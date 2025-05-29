@@ -55,6 +55,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
 * section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
+* section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
 
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
@@ -65,7 +66,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
     anamnesi 0..1 and
     allergie 0..* and
     terapiaFarmacologicaInAtto 0..* and
-    esameObbiettivo 0..1
+    esameObiettivo 0..1
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0 (exactly)
@@ -79,9 +80,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0 (exactly)
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatement)
 
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo] ^sliceName = "esameObbiettivo"
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo].code = $loinc#29545-1 (exactly)
-* section[InquadramentoClinicoIniziale].section[esameObbiettivo].entry only Reference(ObservationTelemedicina)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelemedicina)
 
 // Slice: precedentiEsamiEseguiti
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
@@ -101,6 +102,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 // Slice: referto
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTelemedicina)
+* section[referto].code = $loinc#47045-0 (exactly)
 
 // Slice: diagnosi
 * section[diagnosi] ^sliceName = "diagnosi"
@@ -110,6 +112,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 // Slice: conclusioni
 * section[conclusioni] ^sliceName = "conclusioni"
 * section[conclusioni].entry only Reference(ObservationTelemedicina)
+* section[conclusioni].code = $loinc#55110-1 (exactly)
 
 // Slice: suggerimentiPerMedicoPrescrittore
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
@@ -124,6 +127,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
+* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
 // Slice: appuntamentoTelevisita
 //resta commentato perchè vedendo il cda utilizza la service request referenziata con encouter,usato come prenotazione,(planstratdate e planendDate --> per usarli è necceraio exstesion r5) 
