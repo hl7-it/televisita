@@ -24,7 +24,8 @@ publisher:
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for id, uri, and version.
 #
-# dependencies:
+dependencies:
+  hl7.fhir.it.terminology: current 
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode
@@ -77,6 +78,10 @@ publisher:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+  ModelMaps: RefertoDiTelevisita.html  
+  Support:
+    FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
+    Downloads: downloads.html  
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

@@ -40,8 +40,3 @@ Description: "Profilo base della Composition condiviso in tutti i documenti di T
 
 * event.code ^short = "Tipologia di accesso"
  // TODO: aggiungi il binding alla tipologia di accesso (programmata / ad accesso diretto) 
-
-* section 1..
-* section.title ^short = "Titolo della sezione."
-* section.code ^short = "Codice della sezione."
-// * section.entry 1..

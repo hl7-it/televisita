@@ -10,18 +10,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * status 1..1
 * status = #final (exactly)
 
-// * type 1..1
-// * type from http://hl7.org/fhir/ValueSet/telemedicina (required)
-
 * title 1..1
 * title = "Referto di Televisita" (exactly)
 
 * date 1..1
-
+* event.code ^short = "Tipologia di accesso"
 * type = http://loinc.org#75496-0 (exactly)
-// * attester 0..1
-// * attester.mode = #legal (exactly)
-// * attester.time 1..1
 
 * subject 1..1
 * subject only Reference(PatientTelemedicina)
@@ -35,22 +29,17 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section ^slicing.rules = #open
 
 * section contains
-    terapiaFarmacologica 0..1 and
     questitoDiagnostico 0..1 and
     InquadramentoClinicoIniziale 0..1 and
     precedentiEsamiEseguiti 0..1 and
-    prestazioni 0..1 and
     confrontoPrecedentiEsamiEseguiti 0..1 and
-    referto 0..1 and
+    referto 1..1 and
     diagnosi 0..1 and
     conclusioni 0..1 and
     suggerimentiPerMedicoPrescrittore 0..1 and
     accertamentiControlliConsigliati 0..1 and
-    terapiaFarmacologicaConsigliata 0..1 
-
-// Slice: terapiaFarmacologica
-* section[terapiaFarmacologica] ^sliceName = "terapiaFarmacologica"
-* section[terapiaFarmacologica].entry only Reference(MedicationRequestTelemedicina)
+    terapiaFarmacologicaConsigliata 0..1 and 
+    allegati 0..1
 
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
@@ -89,11 +78,6 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[precedentiEsamiEseguiti].code = $loinc#30954-2 (exactly)
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
-// Slice: prestazioni
-* section[prestazioni] ^sliceName = "prestazioni"
-* section[prestazioni].code = $loinc#62387-6 (exactly)
-* section[prestazioni].entry only Reference(EncounterTelemedicina)
-
 // Slice: confrontoPrecedentiEsamiEseguiti
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
 * section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1 (exactly)
@@ -129,9 +113,9 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
-// Slice: appuntamentoTelevisita
-//resta commentato perchè vedendo il cda utilizza la service request referenziata con encouter,usato come prenotazione,(planstratdate e planendDate --> per usarli è necceraio exstesion r5) 
-//se invece si volesse utilizzare la r4 allora è possibile considerare l' appointmant
-//* section[appuntamentoTelevisita] ^sliceName = "appuntamentoTelevisita"
-//* section[appuntamentoTelevisita].code = $loinc#56446-8 (exactly)
-//* section[appuntamentoTelevisita].entry only Reference(Appointment)
+* section[allegati] ^sliceName = "allegati"
+* section[allegati].entry only Reference(DocumentReference or Binary)
+* section[allegati].code = $loinc#77599-9 (exactly)
+
+
+

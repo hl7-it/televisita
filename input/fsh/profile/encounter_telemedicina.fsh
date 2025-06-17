@@ -56,6 +56,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * participant ^comment = "In partecipat.individual può essere inserito il riferimento al Practitioner o al PractitionerRole che prende in carico la visita."
 * participant.individual only Reference(PractitionerTelemedicina)
 
+//refertence appontment
 * appointment only Reference(AppointmentTelemedicina)
 * appointment ^short = "L'appuntamento da cui è partita l'incontro"
 * appointment ^definition = "L'appuntamento da cui è partita l'incontro"
@@ -63,6 +64,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * period ^short = "Data di inizio e di fine dell'incontro"
 * period ^comment = "Se non è (ancora) nota, la fine del Periodo può essere omessa."
 
+//referecnce prestaziozioni
 * reasonReference ^short = "Motivo scatenante l'incontro"
 * reasonReference only Reference(ConditionTelemedicina or ProcedureTelemedicina)
 
@@ -70,12 +72,6 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * location ^definition = "BackboneElement contenente informazioni come l'ambulatorio di erogazione"
 * location.location ^short = "reference a Location"
 * location.location ^definition = "Reference alla risorsa Location che eroga la visita, intesa come reparto o codice ambulatorio"
-// * location.physicalType.coding.system ^definition = "Per questo elemento è stato definito un system aziendale."
-// * location.physicalType.coding.system ^comment = "L'URI può essere un OID (urn:oid:...) o un UUID (urn:uuid:...).  Gli OID e gli UUID DEVONO essere riferimenti al registro OID HL7. In caso contrario, l'URI dovrebbe provenire dall'elenco HL7 di URI speciali definiti FHIR o dovrebbe fare riferimento a una definizione che stabilisce il sistema in modo chiaro e inequivocabile."
-// * location.physicalType.coding.code ^short = "Codice location"
-// * location.physicalType.coding.code ^definition = "Simbolo nella sintassi definita dal sistema. Il simbolo può essere un codice predefinito o un'espressione in una sintassi definita dal sistema di codifica (ad esempio post-coordinamento)."
-// * location.physicalType.coding.display ^short = "Descrizione del physicalType."
-// * location.physicalType.coding.display ^definition = "Descrizione del physicalType."
 * serviceProvider ^short = "Organizzazione che eroga il il servizio"
 * serviceProvider ^definition = "Elemento reference che contiene il riferimento alla struttura che eroga la visita, intesa come poliambulatorio"
 * serviceProvider only Reference(OrganizationTelemedicina)
