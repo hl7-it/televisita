@@ -26,6 +26,7 @@ publisher:
 #
 dependencies:
   hl7.fhir.it.terminology: current 
+  hl7.fhir.it.lab-report: 0.2.0 
 #   hl7.fhir.us.core: 3.1.0
 #   hl7.fhir.us.mcode:
 #     id: mcode

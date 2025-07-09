@@ -6,15 +6,16 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 * ^status = #draft
 * type = #document (exactly)
 
-* entry ^slicing.discriminator.type = #type
-* entry ^slicing.discriminator.path = "resource.meta.profile"
+* entry ^slicing.discriminator[0].type = #type
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.ordered = false
 * entry ^slicing.rules = #open
 
 * entry contains
     composition 1..1 and
     patient 1..1 and
-    serviceRequest 1..1 and
-    appointment 1..1 and
+    serviceRequest 0..1 and
+    appointment 0..1 and
     practitionerRole 0..* and
     practitioner 0..* and
     organization 0..* and
@@ -25,8 +26,8 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
     allergyIntolerance 0..* and
     familyMemberHistory 0..* and
     encounter 0..* and
-    procedure 0..* and
-    device 0..*
+    procedure 0..*
+//    device 0..*
 * entry[composition].resource only CompositionRefertoTelevisita
 * entry[patient].resource only PatientTelemedicina
 * entry[serviceRequest].resource only ServiceRequestTV
@@ -42,4 +43,4 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 * entry[familyMemberHistory].resource only FamilyMemberHistory
 * entry[encounter].resource only EncounterTelemedicina
 * entry[procedure].resource only ProcedureTelemedicina
-* entry[device].resource only DeviceTelemedicina
+//* entry[device].resource only DeviceTelemedicina

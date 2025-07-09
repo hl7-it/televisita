@@ -6,7 +6,7 @@ Title: "MDS - ASL"
 Description: "MDS - ASL"
 * ^version = "0.2.0"
 * ^status = #active
-* ^experimental = false
+* ^experimental = true
 * ^publisher = "HL7 Italia"
 * ^contact[0].name = "HL7 Italia"
 * ^contact[=].telecom.system = #url

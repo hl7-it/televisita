@@ -13,7 +13,6 @@ Description: "Profilo base della MedicationRequest condiviso in tutti i document
 * medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
 * medication[x] ^short = "Definizione farmaco"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
-* medication[x] ^binding.strength = #preferred
 * subject only Reference(PatientTelemedicina)
 * subject ^short = "Soggetto per cui è ricchiesta la medication"
 * subject ^definition = "Soggetto per cui è ricchiesta la medication"

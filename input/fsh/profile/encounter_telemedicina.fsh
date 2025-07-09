@@ -1,20 +1,20 @@
-Alias: $ValueSet-encounter-class.html = http://terminology.hl7.org/ValueSet/encounter-class
+//Alias: $ValueSet-encounter-class.html = http://terminology.hl7.org/ValueSet/encounter-class
 
 Profile: EncounterTelemedicina
 Parent: Encounter
 Id: EncounterTelemedicina
 Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Telemedicina"
 * ^status = #draft
-* extension contains
-    actual-period named periodoEffettivo 0..1 and
-    planned-start-date named dataInizioPianificata 0..1 and
-    planned-end-date named dataFinePianificata 0..1 
-* extension[periodoEffettivo] ^short = "Periodo effettivo della visita"
-* extension[periodoEffettivo] ^definition = "Periodo temporale che rappresenta l'inizio e la fine effettiva della visita."
-* extension[dataInizioPianificata] ^short = "Data di inizio pianificata"
-* extension[dataInizioPianificata] ^definition = "Data e ora pianificate di inizio visita (es. data di ammissione)."
-* extension[dataFinePianificata] ^short = "Data di fine pianificata"
-* extension[dataFinePianificata] ^definition = "Data e ora pianificate di fine visita (es. data di dimissione)."
+// * extension contains
+//     actual-period named periodoEffettivo 0..1 and
+//     planned-start-date named dataInizioPianificata 0..1 and
+//     planned-end-date named dataFinePianificata 0..1 
+// * extension[periodoEffettivo] ^short = "Periodo effettivo della visita"
+// * extension[periodoEffettivo] ^definition = "Periodo temporale che rappresenta l'inizio e la fine effettiva della visita."
+// * extension[dataInizioPianificata] ^short = "Data di inizio pianificata"
+// * extension[dataInizioPianificata] ^definition = "Data e ora pianificate di inizio visita (es. data di ammissione)."
+// * extension[dataFinePianificata] ^short = "Data di fine pianificata"
+// * extension[dataFinePianificata] ^definition = "Data e ora pianificate di fine visita (es. data di dimissione)."
 * id ^short = "ID logico della risorsa"
 * id ^definition = "ID logico della risorsa, come utilizzato nell'URL della risorsa. Una volta assegnato, questo valore non cambia mai."
 * id ^comment = "Il valore associato al campo deve rispettare il seguente formalismo:\nPOD.GUID\ndove POD= point of delivery identification"
@@ -66,7 +66,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 
 //referecnce prestaziozioni
 * reasonReference ^short = "Motivo scatenante l'incontro"
-* reasonReference only Reference(ConditionTelemedicina or ProcedureTelemedicina)
+* reasonReference only Reference(ProcedureTelemedicina)
 
 * location ^short = "Elenco delle location gestite in questa visita"
 * location ^definition = "BackboneElement contenente informazioni come l'ambulatorio di erogazione"

@@ -1,12 +1,9 @@
-// Alias: $minsan-fls = https://terminology.agenas.gov.it/ValueSet/minsan-fls
-// Alias: $minsan-asl = http://hl7.it/fhir/lab-report/ValueSet/minsan-asl
 Alias: $uri-idAslRegione = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione
 
 Profile: OrganizationT1
 Parent: OrganizationTelemedicina
 Id: OrganizationT1
 Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRCCS)"
-* ^jurisdiction = urn:iso:std:iso:3166#IT
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -35,3 +32,5 @@ Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRC
 * identifier[codiceFiscale] ^sliceName = "codiceFiscale"
 * identifier[codiceFiscale] ^short = "Codice Fiscale Organizzazione"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale" (exactly)
+
+

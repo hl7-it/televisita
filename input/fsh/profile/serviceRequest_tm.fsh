@@ -4,13 +4,8 @@ Profile: ServiceRequestTelemedicina
 Parent: ServiceRequest
 Id: ServiceRequestTelemedicina
 Description: "Profilo base della ServiceRequest condiviso in tutti i documenti di Telemedicina"
-* ^url = "https://agenas.gov.it/fhir/StructureDefinition/ServiceRequestTelemedicina"
 * ^version = "1.0.0"
 * ^status = #draft
-* ^date = "2024-04-29T16:08:42+02:00"
-* id ^short = "ID logico della risorsa"
-* id ^definition = "ID logico della risorsa, come utilizzato nell'URL della risorsa. Una volta assegnato, questo valore non cambia mai."
-* id ^comment = "Il valore associato al campo deve rispettare il seguente formalismo:\nPOD.GUID\ndove POD= point of delivery identification"
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
 * identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
 * requisition ^short = "Identificativo univoco della richiesta composita"
@@ -25,7 +20,6 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * requisition.type.coding contains tipoRicetta 0..1
 * requisition.type.coding[tipoRicetta] ^short = "Codice che identifica la tipologia di identificativo, nel caso di prescrizioni"
 * requisition.type.coding[tipoRicetta] ^definition = "Codice che identifica la tipologia di identificativo, nel caso di una prescrizione per soggetti stranieri o naviganti"
-* requisition.type.coding[tipoRicetta].system = "https://terminology.agenas.gov.it/CodeSystem/tipoRicetta" (exactly)
 * requisition.type.coding[tipoRicetta].system ^short = "Identifica il sistema terminologico"
 * requisition.type.coding[tipoRicetta].system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
 * requisition.type.coding[tipoRicetta].code 1..
@@ -55,7 +49,6 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * category[brancaPrestazione].coding from specialita-mediche (preferred)
 * category[brancaPrestazione].coding ^short = "Codice definito da un sistema terminologico"
 * category[brancaPrestazione].coding ^definition = "Un riferimento a un codice definito da un sistema terminologico"
-* category[brancaPrestazione].coding.system = "https://terminology.agenas.gov.it/CodeSystem/brancaPrestazione" (exactly)
 * category[brancaPrestazione].coding.system ^short = "Identifica il sistema di terminologia"
 * category[brancaPrestazione].coding.system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
 * category[brancaPrestazione].coding.code from specialita-mediche (preferred)
@@ -67,9 +60,9 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * code ^short = "Cosa viene richiesto/ordinato"
 * code ^definition = "Indica cosa è stato richiesto, ovvero il codice della prestazione quando prevista"
 * code ^comment = "Molti codici di procedure di laboratorio e radiologiche incorporano il sistema campione/organo nel nome dell'ordine del test, ad esempio il glucosio da siero o da siero/plasma, o una radiografia del torace. Il campione potrebbe non essere registrato separatamente dal codice dell'esame."
-* code.coding ^short = "Codice definito da un sistema terminologico"
-* code.coding ^definition = "Un riferimento a un codice definito da un sistema terminologico."
-* code.coding ^comment = "I codici possono essere definiti in modo molto casuale in enumerazioni o elenchi di codici, fino a definizioni molto formali come SNOMED CT - si vedano i Core Principles di HL7 v3 per maggiori informazioni.  L'ordine dei codici non è definito e NON DEVE essere utilizzato per dedurre il significato. In generale, al massimo uno solo dei valori di codifica sarà etichettato come UserSelected = true."
+// * code.coding ^short = "Codice definito da un sistema terminologico"
+// * code.coding ^definition = "Un riferimento a un codice definito da un sistema terminologico."
+// * code.coding ^comment = "I codici possono essere definiti in modo molto casuale in enumerazioni o elenchi di codici, fino a definizioni molto formali come SNOMED CT - si vedano i Core Principles di HL7 v3 per maggiori informazioni.  L'ordine dei codici non è definito e NON DEVE essere utilizzato per dedurre il significato. In generale, al massimo uno solo dei valori di codifica sarà etichettato come UserSelected = true."
 * orderDetail ^short = "Informazioni aggiuntive sulla richiesta"
 * orderDetail ^definition = "Ulteriori dettagli e istruzioni sulla servizi da erogare"
 * quantity[x] ^short = "Quantità prestazione"
@@ -98,7 +91,7 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * reasonCode ^definition = "Una spiegazione o giustificazione del motivo per cui viene richiesto il servizio, in forma codificata o testuale."
 * reasonCode.coding ^short = "Codifica associata al quesito diagnostico"
 * reasonCode.coding ^definition = "Riferimento ad un codice definito in uno specifico sistema terminologico."
-* reasonReference only Reference(DiagnosticReportTelemedicina)
+// * reasonReference only Reference(DiagnosticReportTelemedicina)
 * insurance ^short = "Copertura assicurativa associata"
 * insurance ^definition = "Elemento di tipo reference utilizzato per indicare il codice esenzione associato alla richiesta.\n\n*Se la reference non riusulta valorizzata, la posizione dell'assistito è da intendersi come NON ESENTE."
 * specimen ^short = "Reference usata solo se il campione cui punta la richiesta è già stato prelevato ed esiste."

@@ -1,33 +1,50 @@
 Alias: $loinc = http://loinc.org
 
 Profile: CompositionRefertoTelevisita
-Parent: CompositionTelemedicina
+Parent: Composition
 Id: CompositionRefertoTelevisita
 Description: "Profilo della Composition utilizzata nel contesto della Televisita"
 * ^status = #draft
+* identifier ^short = "	Identificativo indipendente dalla versione."
+* type from vsTipologiaDocumentale (required)
+* type ^short = "Tipo di Composition."
 
-// Elementi primari della Composition
-* status 1..1
-* status = #final (exactly)
+* subject only Reference(PatientTelemedicina)
+* encounter only Reference(EncounterTelemedicina)
+* encounter ^short = "Contesto in cui è stato generato il documento."
+* date ^short = "Data di modifica della risorsa."
+
+* author only Reference(PractitionerRoleTelemedicina or OrganizationTelemedicina)
+* author ^short = "Autore della Composition (Medico Refertante)."
+
+* title ^short = "Titolo del documento"
+
+* attester ^slicing.discriminator.type = #value
+* attester ^slicing.discriminator.path = "mode"
+* attester ^slicing.rules = #open
+* attester ^short = "Professionisti che attestano la validità del documento."
+* attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
+* attester contains legalAuthenticator 1..1
+* attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].time 1..
+* attester[legalAuthenticator].party 1..
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+
+* relatesTo ^short = "Ulteriori documenti correlati"
+
+* event.code ^short = "Tipologia di accesso"
 
 * title 1..1
 * title = "Referto di Televisita" (exactly)
 
 * date 1..1
-* event.code ^short = "Tipologia di accesso"
-* type = http://loinc.org#75496-0 (exactly)
+* type = http://loinc.org#75496-0 "Telehealth Note" (exactly)
 
-* subject 1..1
-* subject only Reference(PatientTelemedicina)
-
-* encounter 0..1
-* encounter only Reference(EncounterTelemedicina)
 
 // Sezionamento e slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
-
 * section contains
     questitoDiagnostico 0..1 and
     InquadramentoClinicoIniziale 0..1 and
@@ -45,12 +62,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
 * section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
 * section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
-
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
+* section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
 * section[InquadramentoClinicoIniziale].section contains
     anamnesi 0..1 and
     allergie 0..* and
@@ -114,7 +131,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
 
 * section[allegati] ^sliceName = "allegati"
-* section[allegati].entry only Reference(DocumentReference or Binary)
+* section[allegati].entry only Reference(DocumentReference or Binary or Media)
 * section[allegati].code = $loinc#77599-9 (exactly)
 
 
