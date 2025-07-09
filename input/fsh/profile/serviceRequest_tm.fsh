@@ -40,20 +40,15 @@ Description: "Profilo base della ServiceRequest condiviso in tutti i documenti d
 * intent ^definition = "Indica l'intento della richiesta, ovvero se si tratta di una proposta, un piano, un ordine originale o un ordine riflesso.\n\nPer i casi d'uso gestiti dell'ambito di questa IG deve essere valorizzato fisso ad order."
 * intent ^comment = "Questo elemento è etichettato come modificatore perché l'intento altera quando e come la risorsa è effettivamente applicabile."
 * category ^slicing.discriminator.type = #value
-* category ^slicing.discriminator.path = "coding.system"
+* category ^slicing.discriminator.path = "category.code"
 * category ^slicing.rules = #open
 * category ^short = "Classificazione del servizio"
 * category ^definition = "Un codice che classifica il servizio"
 * category contains brancaPrestazione 0..*
-* category[brancaPrestazione].coding ..1
-* category[brancaPrestazione].coding from specialita-mediche (preferred)
-* category[brancaPrestazione].coding ^short = "Codice definito da un sistema terminologico"
-* category[brancaPrestazione].coding ^definition = "Un riferimento a un codice definito da un sistema terminologico"
-* category[brancaPrestazione].coding.system ^short = "Identifica il sistema di terminologia"
-* category[brancaPrestazione].coding.system ^definition = "Identificazione del sistema terminologico che definisce il significato del codice."
-* category[brancaPrestazione].coding.code from specialita-mediche (preferred)
-* category[brancaPrestazione].coding.code ^short = "Codice valido per il sistema terminologico di riferimento"
-* category[brancaPrestazione].coding.code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
+* category[brancaPrestazione] ..1
+* category[brancaPrestazione] from specialita-mediche (preferred)
+* category[brancaPrestazione] ^short = "Codice definito da un sistema terminologico"
+* category[brancaPrestazione] ^definition = "Un riferimento a un codice definito da un sistema terminologico"
 * priority ^short = "priorità della richiesta"
 * priority ^definition = "Indica la priorità della richiesta."
 * priority ^comment = "Si noti che le stringhe FHIR NON devono superare la dimensione di 1MB."

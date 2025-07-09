@@ -141,7 +141,7 @@ Usage: #example
 * section[accertamentiControlliConsigliati].entry[0] = Reference(Observation/1b401b53-f564-4730-bb13-45d5620596f0)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6
 * section[terapiaFarmacologicaConsigliata].title = "Terapia farmacologica consigliata"
-* section[terapiaFarmacologicaConsigliata].entry[0] = Reference(MedicationRequest/9282eb8d-b153-451a-bd0d-437efd13b45f)
+* section[terapiaFarmacologicaConsigliata].entry[0] = Reference(MedicationRequest-terapia-consigliata)
 * section[allegati].code = $loinc#77599-9
 * section[allegati].title = "Documenti allegati"
 * section[allegati].entry[0] = Reference(DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb)
@@ -408,7 +408,7 @@ Usage: #example
 * start = "2025-07-09T10:00:00+01:00"
 * end = "2025-07-09T10:30:00+01:00"
 * basedOn = Reference(ServiceRequestTelemedicinaExample)
-* serviceCategory = http://terminology.hl7.org/CodeSystem/service-category#Counselling "Counselling"
+* serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#Counselling "Counselling"
 * reasonCode[+] = http://snomed.info/sct#129265001 "Evaluation - action (qualifier value)"
 * reasonCode[=].text = "Televisita cardiologica per controllo post-operatorio"
 * participant[0].actor = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)

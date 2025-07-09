@@ -25,7 +25,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * attester ^short = "Professionisti che attestano la validità del documento."
 * attester ^definition = "Professionisti che attestano la validità del documento. Se la risorsa è creata a fine documentale uno degli attester dovrebbe essere il firmatario, ovvero chi allega la firma digitale al documento."
 * attester contains legalAuthenticator 1..1
-* attester[legalAuthenticator].mode = #legal (exactly)
+* attester[legalAuthenticator].mode = #legal  
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
 * attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
@@ -35,16 +35,17 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * event.code ^short = "Tipologia di accesso"
 
 * title 1..1
-* title = "Referto di Televisita" (exactly)
+* title = "Referto di Televisita"  
 
 * date 1..1
-* type = http://loinc.org#75496-0 "Telehealth Note" (exactly)
+* type = http://loinc.org#75496-0 "Telehealth Note"  
 
 
 // Sezionamento e slicing delle sezioni interne
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
+* section ^slicing.ordered = false
 * section contains
     questitoDiagnostico 0..1 and
     InquadramentoClinicoIniziale 0..1 and
@@ -61,13 +62,13 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
 * section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
-* section[questitoDiagnostico].code = $loinc#29299-5 (exactly)
+* section[questitoDiagnostico].code = $loinc#29299-5
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
-* section[InquadramentoClinicoIniziale].code = $loinc#11329-0 (exactly)
+* section[InquadramentoClinicoIniziale].code = $loinc#11329-0
 * section[InquadramentoClinicoIniziale].section contains
     anamnesi 0..1 and
     allergie 0..* and
@@ -75,64 +76,64 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
     esameObiettivo 0..1
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
-* section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0 (exactly)
+* section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0  
 * section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTelemedicina)
 
 * section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
-* section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2 (exactly)
+* section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2  
 * section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTelemedicina)
 
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^sliceName = "terapiaFarmacologicaInAtto"
-* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0 (exactly)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0  
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatement)
 
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
-* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1 (exactly)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1  
 * section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelemedicina)
 
 // Slice: precedentiEsamiEseguiti
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
-* section[precedentiEsamiEseguiti].code = $loinc#30954-2 (exactly)
+* section[precedentiEsamiEseguiti].code = $loinc#30954-2  
 * section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
 // Slice: confrontoPrecedentiEsamiEseguiti
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
-* section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1 (exactly)
+* section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1  
 * section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
 
 // Slice: referto
 * section[referto] ^sliceName = "referto"
 * section[referto].entry only Reference(ObservationTelemedicina)
-* section[referto].code = $loinc#47045-0 (exactly)
+* section[referto].code = $loinc#47045-0  
 
 // Slice: diagnosi
 * section[diagnosi] ^sliceName = "diagnosi"
-* section[diagnosi].code = $loinc#29548-5 (exactly)
+* section[diagnosi].code = $loinc#29548-5  
 * section[diagnosi].entry only Reference(ObservationTelemedicina)
 
 // Slice: conclusioni
 * section[conclusioni] ^sliceName = "conclusioni"
 * section[conclusioni].entry only Reference(ObservationTelemedicina)
-* section[conclusioni].code = $loinc#55110-1 (exactly)
+* section[conclusioni].code = $loinc#55110-1  
 
 // Slice: suggerimentiPerMedicoPrescrittore
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
-* section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0 (exactly)
+* section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0  
 * section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTelemedicina)
 
 // Slice: accertamentiControlliConsigliati
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
-* section[accertamentiControlliConsigliati].code = $loinc#80615-8 (exactly)
+* section[accertamentiControlliConsigliati].code = $loinc#80615-8  
 * section[accertamentiControlliConsigliati].entry only Reference(ObservationTelemedicina)
 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
-* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6 (exactly)
+* section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
 
 * section[allegati] ^sliceName = "allegati"
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
-* section[allegati].code = $loinc#77599-9 (exactly)
+* section[allegati].code = $loinc#77599-9  
 
 
 
