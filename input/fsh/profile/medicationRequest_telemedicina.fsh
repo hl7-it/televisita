@@ -10,6 +10,7 @@ Description: "Profilo base della MedicationRequest condiviso in tutti i document
 * status ^definition = "Codice che desctive lo stato della request"
 * intent = #proposal
 * intent ^definition = "Scopo della request"
+* medication[x] only CodeableConcept
 * medication[x] from https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic (required)
 * medication[x] ^short = "Definizione farmaco"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."

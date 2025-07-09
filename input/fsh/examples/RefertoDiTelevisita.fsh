@@ -2,7 +2,7 @@ Alias: $sct = http://snomed.info/sct
 Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-Alias: $icd9cm = http://hl7.org/fhir/sid/icd-9-cm
+// Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $mimeType = urn:ietf:bcp:13
 
 
@@ -306,7 +306,7 @@ InstanceOf: ObservationTelemedicina
 Description: "Esempio di esame diagnosi nel contesto della televisita"
 Usage: #example
 * status = #final
-* code = $icd9cm#491.1 "Bronchite cronica"
+* code = $icd-9-cm#491.1 "Bronchite cronica"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
@@ -360,7 +360,7 @@ Usage: #example
 * status = #active
 * intent = #proposal
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* medication[x] = https://www.hl7.it/fhir/terminology/ValueSet/aifa-aic#C01BD01 "Amiodarone" 
+* medicationCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/aifa-aic#C01BD01 "Amiodarone" 
 * authoredOn = "2025-06-16"
 * requester = Reference(PractitionerTelemedicinaExample)
 * id = "9282eb8d-b153-451a-bd0d-437efd13b45f"
