@@ -203,7 +203,7 @@ Description: "Esempio di quesito diagnostico nel contesto della televisita"
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
 * status = #final
-* code = $icd-9-cm#786.2
+* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo post-COVID per tosse persistente"
 * performer = Reference(PractitionerTelemedicinaExample)
@@ -306,7 +306,7 @@ InstanceOf: ObservationTelemedicina
 Description: "Esempio di esame diagnosi nel contesto della televisita"
 Usage: #example
 * status = #final
-* code = $icd-9-cm#491.1 "Bronchite cronica"
+* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"

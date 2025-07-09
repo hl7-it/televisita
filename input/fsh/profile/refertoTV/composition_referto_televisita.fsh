@@ -33,6 +33,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * relatesTo ^short = "Ulteriori documenti correlati"
 
 * event.code ^short = "Tipologia di accesso"
+* event.code from http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0
 
 * title 1..1
 * title = "Referto di Televisita" (exactly)

@@ -7,7 +7,6 @@ Description: "Definisce il sistema di terminologie da usare per i codici delle s
 * ^status = #draft
 * ^versionNeeded = false
 * ^experimental = true
-* ^content = #example
 * ^caseSensitive = true
 * #01 "Allergologia" "Allergologia"
 * #02 "Day hospital" "Day hospital - Identifica reparti esclusivamente dedicati ad attività di day hospital multispecialistico"

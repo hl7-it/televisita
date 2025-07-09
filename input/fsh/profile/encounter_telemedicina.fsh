@@ -1,4 +1,4 @@
-//Alias: $ValueSet-encounter-class.html = http://terminology.hl7.org/ValueSet/encounter-class
+Alias: $ValueSet-encounter-class.html = http://terminology.hl7.org/ValueSet/encounter-class|3.0.0
 
 Profile: EncounterTelemedicina
 Parent: Encounter
@@ -28,8 +28,9 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * class ^short = "Classificazione dell'incontro con il paziente."
 * class ^definition = "Concetti che rappresentano la classificazione dell'incontro con il paziente, come ad esempio ambulatorio (paziente esterno), ricovero, emergenza, assistenza sanitaria a domicilio o altri, a causa delle variazioni locali."
 * class ^comment = "Classificazione della risorsa. Nel caso della televisita, utilizza\n\n* VR: La vista avvine ein modalità tele"
+
 // * class ^binding.strength = #required
-// * class.system from $ValueSet-encounter-class.html (preferred)
+ * class from $ValueSet-encounter-class.html (preferred)
 // * class.system ^short = "Identità del sistema terminologico"
 // * class.system ^definition = "L'identificazione del sistema di codice che definisce il significato del simbolo nel codice."
 // * class.system ^comment = "Il system proposto dallo standard è: \"http://terminology.hl7.org/ValueSet/v3-ActEncounterCode\""
