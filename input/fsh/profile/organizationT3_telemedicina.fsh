@@ -55,8 +55,10 @@ Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, amb
 // * identifier[codiceFiscale] ^sliceName = "codiceFiscale"
 // * identifier[codiceFiscale] ^short = "Codice Fiscale Organizzazione"
 // * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale" (exactly)
+
 * identifier[strutturaInterna] ^sliceName = "strutturaInterna"
 * identifier[strutturaInterna].system = "http://hl7.it/sid/hsp11.strutturaInterna" (exactly)
 * identifier[strutturaInterna].value from VsMinisteroSaluteIdStruttureInterne (required)
 * identifier[strutturaInterna].value ^binding.description = "MDS - ID Strutture Interne di Ricovero"
+
 * partOf only Reference(OrganizationT2)

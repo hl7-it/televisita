@@ -1,6 +1,7 @@
 Extension: Extension_serviceRequest_codeCodingType
 Id: Extension-serviceRequest-codeCodingType
 Context: ServiceRequest.code.coding
+Description: "Extension per la tipologia della codifica del servizio."
 * ^status = #draft
 * ^date = "2023-09-20T21:19:29+02:00"
 * . MS

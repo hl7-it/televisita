@@ -5,7 +5,7 @@ Parent: Composition
 Id: CompositionRefertoTelevisita
 Description: "Profilo della Composition utilizzata nel contesto della Televisita"
 * ^status = #draft
-* identifier ^short = "	Identificativo indipendente dalla versione."
+* identifier ^short = "Identificativo indipendente dalla versione."
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
@@ -129,8 +129,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
-* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
+* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
 
 * section[allegati] ^sliceName = "allegati"
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)

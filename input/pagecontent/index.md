@@ -22,7 +22,7 @@ L'integrazione con i sistemi sanitari regionali e nazionali è fondamentale per 
 
 Di seguito è riportato uno schema esemplificativo che illustra il flusso dei dati tra i diversi sistemi, evidenziando come le informazioni vengano trasferite e integrate all'interno della Piattaforma Nazionale di Telemedicina.
 
-![](Flusso_Dati_PNT_IRT_v3.png)
+![](Flusso_Dati_PNT_IRT_v5.png)
 
 I referti prodotti vengono prima validati dal Gateway, che assicura l'integrità e la conformità dei dati. Successivamente, i dati validati vengono archiviati e indicizzati nei registri nazionali e regionali. Il Gateway invia quindi le informazioni all'EDS, che a sua volta notifica la Piattaforma Nazionale di Telemedicina, garantendo una gestione centralizzata e conforme del flusso informativo.
 
@@ -60,3 +60,12 @@ Raccolta di acronimi e termini utilizzati nel progetto
   </tbody>
 </table>
 
+### Dipendenze
+{% include dependency-table.xhtml %}
+
+### Details
+#### Cross-Version Analysis
+{% include cross-version-analysis.xhtml %}
+
+### Intellectual Property Statements
+{% include ip-statements.xhtml %}

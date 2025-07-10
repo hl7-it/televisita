@@ -5,6 +5,5 @@ Description: "Contiene la lista di codici da utilizzare per le specialità del P
 * ^name = "ValueSet_per_specialita_PractitionerRole"
 * ^version = "1.0.0"
 * ^status = #draft
-* ^experimental = true
-* ^publisher = "pnt.gov.it"
+* ^experimental = false
 * include codes from system https://agenas.gov.it/fhir/CodeSystem/csspecialityPractitionerRole
