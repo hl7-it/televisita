@@ -4,7 +4,7 @@ Id: ProcedureTelemedicina
 Description:  "Profilo base della Procedure condiviso in tutti i documenti di Telemedicina"
 
 * ^status = #draft
-* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method named ModalitaEsecuzioneProcedura 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method|5.2.0 named ModalitaEsecuzioneProcedura 0..1
 * extension[ModalitaEsecuzioneProcedura] ^short = "Modalità esecuzione procedura operativa"
 
 * basedOn ^short = "Richiesta su cui si basa questa procedura."
@@ -33,7 +33,7 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 
 * performer ^short = "Persone che hanno eseguito la procedura."
 * performer ^definition = "Elemento ripetibile contenente i riferimenti a chi prende parte alla procedura di intervento e alle tipologie di performance offerte durante la procedure."
-* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationTelemedicina or Patient)
+* performer.actor only Reference(PractitionerTelemedicina or PractitionerRoleTelemedicina or OrganizationT1 or Patient)
 
 * outcome ^short = "Parametri rilevanti al fine di caratterizzare la procedura."
 * outcome ^definition = "Elemento utilizzato per gestire la relazione del professionista generata al termine dell'erogazione"

@@ -6,7 +6,7 @@ Description: "Profilo base del Practitioner condiviso in tutti i documenti di Te
 * ^status = #active
 
 * identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.description = "Slice based on the identifier pattern"
 * identifier ^slicing.rules = #open
 * identifier ^short = "Identificativo dell'operatore sanitario"
@@ -14,7 +14,6 @@ Description: "Profilo base del Practitioner condiviso in tutti i documenti di Te
 * identifier contains codiceFiscale 0..1
 * identifier[codiceFiscale] ^short = "Codice Fiscale"
 * identifier[codiceFiscale] ^definition = "Codice Fiscale"
-* identifier[codiceFiscale] ^patternIdentifier.system = "http://hl7.it/sid/codiceFiscale"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale" (exactly)
 
 * name ^short = "Nome dell'operatore sanitario."

@@ -5,7 +5,6 @@ Alias: $uri-idEni = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentific
 Alias: $uri-idStp = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentificatore
 Alias: $anpr = http://hl7.it/sid/anpr
 Alias: $cf = http://hl7.it/sid/codiceFiscale
-Alias: $tipoIdentificatore = http://hl7.it/fhir/lab-report/ValueSet/VstipoIdentificatore
 
 Profile: PatientTelemedicina
 Parent: Patient
@@ -16,8 +15,8 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * ^experimental = true
 * ^date = "2024-04-29T16:08:42+02:00"
 
-* extension contains $patient-birthPlace named luogoNascita 0..1
-* extension[luogoNascita] ^isModifier = false
+* extension contains BirthPlaceIta named luogoNascita 0..1
+* extension[luogoNascita] ^short = "Luogo di nascita." 
 
 * identifier  
 * identifier 1..
@@ -91,17 +90,7 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * gender ^definition = "Genere amministrativo."
 * gender ^comment = "Il genere potrebbe non corrispondere al sesso biologico determinato dalla genetica o dall'identificazione preferita dall'individuo. Si noti che sia per gli esseri umani che, in particolare, per gli animali, esistono altre possibilità legittime oltre a quella di maschio e femmina, anche se la stragrande maggioranza dei sistemi e dei contesti supporta solo maschio e femmina.  I sistemi che forniscono supporto decisionale o applicano le regole aziendali dovrebbero idealmente farlo sulla base di osservazioni che riguardano il sesso specifico o l'aspetto del genere di interesse (anatomico, cromosomico, sociale, ecc.) Tuttavia, poiché queste osservazioni sono registrate di rado, la prassi comune è quella di assegnare il genere amministrativo.  In questi casi, l'applicazione delle regole deve tenere conto della variazione tra gli aspetti amministrativi e quelli biologici, cromosomici e di altro genere.  Ad esempio, un avviso relativo a un'isterectomia su un uomo dovrebbe essere gestito come un avvertimento o un errore escludibile, e non come un errore \"duro\".  Per ulteriori informazioni sulla comunicazione del sesso e del genere del paziente, consultare la sezione Genere e sesso del paziente."
 
-* address ^slicing.discriminator.type = #value
-* address ^slicing.discriminator.path = "use"
-* address ^slicing.rules = #open
-* address contains
-    indirizzoResidenza 1..1 and
-    indirizzoDomicilio 0..1
-
-* address[indirizzoResidenza].use 1..
-* address[indirizzoResidenza].use = #billing (exactly)
-* address[indirizzoDomicilio].use 1..
-* address[indirizzoDomicilio].use = #home (exactly)
+* address only AddressItTelemedicina
 
 * birthDate ^short = "La data di nascita dell'individuo"
 * birthDate ^definition = "La data di nascita dell'individuo."
@@ -116,17 +105,17 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * maritalStatus ^definition = "Questo campo contiene l'ultimo stato civile del paziente."
 * maritalStatus ^comment = "Non tutti gli usi della terminologia si adattano a questo schema generale. In alcuni casi, i modelli non dovrebbero usare CodeableConcept e utilizzare direttamente la codifica, fornendo la propria struttura per la gestione del testo, delle codifiche, delle traduzioni e delle relazioni tra gli elementi e il pre e post coordinamento."
 
-* generalPractitioner MS
+
 * generalPractitioner ^slicing.discriminator.type = #profile
 * generalPractitioner ^slicing.discriminator.path = "$this"
 * generalPractitioner ^slicing.rules = #open
 * generalPractitioner contains
-    mmgPlsRole 0..* MS and
-    mmgPls 0..* MS and
-    aziendaAssistenza 0..* MS
+    mmgPlsRole 0..* and
+    mmgPls 0..* and
+    aziendaAssistenza 0..* 
 * generalPractitioner[mmgPlsRole] only Reference(PractitionerRoleTelemedicina)
 * generalPractitioner[mmgPls] only Reference(PractitionerTelemedicina)
-* generalPractitioner[aziendaAssistenza] only Reference(OrganizationTelemedicina)
+* generalPractitioner[aziendaAssistenza] only Reference(OrganizationT1)
 
 
 Invariant: pat-id-cf-1

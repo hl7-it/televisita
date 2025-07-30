@@ -34,7 +34,7 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 * entry[appointment].resource only Appointment
 * entry[practitionerRole].resource only PractitionerRoleTelemedicina
 * entry[practitioner].resource only PractitionerTelemedicina
-* entry[organization].resource only OrganizationTelemedicina
+* entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
 * entry[observation].resource only ObservationTelemedicina
 * entry[condition].resource only Condition
 * entry[medicationRequest].resource only MedicationRequestTelemedicina

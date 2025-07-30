@@ -2,8 +2,147 @@ Alias: $sct = http://snomed.info/sct
 Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+Alias: $istat-DUG-CS = 	https://www.hl7.it/fhir/terminology/CodeSystem/dug
 Alias: $mimeType = urn:ietf:bcp:13
 
+// BUNDLE DI TIPO TRANSACTION
+Instance: RefertoDiTelevisitaTransaction
+InstanceOf: BundleRefertoDiTelevisitaTransaction
+Description: "Esempio di Referto di Televisita come Bundle transaction con PUT e identifier"
+Usage: #example
+
+* type = #transaction
+
+// Risorse amministrative con PUT e identifier
+
+* entry[0].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
+* entry[0].resource = PatientTelemedicinaExample
+* entry[0].request.method = #PUT
+* entry[0].request.url = "Patient?identifier=http://hl7.it/sid/codiceFiscale|RSSMRA80A01H501Z"
+
+* entry[1].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
+* entry[1].resource = PractitionerTelemedicinaExample
+* entry[1].request.method = #PUT
+* entry[1].request.url = "Practitioner?identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
+
+* entry[2].fullUrl = "http://example/Organization/asl-roma-1"
+* entry[2].resource = AslRoma1
+* entry[2].request.method = #PUT
+* entry[2].request.url = "Organization?identifier=http://hl7.it/sid/fls|RM0011"
+
+* entry[3].fullUrl = "http://example/Organization/osp-pertini"
+* entry[3].resource = PresidioSandroPertini
+* entry[3].request.method = #PUT
+* entry[3].request.url = "Organization?identifier=http://hl7.it/sid/hsp|HSP00123"
+
+* entry[4].fullUrl = "http://example/Organization/uo-cardiologia-pertini"
+* entry[4].resource = UOCardiologiaPertini
+* entry[4].request.method = #PUT
+* entry[4].request.url = "Organization?identifier=http://hl7.it/sid/hsp|UO12345"
+
+* entry[5].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
+* entry[5].resource = PractitionerRoleTelemedicinaExample
+* entry[5].request.method = #PUT
+* entry[5].request.url = "PractitionerRole?practitioner.identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
+
+// Risorse cliniche con POST
+
+* entry[6].fullUrl = "http://example/Composition/aa011502-6ad2-430b-a439-01dddc36fd4e"
+* entry[6].resource = CompositionRefertoTelevisitaExample
+* entry[6].request.method = #POST
+* entry[6].request.url = "Composition"
+
+* entry[7].fullUrl = "http://example/Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
+* entry[7].resource = EncounterTelemedicinaExample
+* entry[7].request.method = #POST
+* entry[7].request.url = "Encounter"
+
+* entry[8].fullUrl = "http://example/Observation/7cbbe77d-dcdb-409b-a215-6361ad7873d5"
+* entry[8].resource = Observation-quesito
+* entry[8].request.method = #POST
+* entry[8].request.url = "Observation"
+
+* entry[9].fullUrl = "http://example/Observation/84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
+* entry[9].resource = Observation-anamnesi
+* entry[9].request.method = #POST
+* entry[9].request.url = "Observation"
+
+* entry[10].fullUrl = "http://example/AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94"
+* entry[10].resource = AllergyIntolerance-allergia1
+* entry[10].request.method = #POST
+* entry[10].request.url = "AllergyIntolerance"
+
+* entry[11].fullUrl = "http://example/MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a"
+* entry[11].resource = MedicationStatement-terapia-corrente
+* entry[11].request.method = #POST
+* entry[11].request.url = "MedicationStatement"
+
+* entry[12].fullUrl = "http://example/Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
+* entry[12].resource = Observation-esame-obiettivo
+* entry[12].request.method = #POST
+* entry[12].request.url = "Observation"
+
+* entry[13].fullUrl = "http://example/Observation/9dfdf0c9-a837-42d5-987c-6170c75cc476"
+* entry[13].resource = Observation-esami-precedenti
+* entry[13].request.method = #POST
+* entry[13].request.url = "Observation"
+
+* entry[14].fullUrl = "http://example/Observation/ecc5c95f-a1c0-483c-b48e-5fd84762c393"
+* entry[14].resource = Observation-confronto-esami
+* entry[14].request.method = #POST
+* entry[14].request.url = "Observation"
+
+* entry[15].fullUrl = "http://example/Observation/a465cf01-05e6-4f38-8f6a-b5d6c4168c94"
+* entry[15].resource = Observation-referto-principale
+* entry[15].request.method = #POST
+* entry[15].request.url = "Observation"
+
+* entry[16].fullUrl = "http://example/Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3"
+* entry[16].resource = Observation-diagnosi-principale
+* entry[16].request.method = #POST
+* entry[16].request.url = "Observation"
+
+* entry[17].fullUrl = "http://example/Observation/1611ed98-7577-48ab-9587-7ab4fc96e191"
+* entry[17].resource = Observation-conclusioni-generali
+* entry[17].request.method = #POST
+* entry[17].request.url = "Observation"
+
+* entry[18].fullUrl = "http://example/Observation/2054e65c-2012-4286-aac7-ce2f23e8be31"
+* entry[18].resource = Observation-suggerimenti
+* entry[18].request.method = #POST
+* entry[18].request.url = "Observation"
+
+* entry[19].fullUrl = "http://example/Observation/1b401b53-f564-4730-bb13-45d5620596f0"
+* entry[19].resource = Observation-accertamenti-consigliati
+* entry[19].request.method = #POST
+* entry[19].request.url = "Observation"
+
+* entry[20].fullUrl = "http://example/MedicationRequest/9282eb8d-b153-451a-bd0d-437efd13b45f"
+* entry[20].resource = MedicationRequest-terapia-consigliata
+* entry[20].request.method = #POST
+* entry[20].request.url = "MedicationRequest"
+
+* entry[21].fullUrl = "http://example/DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb"
+* entry[21].resource = DocumentReference-allegato1
+* entry[21].request.method = #POST
+* entry[21].request.url = "DocumentReference"
+
+* entry[22].fullUrl = "http://example/ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc"
+* entry[22].resource = ServiceRequestTelemedicinaExample
+* entry[22].request.method = #POST
+* entry[22].request.url = "ServiceRequest"
+
+* entry[23].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
+* entry[23].resource = AppointmentTelemedicinaExample
+* entry[23].request.method = #POST
+* entry[23].request.url = "Appointment"
+
+* entry[24].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+* entry[24].resource = ProcedureTelemedicinaExample
+* entry[24].request.method = #POST
+* entry[24].request.url = "Procedure"
+
+// BUNDLE DI TIPO DOCUMENT
 Instance: RefertoDiTelevisita
 InstanceOf: BundleRefertodiTelevisita
 Description: "Esempio di Referto di Televisita aggiornato con referto televisita"
@@ -21,8 +160,8 @@ Usage: #example
 * entry[2].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
 * entry[2].resource = PractitionerRoleTelemedicinaExample
 
-* entry[3].fullUrl = "http://example/Organization/e446e848-2bd4-423a-b2f8-5d25687e2f4b"
-* entry[3].resource = organization123456
+* entry[3].fullUrl = "http://example/Organization/asl-roma-1"
+* entry[3].resource = AslRoma1
 
 * entry[4].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 * entry[4].resource = PractitionerTelemedicinaExample
@@ -81,15 +220,63 @@ Usage: #example
 * entry[22].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * entry[22].resource = ProcedureTelemedicinaExample
 
+* entry[23].fullUrl = "http://example/Organization/osp-pertini"
+* entry[23].resource = PresidioSandroPertini
+
+* entry[24].fullUrl = "http://example/Organization/uo-cardiologia-pertini"
+* entry[24].resource = UOCardiologiaPertini
+
 Instance: PatientTelemedicinaExample
 InstanceOf: PatientTelemedicina
 Description: "Esempio di paziente nel contesto della televisita"
 Usage: #example
 * id = "2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-* identifier.system = "http://hl7.it/sid/codiceFiscale"
-* identifier.value = "RSSMRA80A01H501Z"
-* name[0].family = "Rossi"
-* name[0].given[0] = "Mario"
+
+* extension[luogoNascita].valueAddress.extension[residenza].valueBoolean = true
+* extension[luogoNascita].valueAddress.line[+].extension[odonimo].valueString = "Via della Vittoria"
+* extension[luogoNascita].valueAddress.line[=].extension[houseNumber].valueString = "1"
+* extension[luogoNascita].valueAddress.line[=] = "Via della Vittoria, 1"
+* extension[luogoNascita].valueAddress.city = "Milano"
+* extension[luogoNascita].valueAddress.postalCode = "20100"
+* extension[luogoNascita].valueAddress.country = "IT"
+
+* identifier
+  * system = "http://hl7.it/sid/codiceFiscale"
+  * value = "RSSMRA71E01F205E" 
+
+* name.family = "Rossi"
+* name.given = "Maria"
+
+* telecom[0].system = #phone
+* telecom[0].value = "3331245678"
+
+* telecom[1].system = #email
+* telecom[1].value = "maria.rossi@mail.com"
+* birthDate = "1971-05-01"
+* gender = #female
+* address.city = "Milano"
+* address.country = "IT"
+* address.postalCode = "20100"
+* address.line = "Via della Libertà, 52"
+* address.use = #home
+* address.extension[residenza].valueBoolean = true
+* address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/it-tipoEntita#gov
+* address.line.extension[dugCode].valueCodeableConcept  = $istat-DUG-CS#67 "via"
+* contact[0].name.family = "Rossi"
+* contact[0].name.given = "Luigi"
+* contact[1].name.family = "Bianchi"
+* contact[1].name.given = "Maria"
+* contact[0].relationship.coding.code = #C
+* contact[0].relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0131"
+* contact[0].relationship.coding.display = "Emergency Contact"
+* contact[1].relationship.coding.code = #C
+* contact[1].relationship.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0131"
+* contact[1].relationship.coding.display = "Emergency Contact"
+* contact[0].telecom.system = #phone
+* contact[0].telecom.value = "3312345567"
+* contact[1].telecom.system = #phone
+* contact[1].telecom.value = "3311234598"
+//* generalPractitioner[mmgPlsRole] = Reference(PractitionerRoleTelemedicinaExample)
 
 
 Instance: CompositionRefertoTelevisitaExample
@@ -102,7 +289,7 @@ Usage: #example
 * type = $loinc#75496-0 "Telehealth Note"
 * title = "Referto di Televisita"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* encounter = Reference(EncounterTelemedicinaExample)
+* encounter = Reference(Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2)
 * date = "2025-06-16T10:30:00+02:00"
 * author[0] = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
 * attester[legalAuthenticator].mode = #legal
@@ -151,7 +338,9 @@ Usage: #example
 * section[allegati].code = $loinc#77599-9
 * section[allegati].title = "Documenti allegati"
 * section[allegati].entry[0] = Reference(DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb)
-
+* section[prestazioni].code = $loinc#62387-6 
+* section[prestazioni].title = "Prestazioni"
+* section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
 
 Instance: PractitionerTelemedicinaExample
 InstanceOf: PractitionerTelemedicina
@@ -160,7 +349,8 @@ Usage: #example
 * id = "2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
 * name.given = "John"
 * name.family = "Doe"
-
+* identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"
+* identifier[codiceFiscale].value = "DOEMRA80A01H501Z"
 
 Instance: EncounterTelemedicinaExample
 InstanceOf: EncounterTelemedicina
@@ -181,25 +371,18 @@ Usage: #example
 * priority.coding[0].code = #R
 * priority.coding[0].display = "routine"
 * participant[0].individual = Reference(PractitionerTelemedicinaExample)
-* reasonReference[0] = Reference(ProcedureTelemedicinaExample)
-* serviceProvider = Reference(organization123456)
+//* reasonReference[0] = Reference(ProcedureTelemedicinaExample)
+* serviceProvider = Reference(AslRoma1)
 
 
 Instance: PractitionerRoleTelemedicinaExample
 InstanceOf: PractitionerRoleTelemedicina
 Description: "Esempio di practitionerRole nel contesto della televisita"
 Usage: #example
-* organization = Reference(organization123456)
+* organization = Reference(AslRoma1)
 * practitioner = Reference(PractitionerTelemedicinaExample)
 * specialty = CodeSystem_specialita_PractitionerRole#01 "Allergologia"
 * id = "e446e848-2bd4-423a-b2f8-5d25687e2f42"
-
-Instance: organization123456
-InstanceOf: OrganizationTelemedicina
-Description: "Esempio di organization nel contesto della televisita"
-Usage: #example
-* name = "FantasticaAzienda"
-* id = "e446e848-2bd4-423a-b2f8-5d25687e2f4b"
 
 
 Instance: Observation-quesito
@@ -397,6 +580,7 @@ Usage: #example
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
+* encounter = Reference(EncounterTelemedicinaExample)
 * recorder = Reference(PractitionerTelemedicinaExample)
 * performer[+].actor = Reference(PractitionerTelemedicinaExample)
 * performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
@@ -426,7 +610,7 @@ Usage: #example
 
 
 Instance: ServiceRequestTelemedicinaExample
-InstanceOf: ServiceRequestTelemedicina
+InstanceOf: ServiceRequestTV
 Title: "Richiesta Televisita Cardiologica - Mario Rossi"
 Description: "Esempio di ServiceRequest per una televisita cardiologica, con NRE e branca di prestazione."
 Usage: #example
@@ -447,3 +631,47 @@ Usage: #example
 //* performer = Reference(Organization/ASLRoma1)
 * reasonCode = http://snomed.info/sct#2153008 "Cardiac catheterization education"
 * note[+].text = "Prestazione da eseguire in modalità remota tramite piattaforma XTelemed"
+
+
+Instance: AslRoma1
+InstanceOf: OrganizationT1
+Title: "ASL Roma 1"
+Description: "Esempio di Azienda Sanitaria Locale (ASL)"
+Usage: #example
+
+* id = "asl-roma-1"
+* name = "ASL Roma 1"
+* identifier[asl].system = "http://hl7.it/sid/fls"
+* identifier[asl].value = "RM0011"
+* identifier[aslRegione].system = "https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione"
+* identifier[aslRegione].value = "RM1"
+* identifier[partitaIva].system = "http://hl7.it/sid/partitaIva"
+* identifier[partitaIva].value = "12345678901"
+* identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"
+* identifier[codiceFiscale].value = "01234567890"
+
+
+Instance: PresidioSandroPertini
+InstanceOf: OrganizationT2
+Title: "Presidio Sandro Pertini"
+Description: "Presidio ospedaliero facente parte di ASL Roma 1"
+Usage: #example
+
+* id = "osp-pertini"
+* name = "Ospedale Sandro Pertini"
+* partOf = Reference(Organization/asl-roma-1)
+* identifier.system = "http://hl7.it/sid/hsp"
+* identifier.value = "HSP00123"
+
+
+Instance: UOCardiologiaPertini
+InstanceOf: OrganizationT3
+Title: "U.O. Cardiologia - Ospedale Pertini"
+Description: "Unità Operativa di Cardiologia afferente all'Ospedale Pertini"
+Usage: #example
+
+* id = "uo-cardiologia-pertini"
+* name = "U.O. Cardiologia"
+* partOf = Reference(Organization/osp-pertini)
+* identifier.system = "http://hl7.it/sid/hsp"
+* identifier.value = "UO12345"

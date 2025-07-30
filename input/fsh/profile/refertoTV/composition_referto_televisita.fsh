@@ -14,7 +14,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationTelemedicina)
+* author only Reference(PractitionerRoleTelemedicina or OrganizationT1)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -58,7 +58,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
     suggerimentiPerMedicoPrescrittore 0..1 and
     accertamentiControlliConsigliati 0..1 and
     terapiaFarmacologicaConsigliata 0..1 and 
-    allegati 0..1
+    allegati 0..1 and
+    prestazioni 1..*
 
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
@@ -136,5 +137,8 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
 * section[allegati].code = $loinc#77599-9  
 
+* section[prestazioni] ^sliceName = "prestazioni"
+* section[prestazioni].entry only Reference(ProcedureTelemedicina)
+* section[prestazioni].code = $loinc#62387-6
 
 

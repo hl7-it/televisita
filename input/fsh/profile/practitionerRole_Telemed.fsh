@@ -25,7 +25,7 @@ Description: "Profilo base del PractitionerRole condiviso in tutti i documenti d
 * practitioner ^definition = "Il professionista è in grado di fornire i servizi definiti per l'organizzazione."
 * practitioner ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
 
-* organization only Reference(OrganizationTelemedicina)
+* organization only Reference(OrganizationT1)
 * organization ^short = "Organizzazione di Appartenenza"
 * organization ^definition = "L'organizzazione in cui il professionista svolge i ruoli associati."
 * organization ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."

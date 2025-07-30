@@ -19,7 +19,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * priority ^definition = "Priorità della richiesta."
 * subject ^short = "Paziente coinvolto nell'incontro"
 * subject only Reference(PatientTelemedicina)
-* basedOn only Reference(ServiceRequestTelemedicina) 
+* basedOn only Reference(ServiceRequestTV) 
 * basedOn ^short = "Richiesta che ha avviato la visita."
 * basedOn ^definition = "La richiesta che questa visita soddisfa."
 
@@ -40,7 +40,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 
 * serviceProvider ^short = "Organizzazione che eroga il il servizio"
 * serviceProvider ^definition = "Elemento reference che contiene il riferimento alla struttura che eroga la visita, intesa come poliambulatorio"
-* serviceProvider only Reference(OrganizationTelemedicina)
+* serviceProvider only Reference(OrganizationT1)
 
 
 
