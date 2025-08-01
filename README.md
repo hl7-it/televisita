@@ -2,7 +2,7 @@
 
 HL7 Italy - HL7 FHIR R4 Televisita Implementation Guide.
 
-https://www.hl7.it/fhir/teleconsulto_ballot/
+www.hl7.it/fhir/teleconsulto_ballot
 
 # Ballot: Guida alla votazione
 La procedura di ballot segue lo standard Jira Balloting di HL7 international FHIR, che prevede l'utilizzo delle Issue GitHub (le Issue aperte prima dell'inizio del ballot sono segnalate come "Pre-Ballot Close"). Tale procedura è utile a segnalare commenti correlati alla votazione, che ufficialmente deve avvenire nell'area ballot del sito HL7 Italia (http://www.hl7italia.it/ballot/). 
