@@ -5,8 +5,7 @@ HL7 Italy - HL7 FHIR R4 Televisita Implementation Guide.
 www.hl7.it/fhir/teleconsulto_ballot
 
 # Ballot: Guida alla votazione
-La procedura di ballot segue lo standard Jira Balloting di HL7 international FHIR, che prevede l'utilizzo delle Issue GitHub (le Issue aperte prima dell'inizio del ballot sono segnalate come "Pre-Ballot Close"). Tale procedura è utile a segnalare commenti correlati alla votazione, che ufficialmente deve avvenire nell'area ballot del sito HL7 Italia (http://www.hl7italia.it/ballot/). 
-Le possibili votazioni sono: 
+La procedura di ballot segue lo standard Jira Balloting di HL7 international FHIR, che prevede l'utilizzo delle Issue GitHub (le Issue aperte prima dell'inizio del ballot sono segnalate come "Pre-Ballot Close"). Tale procedura è utile a segnalare commenti correlati alla votazione, che ufficialmente deve avvenire nell'area Discussion di GitHub
 - *Comment*
 - *Question*
 - *Technical Correction*
@@ -35,3 +34,6 @@ Le possibili votazioni sono:
 - **Proposta di un nuovo profilo** <img src="input/images/change pro.png" width="95" alt=""/>
   
   Esempio [Issue proposta Observation-LIS](https://github.com/hl7-it/lab-report/issues/21#issue-1684602474) : *Change Proposal*
+
+  - Indicazioni su come fornire votazione valida al fine del ballottaggio è indicato nella sezione: <img src="input/images/change pro.png" width="95" alt=""/>
+  [Discussion](https://github.com/hl7-it/Lettera-di-invito-per-vaccinazione/discussions.html)
