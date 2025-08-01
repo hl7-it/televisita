@@ -35,5 +35,5 @@ La procedura di ballot segue lo standard Jira Balloting di HL7 international FHI
   
   Esempio [Issue proposta Observation-LIS](https://github.com/hl7-it/lab-report/issues/21#issue-1684602474) : *Change Proposal*
 
-  - Indicazioni su come fornire votazione valida al fine del ballottaggio è indicato nella sezione: <img src="input/images/change pro.png" width="95" alt=""/>
+- Indicazioni su come fornire votazione valida al fine del ballottaggio è indicato nella sezione: <img src="input/images/change pro.png" width="95" alt=""/>
   [Discussion](https://github.com/hl7-it/Lettera-di-invito-per-vaccinazione/discussions.html)
