@@ -6,12 +6,7 @@ Description: "Definisce il sistema di terminologie da usare per i codici prestaz
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = true
-* ^publisher = "pnt.gov.it"
-* ^caseSensitive = true
-* ^versionNeeded = false
-* ^content = #complete
-* ^experimental = true
-* ^caseSensitive = true
+* ^caseSensitive = false
 * #02.39.1 "PUNTURA DI RESERVOIR CRANICO PER DELIQUORAZIONE"
 * #02.93.1 "CONTROLLO / PROGRAMMAZIONE DI NEUROSTIMOLATORE ENCEFALICONon associabile a Visita neurologica di controllo 89.01.C"
 * #02.95 "RIMOZIONE DI TRAZIONE TRANSCRANICA O DISPOSITIVO DI HALO"

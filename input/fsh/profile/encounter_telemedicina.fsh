@@ -8,7 +8,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier contains codiceNosologico 0..*
-* identifier[codiceNosologico].system = "http://agenas.gov.it/sid/codiceNosologico" (exactly)
+* identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)
 
 * status ^short = "Stato attuale dell'incontro."
 * status ^definition = "Stato attuale dell'incontro. Possibili valori: planned | arrived | triaged | in-progress | onleave | finished | cancelled"

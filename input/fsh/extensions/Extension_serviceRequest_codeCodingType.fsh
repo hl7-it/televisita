@@ -7,5 +7,5 @@
 // * . MS
 // * . ^short = "Tipologia codifica del servizio."
 // * . ^definition = "Indica la tipologia della codifica del servizio (es: Loinc, catalogo regionale prestazioni, catalogo nazionale prestazioni, etc.)"
-// * url = "https://agenas.gov.it/fhir/StructureDefinition/Extension-serviceRequest-codeCodingType" (exactly)
+// * url = "http://hl7.it/fhir/StructureDefinition/Extension-serviceRequest-codeCodingType" (exactly)
 // * value[x] only string

@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: televisita
-canonical: https://agenas.gov.it/fhir
+canonical: http://hl7.it/fhir/televisita
 name: Televisita
 title: Televisita
 # description: Example Implementation Guide for getting started with SUSHI

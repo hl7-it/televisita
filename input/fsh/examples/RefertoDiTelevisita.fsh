@@ -365,7 +365,7 @@ Usage: #example
 * appointment = Reference(AppointmentTelemedicinaExample)
 * period.start = "2025-06-16T09:00:00+02:00"
 * period.end = "2025-06-16T09:45:00+02:00"
-* identifier[+].system = "http://agenas.gov.it/sid/codiceNosologico"
+* identifier[+].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico"
 * identifier[=].value = "POD.123e4567-e89b-12d3-a456-426614174000"
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ActPriority"
 * priority.coding[0].code = #R
@@ -391,7 +391,7 @@ Description: "Esempio di quesito diagnostico nel contesto della televisita"
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
 * status = #final
-* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
+* code = http://hl7.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Controllo post-COVID per tosse persistente"
 * performer = Reference(PractitionerTelemedicinaExample)
@@ -450,7 +450,7 @@ InstanceOf: ObservationTelemedicina
 Description: "Esempio di prcedenti esami eseguiti nel contesto della televisita"
 Usage: #example
 * status = #final
-* category[0] = $loinc#30954-2 "Relevant diagnostic tests/laboratory data Narrative"
+* category[0] = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
 * code = $loinc#24606-6 "MG Breast Screening"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * effectiveDateTime = "2025-05-10"
@@ -494,7 +494,7 @@ InstanceOf: ObservationTelemedicina
 Description: "Esempio di esame diagnosi nel contesto della televisita"
 Usage: #example
 * status = #final
-* code = https://agenas.gov.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
+* code = http://hl7.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
@@ -576,7 +576,7 @@ Usage: #example
 * id = "b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * status = #completed
 * category = http://snomed.info/sct#409063005 "Counselling"
-* code = CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
+//* code = CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * performedPeriod.start = "2025-07-08T10:00:00+01:00"
 * performedPeriod.end = "2025-07-08T10:30:00+01:00"
@@ -619,7 +619,7 @@ Usage: #example
 * intent = #order
 * identifier.value = "AAZ123456789"
 * requisition.value = "REQ-20250709-0001"
-* category = https://agenas.gov.it/fhir/CodeSystem/branca-prestazione#02 "Cardiologia"
+* category = http://hl7.it/fhir/CodeSystem/branca-prestazione#02 "Cardiologia"
 * priority = #routine
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * subject.display = "Mario Rossi"
@@ -642,9 +642,9 @@ Usage: #example
 * id = "asl-roma-1"
 * name = "ASL Roma 1"
 * identifier[asl].system = "http://hl7.it/sid/fls"
-* identifier[asl].value = "RM0011"
+* identifier[asl].value = "120201"
 * identifier[aslRegione].system = "https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione"
-* identifier[aslRegione].value = "RM1"
+* identifier[aslRegione].value = "http://hl7.it/sid/lazio/asl"
 * identifier[partitaIva].system = "http://hl7.it/sid/partitaIva"
 * identifier[partitaIva].value = "12345678901"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"
@@ -656,7 +656,6 @@ InstanceOf: OrganizationT2
 Title: "Presidio Sandro Pertini"
 Description: "Presidio ospedaliero facente parte di ASL Roma 1"
 Usage: #example
-
 * id = "osp-pertini"
 * name = "Ospedale Sandro Pertini"
 * partOf = Reference(Organization/asl-roma-1)
@@ -669,7 +668,6 @@ InstanceOf: OrganizationT3
 Title: "U.O. Cardiologia - Ospedale Pertini"
 Description: "Unità Operativa di Cardiologia afferente all'Ospedale Pertini"
 Usage: #example
-
 * id = "uo-cardiologia-pertini"
 * name = "U.O. Cardiologia"
 * partOf = Reference(Organization/osp-pertini)

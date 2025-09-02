@@ -6,4 +6,4 @@ Description: "Contiene la lista di codici da utilizzare per le specialità del P
 * ^version = "1.0.0"
 * ^status = #draft
 * ^experimental = false
-* include codes from system https://agenas.gov.it/fhir/CodeSystem/csspecialityPractitionerRole
+* include codes from system http://hl7.it/fhir/televisita/CodeSystem/csspecialityPractitionerRole

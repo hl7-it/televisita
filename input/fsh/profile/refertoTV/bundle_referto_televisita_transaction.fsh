@@ -15,6 +15,8 @@ Description: "Bundle FHIR di tipo transaction contenente il referto di televisit
     patient 1..1 and
     practitioner 0..1 and
     organization 0..* and
+    // organizationT2 0..* and
+    // organizationT3 0..* and
     practitionerRole 0..1 and
     encounter 0..1 and
     serviceRequest 0..1 and
@@ -36,6 +38,12 @@ Description: "Bundle FHIR di tipo transaction contenente il referto di televisit
 
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
 * entry[organization].request.method = #PUT
+
+// * entry[organizationT2].resource only OrganizationT2
+// * entry[organizationT2].request.method = #PUT
+
+// * entry[organizationT3].resource only OrganizationT3
+// * entry[organizationT3].request.method = #PUT
 
 * entry[practitionerRole].resource only PractitionerRoleTelemedicina
 * entry[practitionerRole].request.method = #PUT

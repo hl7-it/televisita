@@ -8,7 +8,6 @@ Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRC
 
 * identifier ^short = "Identificativo dell'organizzazione."
 * identifier ^definition = "Identificativi di Organization usati per identificare l'Organization su diversi sistemi"
-* identifier 1..*
 
 * type ^short = "Tipo di organizzazione"
 * type ^definition = "Il tipo di organizzazione di cui si tratta"
@@ -32,8 +31,7 @@ Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRC
 * identifier ^slicing.discriminator[1].path = "system"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.description = "Slice based on the identifier pattern"
-* identifier.system 1..1  
-* identifier.value 1..1  
+* identifier 1..*  
 * identifier contains 
 	asl 0..1 
 	and aslRegione 0..1

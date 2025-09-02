@@ -5,14 +5,6 @@ Profile: OrganizationT3
 Parent: Organization
 Id: OrganizationT3
 Description: "Profilo base generico per Organization di tipo 3 (es. Reparto, ambulatorio)"
-// * ^jurisdiction = urn:iso:std:iso:3166#IT
-// * identifier ^slicing.discriminator.type = #value
-// * identifier ^slicing.discriminator.path = "system"
-// * identifier ^slicing.rules = #open
-// * identifier contains
-//     unitaOperativa 0..1
-// * identifier[unitaOperativa] ^sliceName = "unitaOperativa"
-// * identifier[unitaOperativa] ^short = "Codice dell'unità operativa"
 
 * identifier ^short = "Identificativo dell'organizzazione."
 * identifier ^definition = "Identificativi di Organization usati per identificare l'Organization su diversi sistemi"

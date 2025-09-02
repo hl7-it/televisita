@@ -8,6 +8,8 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 
 * entry ^slicing.discriminator[0].type = #type
 * entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.discriminator[1].type = #profile
+* entry ^slicing.discriminator[1].path = "resource"
 * entry ^slicing.ordered = false
 * entry ^slicing.rules = #open
 
@@ -19,6 +21,8 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
     practitionerRole 0..* and
     practitioner 0..* and
     organization 0..* and
+    // organizationT2 0..* and
+    // organizationT3 0..* and
     observation 0..* and
     condition 0..* and
     medicationRequest 0..* and
@@ -26,7 +30,9 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
     allergyIntolerance 0..* and
     familyMemberHistory 0..* and
     encounter 0..* and
-    procedure 0..*
+    procedure 0..* and
+    documentReference 0..*
+
 //    device 0..*
 * entry[composition].resource only CompositionRefertoTelevisita
 * entry[patient].resource only PatientTelemedicina
@@ -35,6 +41,8 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 * entry[practitionerRole].resource only PractitionerRoleTelemedicina
 * entry[practitioner].resource only PractitionerTelemedicina
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
+// * entry[organizationT2].resource only OrganizationT2 
+// * entry[organizationT3].resource only OrganizationT3
 * entry[observation].resource only ObservationTelemedicina
 * entry[condition].resource only Condition
 * entry[medicationRequest].resource only MedicationRequestTelemedicina
@@ -43,4 +51,5 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 * entry[familyMemberHistory].resource only FamilyMemberHistory
 * entry[encounter].resource only EncounterTelemedicina
 * entry[procedure].resource only ProcedureTelemedicina
+* entry[documentReference].resource only DocumentReference
 //* entry[device].resource only DeviceTelemedicina
