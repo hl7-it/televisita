@@ -9,12 +9,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * type from vsTipologiaDocumentale (required)
 * type ^short = "Tipo di Composition."
 
-* subject only Reference(PatientTelemedicina)
-* encounter only Reference(EncounterTelemedicina)
+* subject only Reference(PatientTelevisita)
+* encounter only Reference(EncounterTelevisita)
 * encounter ^short = "Contesto in cui è stato generato il documento."
 * date ^short = "Data di modifica della risorsa."
 
-* author only Reference(PractitionerRoleTelemedicina or OrganizationT1)
+* author only Reference(PractitionerRoleTelevisita or OrganizationT1)
 * author ^short = "Autore della Composition (Medico Refertante)."
 
 * title ^short = "Titolo del documento"
@@ -28,7 +28,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * attester[legalAuthenticator].mode = #legal  
 * attester[legalAuthenticator].time 1..
 * attester[legalAuthenticator].party 1..
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+* attester[legalAuthenticator].party only Reference(PractitionerRoleTelevisita)
 
 * relatesTo ^short = "Ulteriori documenti correlati"
 
@@ -63,7 +63,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 
 // Slice: questitoDiagnostico
 * section[questitoDiagnostico] ^sliceName = "questitoDiagnostico"
-* section[questitoDiagnostico].entry only Reference(ObservationTelemedicina)
+* section[questitoDiagnostico].entry only Reference(ObservationTelevisita)
 * section[questitoDiagnostico].code = $loinc#29299-5
 // Slice: InquadramentoClinicoIniziale e sottosezioni
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
@@ -79,11 +79,12 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 
 * section[InquadramentoClinicoIniziale].section[anamnesi] ^sliceName = "anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0  
-* section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTelemedicina)
+* section[InquadramentoClinicoIniziale].section[anamnesi].entry only Reference(ObservationTelevisitaNarrative)
+* section[InquadramentoClinicoIniziale].section[anamnesi] obeys sec-obs-code-match
 
 * section[InquadramentoClinicoIniziale].section[allergie] ^sliceName = "allergie"
 * section[InquadramentoClinicoIniziale].section[allergie].code = $loinc#48765-2  
-* section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTelemedicina)
+* section[InquadramentoClinicoIniziale].section[allergie].entry only Reference(AllergyIntoleranceTelevisita)
 
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^sliceName = "terapiaFarmacologicaInAtto"
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0  
@@ -91,54 +92,60 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
 * section[InquadramentoClinicoIniziale].section[esameObiettivo].code = $loinc#29545-1  
-* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelemedicina)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo].entry only Reference(ObservationTelevisitaNarrative)
+* section[InquadramentoClinicoIniziale].section[esameObiettivo] obeys sec-obs-code-match
 
 // Slice: precedentiEsamiEseguiti
 * section[precedentiEsamiEseguiti] ^sliceName = "precedentiEsamiEseguiti"
 * section[precedentiEsamiEseguiti].code = $loinc#30954-2  
-* section[precedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
+* section[precedentiEsamiEseguiti].entry only Reference(ObservationTelevisita)
 
 // Slice: confrontoPrecedentiEsamiEseguiti
 * section[confrontoPrecedentiEsamiEseguiti] ^sliceName = "confrontoPrecedentiEsamiEseguiti"
 * section[confrontoPrecedentiEsamiEseguiti].code = $loinc#93126-1  
-* section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTelemedicina)
-
+* section[confrontoPrecedentiEsamiEseguiti].entry only Reference(ObservationTelevisitaNarrative)
+* section[confrontoPrecedentiEsamiEseguiti] obeys sec-obs-code-match
 // Slice: referto
 * section[referto] ^sliceName = "referto"
-* section[referto].entry only Reference(ObservationTelemedicina)
+* section[referto].entry only Reference(ObservationTelevisita)
 * section[referto].code = $loinc#47045-0  
 
 // Slice: diagnosi
 * section[diagnosi] ^sliceName = "diagnosi"
 * section[diagnosi].code = $loinc#29548-5  
-* section[diagnosi].entry only Reference(ObservationTelemedicina)
+* section[diagnosi].entry only Reference(ObservationTelevisita)
 
 // Slice: conclusioni
 * section[conclusioni] ^sliceName = "conclusioni"
-* section[conclusioni].entry only Reference(ObservationTelemedicina)
+* section[conclusioni].entry only Reference(ObservationTelevisita)
 * section[conclusioni].code = $loinc#55110-1  
 
 // Slice: suggerimentiPerMedicoPrescrittore
 * section[suggerimentiPerMedicoPrescrittore] ^sliceName = "suggerimentiPerMedicoPrescrittore"
 * section[suggerimentiPerMedicoPrescrittore].code = $loinc#62385-0  
-* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTelemedicina)
+* section[suggerimentiPerMedicoPrescrittore].entry only Reference(ObservationTelevisitaNarrative)
+* section[suggerimentiPerMedicoPrescrittore] obeys sec-obs-code-match
 
 // Slice: accertamentiControlliConsigliati
 * section[accertamentiControlliConsigliati] ^sliceName = "accertamentiControlliConsigliati"
 * section[accertamentiControlliConsigliati].code = $loinc#80615-8  
-* section[accertamentiControlliConsigliati].entry only Reference(ObservationTelemedicina)
+* section[accertamentiControlliConsigliati].entry only Reference(ObservationTelevisita)
 
 // Slice: terapiaFarmacologicaConsigliata
 * section[terapiaFarmacologicaConsigliata] ^sliceName = "terapiaFarmacologicaConsigliata"
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6  
-* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelemedicina)
+* section[terapiaFarmacologicaConsigliata].entry only Reference(MedicationRequestTelevisita)
 
 * section[allegati] ^sliceName = "allegati"
 * section[allegati].entry only Reference(DocumentReference or Binary or Media)
 * section[allegati].code = $loinc#77599-9  
 
 * section[prestazioni] ^sliceName = "prestazioni"
-* section[prestazioni].entry only Reference(ProcedureTelemedicina)
+* section[prestazioni].entry only Reference(ProcedureTelevisita)
 * section[prestazioni].code = $loinc#62387-6
 
-
+// Invariante valutato su Composition.section
+Invariant: sec-obs-code-match
+Severity: #error
+Description: "Ogni ObservationNarrative in section.entry deve condividere il code con section.code."
+Expression: "entry.reference.resolve().ofType(Observation).empty() or entry.reference.resolve().ofType(Observation).where(code.coding.where(code.exists()).code.intersect(%context.code.coding.where(code.exists()).code).empty()).empty()"

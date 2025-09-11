@@ -20,16 +20,16 @@ class "Bundle_Piano_TM" <<Profile>> [[StructureDefinition-BundlePianoTM.html]]
 "Piano di Telemonitoraggio\\Teleriabilitazione e Teleassistenza" <|. "Bundle_Piano_TM"
 
 class "Composition" <<Profile>> [[StructureDefinition-CompositionPianoTM.html]]
-class "PractitionerRole" <<Profile>> [[StructureDefinition-PractitionerRoleTelemedicina.html]]
+class "PractitionerRole" <<Profile>> [[StructureDefinition-PractitionerRoleTelevisita.html]]
 class "Organization" <<Profile>> [[StructureDefinition-OrganizationTelemedicina.html]]
-class "Observation" <<Profile>> [[StructureDefinition-ObservationTelemedicina.html]]
+class "Observation" <<Profile>> [[StructureDefinition-ObservationTelevisita.html]]
 class "CarePlan" <<Profile>> [[StructureDefinition-CarePlanPianoDiCuraTelemonitoraggio.html]]
 class "ServiceRequest" <<Profile>> [[StructureDefinition-ServiceRequestTelemedicina.html]]
-class "Practitioner" <<Profile>> [[StructureDefinition-PractitionerTelemedicina.html]]
-class "Patient" <<Profile>> [[StructureDefinition-PatientTelemedicina.html]]
+class "Practitioner" <<Profile>> [[StructureDefinition-PractitionerTelevisita.html]]
+class "Patient" <<Profile>> [[StructureDefinition-PatientTelevisita.html]]
 class "Device" <<Profile>> [[StructureDefinition-DeviceTelemedicina.html]]
 class "ActivityDefinition" <<Profile>> [[StructureDefinition-ActivityDefinitionPianoTM.html]]
-class "ObservationDefinition" <<Profile>> [[StructureDefinition-ObservationTelemedicina.html]]
+class "ObservationDefinition" <<Profile>> [[StructureDefinition-ObservationTelevisita.html]]
 
 "Bundle_Piano_TM" -[#red]-> "Composition"
 "Bundle_Piano_TM" -[#red]-> "PractitionerRole"

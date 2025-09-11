@@ -1,8 +1,8 @@
 // Alias: $brancaPrestazione = https://terminology.agenas.gov.it/ValueSet/brancaPrestazione
 
-// Profile: ServiceRequestTV
+// Profile: ServiceRequestTelevisita
 // Parent: ServiceRequest
-// Id: ServiceRequestTV
+// Id: ServiceRequestTelevisita
 // Description: "Profilo base della ServiceRequest condiviso in tutti i documenti di Telemedicina"
 // * ^version = "1.0.0"
 // * ^status = #draft
@@ -60,7 +60,7 @@
 // * quantity[x] ^short = "Quantità prestazione."
 // * quantity[x] ^definition = "Contiene la molteplicità della prestazione."
 
-// * subject only Reference(PatientTelemedicina)
+// * subject only Reference(PatientTelevisita)
 // * subject ^short = "Persona fisica o giuridica per cui è stato ordinato il servizio."
 // * subject ^definition = "Elemento di tipo Reference che contiene il riferimento alla risorsa Patient oggetto della richiesta."
 // * subject ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la non disponibilità temporanea, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
@@ -74,7 +74,7 @@
 
 // * authoredOn ^short = "Data di invio della richiesta."
 // * authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
-// * requester only Reference(PractitionerRoleTelemedicina)
+// * requester only Reference(PractitionerRoleTelevisita)
 // * requester ^short = "Medico prescrittore."
 // * requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 

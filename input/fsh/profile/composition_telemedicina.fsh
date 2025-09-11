@@ -11,12 +11,12 @@
 // * type from vsTipologiaDocumentale (required)
 // * type ^short = "Tipo di Composition."
 
-// * subject only Reference(PatientTelemedicina)
-// * encounter only Reference(EncounterTelemedicina)
+// * subject only Reference(PatientTelevisita)
+// * encounter only Reference(EncounterTelevisita)
 // * encounter ^short = "Contesto in cui è stato generato il documento."
 // * date ^short = "Data di modifica della risorsa."
 
-// * author only Reference(PractitionerRoleTelemedicina or OrganizationTelemedicina)
+// * author only Reference(PractitionerRoleTelevisita or OrganizationTelemedicina)
 // * author ^short = "Autore della Composition (Medico Refertante)."
 
 // * title ^short = "Titolo del documento"
@@ -30,7 +30,7 @@
 // * attester[legalAuthenticator].mode = #legal (exactly)
 // * attester[legalAuthenticator].time 1..
 // * attester[legalAuthenticator].party 1..
-// * attester[legalAuthenticator].party only Reference(PractitionerRoleTelemedicina)
+// * attester[legalAuthenticator].party only Reference(PractitionerRoleTelevisita)
 
 // * relatesTo ^short = "Ulteriori documenti correlati"
 

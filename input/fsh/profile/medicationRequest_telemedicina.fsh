@@ -1,6 +1,6 @@
-Profile: MedicationRequestTelemedicina
+Profile: MedicationRequestTelevisita
 Parent: MedicationRequest
-Id: MedicationRequestTelemedicina
+Id: MedicationRequestTelevisita
 Description: "Profilo base della MedicationRequest condiviso in tutti i documenti di Telemedicina" 
 * ^status = #draft
 * status ^definition = "Stato della richiesta."
@@ -11,7 +11,7 @@ Description: "Profilo base della MedicationRequest condiviso in tutti i document
 * medication[x] ^short = "Definizione farmaco"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
 
-* subject only Reference(PatientTelemedicina)
+* subject only Reference(PatientTelevisita)
 * subject ^short = "Soggetto per cui è ricchiesta la medication"
 * subject ^definition = "Soggetto per cui è ricchiesta la medication"
 

@@ -30,10 +30,10 @@ Description: "Bundle FHIR di tipo transaction contenente il referto di televisit
     procedure 0..*
 
 // Risorse amministrative (PUT)
-* entry[patient].resource only PatientTelemedicina
+* entry[patient].resource only PatientTelevisita
 * entry[patient].request.method = #PUT
 
-* entry[practitioner].resource only PractitionerTelemedicina
+* entry[practitioner].resource only PractitionerTelevisita
 * entry[practitioner].request.method = #PUT
 
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
@@ -45,39 +45,39 @@ Description: "Bundle FHIR di tipo transaction contenente il referto di televisit
 // * entry[organizationT3].resource only OrganizationT3
 // * entry[organizationT3].request.method = #PUT
 
-* entry[practitionerRole].resource only PractitionerRoleTelemedicina
+* entry[practitionerRole].resource only PractitionerRoleTelevisita
 * entry[practitionerRole].request.method = #PUT
 
 // Risorse cliniche (POST)
 * entry[composition].resource only CompositionRefertoTelevisita
 * entry[composition].request.method = #POST
 
-* entry[encounter].resource only EncounterTelemedicina
+* entry[encounter].resource only EncounterTelevisita
 * entry[encounter].request.method = #POST
 
-* entry[serviceRequest].resource only ServiceRequestTV
+* entry[serviceRequest].resource only ServiceRequestTelevisita
 * entry[serviceRequest].request.method = #POST
 
-* entry[appointment].resource only AppointmentTelemedicina
+* entry[appointment].resource only AppointmentTelevisita
 * entry[appointment].request.method = #POST
 
-* entry[observation].resource only ObservationTelemedicina
+* entry[observation].resource only ObservationTelevisita
 * entry[observation].request.method = #POST
 
 * entry[condition].resource only Condition
 * entry[condition].request.method = #POST
 
-* entry[medicationRequest].resource only MedicationRequestTelemedicina
+* entry[medicationRequest].resource only MedicationRequestTelevisita
 * entry[medicationRequest].request.method = #POST
 
 * entry[medicationStatement].resource only MedicationStatement
 * entry[medicationStatement].request.method = #POST
 
-* entry[allergyIntolerance].resource only AllergyIntoleranceTelemedicina
+* entry[allergyIntolerance].resource only AllergyIntoleranceTelevisita
 * entry[allergyIntolerance].request.method = #POST
 
 * entry[familyMemberHistory].resource only FamilyMemberHistory
 * entry[familyMemberHistory].request.method = #POST
 
-* entry[procedure].resource only ProcedureTelemedicina
+* entry[procedure].resource only ProcedureTelevisita
 * entry[procedure].request.method = #POST

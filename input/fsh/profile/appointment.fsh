@@ -1,10 +1,11 @@
-Alias: $serviceRequest_tm = http://hl7.it/fhir/StructureDefinition/ServiceRequestTV
+Alias: $serviceRequest_tm = http://hl7.it/fhir/StructureDefinition/ServiceRequestTelevisita
 
-Profile: AppointmentTelemedicina
+Profile: AppointmentTelevisita
 Parent: Appointment
-Id: AppointmentTelemedicina
+Id: AppointmentTelevisita
 Description: "Profilo base del Appointment condiviso in tutti i documenti di Telemedicina"
 * ^status = #draft
+* identifier 1..
 * identifier ^short = "Codice della prenotazione"
 * identifier ^definition = "Elemento di tipo identifier contenente gli identificativi univoci della risorsa."
 
@@ -26,7 +27,7 @@ Description: "Profilo base del Appointment condiviso in tutti i documenti di Tel
 * created ^definition = "Elemento di tipo dateTime che contiene la data di creazione iniziale dell'appuntamento"
 * created ^comment = "Questa proprietà è necessaria per molti casi d'uso in cui l'età di un appuntamento viene considerata nell'elaborazione dei flussi di lavoro per la programmazione e la fatturazione degli appuntamenti."
 
-* basedOn only Reference(ServiceRequestTV)
+* basedOn only Reference(ServiceRequestTelevisita)
 * basedOn ^short = "La richiesta di servizio per la quale viene assegnato questo appuntamento"
 * basedOn ^definition = "La richiesta di servizio per la quale è stato assegnato l'appuntamento (ad es. richiesta di referto o di procedura in arrivo)."
 * basedOn ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."

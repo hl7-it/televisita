@@ -1,10 +1,10 @@
-Alias: $ServiceRequest = http://hl7.it/fhir/StructureDefinition/ServiceRequestTV
+Alias: $ServiceRequest = http://hl7.it/fhir/StructureDefinition/ServiceRequestTelevisita
 Alias: $extension_serviceRequest_codeCodingType = http://hl7.it/fhir/StructureDefinition/extension_serviceRequest_codeCodingType
 Alias: $catalogoRegionalePrestazioni = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
 
-Profile: ServiceRequestTV
+Profile: ServiceRequestTelevisita
 Parent: ServiceRequest
-Id: ServiceRequestTV
+Id: ServiceRequestTelevisita
 Description: "Profilo  della ServiceRequest utilizzata per il referto di Televisita"
 * ^status = #draft
 * code.coding ^slicing.discriminator.type = #value
@@ -32,7 +32,7 @@ Description: "Profilo  della ServiceRequest utilizzata per il referto di Televis
 // * code.coding[codiceCatalogoRegionalePrestazione].code ^short = "Codice valido per il sistema terminologico di riferimento"
 // * code.coding[codiceCatalogoRegionalePrestazione].code ^definition = "Un codice valido per il sistema terminologico di riferimento, i cui valori sono definiti nel CodeSystem dedicato"
 
-
+* identifier 1..
 * identifier ^short = "Identifiicativi associati alle singole istanze della richiesta (Numero ricetta medica)."
 * identifier ^definition = "Identifiicativi associati alla singole istanze della richiesta."
 
@@ -62,6 +62,7 @@ Description: "Profilo  della ServiceRequest utilizzata per il referto di Televis
 // * category ^slicing.discriminator.path = "code"
 // * category ^slicing.rules = #open
 
+* category 1..
 * category ^short = "Classificazione del servizio."
 * category ^definition = "Un codice che classifica il servizio."
 * category from specialita-mediche (preferred)
@@ -87,7 +88,7 @@ Description: "Profilo  della ServiceRequest utilizzata per il referto di Televis
 * quantity[x] ^short = "Quantità prestazione."
 * quantity[x] ^definition = "Contiene la molteplicità della prestazione."
 
-* subject only Reference(PatientTelemedicina)
+* subject only Reference(PatientTelevisita)
 * subject ^short = "Persona fisica o giuridica per cui è stato ordinato il servizio."
 * subject ^definition = "Elemento di tipo Reference che contiene il riferimento alla risorsa Patient oggetto della richiesta."
 * subject ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la non disponibilità temporanea, ecc.) La risoluzione può avvenire tramite recupero dall'URL o, se applicabile per tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
@@ -101,7 +102,7 @@ Description: "Profilo  della ServiceRequest utilizzata per il referto di Televis
 
 * authoredOn ^short = "Data di invio della richiesta."
 * authoredOn ^definition = "Nei casi di prescrizione, corrisponde alla data di compilazione della prescrizione."
-* requester only Reference(PractitionerRoleTelemedicina)
+* requester only Reference(PractitionerRoleTelevisita or PractitionerTelevisita)
 * requester ^short = "Medico prescrittore."
 * requester ^definition = "Elemento di tipo Reference che contiene il riferimento alla asl e medico richiedente."
 

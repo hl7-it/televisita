@@ -1,13 +1,13 @@
-Profile: EncounterTelemedicina
+Profile: EncounterTelevisita
 Parent: Encounter
-Id: EncounterTelemedicina
+Id: EncounterTelevisita
 Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Telemedicina"
 * ^status = #draft
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier contains codiceNosologico 0..*
+* identifier contains codiceNosologico 1..1
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)
 
 * status ^short = "Stato attuale dell'incontro."
@@ -15,20 +15,24 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 
 * class ^short = "Classificazione dell'incontro con il paziente."
 
+* type ^short = "Disciplina specialistica ambulatoriale"
+* type from ValueSet_specialita_PractitionerRole (required) 
+* type MS
+
 * priority ^short = "Priorità della richiesta."
 * priority ^definition = "Priorità della richiesta."
 * subject ^short = "Paziente coinvolto nell'incontro"
-* subject only Reference(PatientTelemedicina)
-* basedOn only Reference(ServiceRequestTV) 
+* subject only Reference(PatientTelevisita)
+* basedOn only Reference(ServiceRequestTelevisita) 
 * basedOn ^short = "Richiesta che ha avviato la visita."
 * basedOn ^definition = "La richiesta che questa visita soddisfa."
 
 * participant ^short = "Altre figura tecnica coinvolte."
 * participant ^definition = "BackboneElement contenente la lista dei coinvolti nella visita oltre al Patient."
 * participant ^comment = "In partecipat.individual può essere inserito il riferimento al Practitioner o al PractitionerRole che prende in carico la visita."
-* participant.individual only Reference(PractitionerTelemedicina)
+* participant.individual only Reference(PractitionerTelevisita)
 
-* appointment only Reference(AppointmentTelemedicina)
+* appointment only Reference(AppointmentTelevisita)
 * appointment ^short = "Appuntamento da cui è partita l'incontro."
 * appointment ^definition = "L'appuntamento da cui è partita l'incontro"
 
@@ -36,7 +40,7 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * period ^comment = "Se non è (ancora) nota, la fine del Periodo può essere omessa."
 
 * reasonReference ^short = "Motivo scatenante l'incontro."
-* reasonReference only Reference(ProcedureTelemedicina)
+* reasonReference only Reference(ProcedureTelevisita)
 
 * serviceProvider ^short = "Organizzazione che eroga il il servizio"
 * serviceProvider ^definition = "Elemento reference che contiene il riferimento alla struttura che eroga la visita, intesa come poliambulatorio"

@@ -1,10 +1,11 @@
-Profile: PractitionerTelemedicina
+Profile: PractitionerTelevisita
 Parent: Practitioner
-Id: PractitionerTelemedicina
+Id: PractitionerTelevisita
 Description: "Profilo base del Practitioner condiviso in tutti i documenti di Telemedicina"
 * ^version = "0.1.0"
 * ^status = #active
 
+* identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.description = "Slice based on the identifier pattern"

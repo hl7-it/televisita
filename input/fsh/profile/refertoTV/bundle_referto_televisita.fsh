@@ -35,21 +35,21 @@ Description: "Bundle FHIR document contenente il referto di televisita e tutte l
 
 //    device 0..*
 * entry[composition].resource only CompositionRefertoTelevisita
-* entry[patient].resource only PatientTelemedicina
-* entry[serviceRequest].resource only ServiceRequestTV
+* entry[patient].resource only PatientTelevisita
+* entry[serviceRequest].resource only ServiceRequestTelevisita
 * entry[appointment].resource only Appointment
-* entry[practitionerRole].resource only PractitionerRoleTelemedicina
-* entry[practitioner].resource only PractitionerTelemedicina
+* entry[practitionerRole].resource only PractitionerRoleTelevisita
+* entry[practitioner].resource only PractitionerTelevisita
 * entry[organization].resource only OrganizationT1 or OrganizationT2 or OrganizationT3
 // * entry[organizationT2].resource only OrganizationT2 
 // * entry[organizationT3].resource only OrganizationT3
-* entry[observation].resource only ObservationTelemedicina
+* entry[observation].resource only ObservationTelevisita
 * entry[condition].resource only Condition
-* entry[medicationRequest].resource only MedicationRequestTelemedicina
+* entry[medicationRequest].resource only MedicationRequestTelevisita
 * entry[medicationStatement].resource only MedicationStatement
-* entry[allergyIntolerance].resource only AllergyIntoleranceTelemedicina
+* entry[allergyIntolerance].resource only AllergyIntoleranceTelevisita
 * entry[familyMemberHistory].resource only FamilyMemberHistory
-* entry[encounter].resource only EncounterTelemedicina
-* entry[procedure].resource only ProcedureTelemedicina
+* entry[encounter].resource only EncounterTelevisita
+* entry[procedure].resource only ProcedureTelevisita
 * entry[documentReference].resource only DocumentReference
 //* entry[device].resource only DeviceTelemedicina

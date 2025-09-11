@@ -158,7 +158,7 @@ groups:
     - StructureDefinition/BundleRefertodiTelevisita
     - StructureDefinition/BundleRefertoDiTelevisitaTransaction
     - StructureDefinition/CompositionRefertoTelevisita
-    - StructureDefinition/ServiceRequestTV
+    - StructureDefinition/ServiceRequestTelevisita
 #   GroupB:
 #     name: Group B
 #     description: The Beta Group
