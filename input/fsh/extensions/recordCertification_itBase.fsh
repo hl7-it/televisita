@@ -24,7 +24,6 @@ Context: Address, Patient, Patient.identifier
 * extension[rank].value[x] only decimal
 
 Extension: BirthPlaceIta
-Parent: $patient-birthPlace
 Id: birth-place-ita
 Title: "Address Birth Place"
 Description: "Definizione dell'indirizzo base per la descrizione del luogo di nascita."

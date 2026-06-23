@@ -70,7 +70,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open
-* section[InquadramentoClinicoIniziale].code = $loinc#11329-0
+// * section[InquadramentoClinicoIniziale].code = $loinc#11329-0
 * section[InquadramentoClinicoIniziale].section contains
     anamnesi 0..1 and
     allergie 0..* and

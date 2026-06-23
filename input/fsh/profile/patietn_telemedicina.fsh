@@ -15,7 +15,7 @@ Description: "Profilo base del Patient condiviso in tutti i documenti di Telemed
 * ^experimental = true
 * ^date = "2024-04-29T16:08:42+02:00"
 
-* extension contains BirthPlaceIta named luogoNascita 0..1
+* extension contains birth-place-ita named luogoNascita 0..1
 * extension[luogoNascita] ^short = "Luogo di nascita." 
 
 * identifier  

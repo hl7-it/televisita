@@ -45,10 +45,10 @@ Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRC
 * identifier[asl].system = "http://hl7.it/sid/fls" (exactly) // pattern
 * identifier[asl].value from VsMinisteroSaluteAsl (required) //$asl
 
-* identifier[aslRegione].value from https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione // pattern $asl
+* identifier[aslRegione].value from VsAnagrafiRegionali // pattern $asl
 * identifier[aslRegione] ^short = "Identificativo Regionale Azienda Sanitaria Locale"
 
-* identifier[aziendaOspedaliera].value from https://www.hl7.it/fhir/terminology/ValueSet/minsan-idAziendeOspedaliere (required)
+* identifier[aziendaOspedaliera].value from VsMinisteroSaluteIdAziendeOspedaliere (required)
 * identifier[aziendaOspedaliera].system = "http://hl7.it/sid/hsp" (exactly)  // pattern
 * identifier[aziendaOspedaliera] ^short = "Identificativo Azienda Ospedaliera"
 //* identifier[aziendaOspedaliera].value from VsMinisteroSaluteIdAziendeOspedaliere (required)
@@ -56,10 +56,10 @@ Description: "Profilo base generico per Organization di tipo 1 (es. ASL, AO, IRC
 * identifier[struttura].system = "http://hl7.it/sid/hsp" (exactly) // pattern
 * identifier[struttura] ^short = "Identificativo Struttura di Ricovero"
 //* identifier[struttura].value from VsMinisteroSaluteIdStrutture (required)
-* identifier[struttura].value from https://www.hl7.it/fhir/terminology/ValueSet/minsan-idStrutture (required)
+* identifier[struttura].value from VsMinisteroSaluteIdStrutture (required)
 
 * identifier[strutturaInterna].system = "http://hl7.it/sid/hsp" (exactly) // pattern
-* identifier[strutturaInterna].value from $minsan-idStruttureInterne-vs (required)
+* identifier[strutturaInterna].value from VsMinisteroSaluteIdStruttureInterne (required)
 
 * identifier[partitaIva].system = "http://hl7.it/sid/partitaIva" (exactly)  // pattern
 * identifier[partitaIva] ^short = "Partita IVA Organizzazione"

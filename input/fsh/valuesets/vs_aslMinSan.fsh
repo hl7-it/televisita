@@ -13,4 +13,13 @@ Description: "MDS - ASL"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "https://hl7.it"
 * ^jurisdiction = urn:iso:std:iso:3166#IT "Italy"
-* include codes from system https://www.hl7.it/fhir/terminology/CodeSystem/cs-asl
+* include codes from system http://hl7.it/fhir/televisita/CodeSystem/cs-asl
+
+
+ValueSet: VsMinisteroSaluteIdStrutture
+Id: minsan-idStrutture
+Title: "Ministero della Salute - ID Strutture Ricovero"
+Description: "Ministero della Salute - Identificativi Strutture Ricovero (HSP11)"
+* ^experimental = false
+//----------------------------------------
+* codes from system http://hl7.it/fhir/televisita/CodeSystem/minsan-hsp
