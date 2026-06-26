@@ -44,14 +44,35 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
+pages:
+  index.md:
+    title: Home
+  scenario.md:
+    title: Scenario
+  RefertoDiTelevisita.md:
+    title: Modello Funzionale
+  modelmap.xml:
+    title: Mapping verso i Profili
+    map-composition.xml:
+      title: Composition - Referto di Televisita
+    map-patient.xml:
+      title: Patient - Paziente
+    map-encounter.xml:
+      title: Encounter - Sessione di Televisita
+    map-appointment.xml:
+      title: Appointment - Appuntamento
+    map-servicerequest.xml:
+      title: ServiceRequest - Richiesta
+    map-allergy.xml:
+      title: AllergyIntolerance - Allergie
+    map-medicationrequest.xml:
+      title: MedicationRequest - Terapia Consigliata
+    map-procedure.xml:
+      title: Procedure - Prestazioni
+    map-organization.xml:
+      title: Organization - Struttura Erogatrice
+  downloads.md:
+    title: Downloads
 #
 #
 # The parameters property represents IG.definition.parameter. Rather
