@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del Decreto Telemedicina
+          e il profilo FHIR <strong>AppointmentTelevisita</strong>.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina → AppointmentTelevisita</h3>
+    <p>
+      La risorsa <code>Appointment</code> rappresenta la prenotazione dell'appuntamento di televisita,
+      incluse date, partecipanti, categoria del servizio e motivazione clinica.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura:</strong>
+      <code>Appointment</code> (profilo <a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a>)
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice prenotazione</td>
+            <td>Identificativo univoco della prenotazione della televisita</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.identifier.value</code></td>
+          </tr>
+          <tr>
+            <td>Data e ora inizio appuntamento</td>
+            <td>Data e ora di inizio della televisita</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.start</code></td>
+          </tr>
+          <tr>
+            <td>Data e ora fine appuntamento</td>
+            <td>Data e ora di conclusione della televisita</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.end</code></td>
+          </tr>
+          <tr>
+            <td>Data creazione prenotazione</td>
+            <td>Data in cui è stata creata la prenotazione dell'appuntamento</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.created</code></td>
+          </tr>
+          <tr>
+            <td>Categoria servizio</td>
+            <td>Categorizzazione del servizio erogato durante l'appuntamento (es. branca specialistica)</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.serviceCategory.coding.code</code></td>
+          </tr>
+          <tr>
+            <td>Motivo dell'appuntamento</td>
+            <td>Motivazione clinica per cui è stato prenotato l'appuntamento di televisita</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.reasonCode.text</code></td>
+          </tr>
+          <tr>
+            <td>Riferimento alla richiesta</td>
+            <td>Riferimento alla ServiceRequest da cui origina la prenotazione</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.basedOn</code></td>
+          </tr>
+          <tr>
+            <td>Paziente</td>
+            <td>Riferimento al paziente partecipante all'appuntamento di televisita</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.participant.actor.resolve().ofType(Patient)</code></td>
+          </tr>
+          <tr>
+            <td>Medico specialista</td>
+            <td>Riferimento al medico specialista (PractitionerRole) partecipante all'appuntamento</td>
+            <td><a href="StructureDefinition-AppointmentTelevisita.html">AppointmentTelevisita</a></td>
+            <td><code>Appointment.participant.actor.resolve().ofType(PractitionerRole)</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Modello di mappatura</a>
+    </p>
+  </body>
+</div>

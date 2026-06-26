@@ -1,21 +1,29 @@
 Profile: EncounterTelevisita
 Parent: Encounter
 Id: EncounterTelevisita
-Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Telemedicina"
+Title: "Encounter Televisita"
+Description: "Profilo della risorsa Encounter utilizzato per rappresentare la visita di telemedicina, incluse informazioni sulla modalità, la disciplina specialistica, i partecipanti e i riferimenti all'appuntamento e alla richiesta di servizio."
 * ^status = #draft
+
+* . ^short = "Visita di telemedicina (televisita)."
+* . ^definition = "Rappresenta l'evento di visita specialistica effettuato in modalità remota, comprensivo di informazioni sulla disciplina, la struttura erogante, i professionisti coinvolti e il periodo di erogazione."
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
 * identifier contains codiceNosologico 1..1
+* identifier[codiceNosologico] ^short = "Codice nosologico dell'incontro."
+* identifier[codiceNosologico] ^definition = "Identificativo univoco dell'incontro di telemedicina nel sistema informativo della struttura erogante (numero di accettazione, codice nosologico)."
 * identifier[codiceNosologico].system = "http://hl7.it/fhir/televisita/sid/codiceNosologico" (exactly)
 
 * status ^short = "Stato attuale dell'incontro."
 * status ^definition = "Stato attuale dell'incontro. Possibili valori: planned | arrived | triaged | in-progress | onleave | finished | cancelled"
 
 * class ^short = "Classificazione dell'incontro con il paziente."
+* class ^definition = "Classificazione dell'incontro clinico. Nel contesto della telemedicina il valore tipicamente utilizzato è 'VR' (virtual) per indicare una visita da remoto."
 
-* type ^short = "Disciplina specialistica ambulatoriale"
+* type ^short = "Disciplina specialistica della televisita."
+* type ^definition = "Indica la branca specialistica nell'ambito della quale viene erogata la televisita (es. cardiologia, neurologia, dermatologia). Il valore è vincolato al ValueSet delle specialità ambulatoriali."
 * type from ValueSet_specialita_PractitionerRole (required) 
 * type MS
 
@@ -36,7 +44,8 @@ Description: "Profilo base dell'Encounter condiviso in tutti i documenti di Tele
 * appointment ^short = "Appuntamento da cui è partita l'incontro."
 * appointment ^definition = "L'appuntamento da cui è partita l'incontro"
 
-* period ^short = "Data e Ora di inizio e di fine dell'incontro."
+* period ^short = "Data e ora di inizio e di fine dell'incontro."
+* period ^definition = "Intervallo temporale che indica l'inizio e la fine effettiva della televisita."
 * period ^comment = "Se non è (ancora) nota, la fine del Periodo può essere omessa."
 
 * reasonReference ^short = "Motivo scatenante l'incontro."

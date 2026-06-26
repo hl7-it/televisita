@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del Decreto Telemedicina
+          e il profilo FHIR <strong>ProcedureTelevisita</strong>.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina → ProcedureTelevisita</h3>
+    <p>
+      La risorsa <code>Procedure</code> rappresenta le prestazioni erogate durante la televisita,
+      inclusi codici, descrizioni, periodi di erogazione, modalità esecutive e strumentazione utilizzata.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura:</strong>
+      <code>Composition.section[prestazioni].entry.resolve().ofType(Procedure)</code>
+      (profilo <a href="StructureDefinition-ProcedureTelevisita.html">ProcedureTelevisita</a>)
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice prestazione eseguita</td>
+            <td>Codice della prestazione eseguita</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</code></td>
+          </tr>
+          <tr>
+            <td>Descrizione prestazione eseguita</td>
+            <td>Descrizione della prestazione eseguita</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.text</code></td>
+          </tr>
+          <tr>
+            <td>Data e ora di inizio erogazione</td>
+            <td>Data e ora di inizio erogazione della prestazione</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).performedPeriod.start</code></td>
+          </tr>
+          <tr>
+            <td>Data e ora di fine erogazione</td>
+            <td>Data e ora di fine erogazione della prestazione</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).performedPeriod.end</code></td>
+          </tr>
+          <tr>
+            <td>Codice procedura operativa</td>
+            <td>Codice della procedura operativa eseguita</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</code></td>
+          </tr>
+          <tr>
+            <td>Descrizione procedura operativa</td>
+            <td>Descrizione procedura operativa eseguita</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.display</code></td>
+          </tr>
+          <tr>
+            <td>Quantità</td>
+            <td>Quantità</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).extension:quantita / derived</code></td>
+          </tr>
+          <tr>
+            <td>Modalità esecuzione procedura operativa</td>
+            <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).method</code></td>
+          </tr>
+          <tr>
+            <td>Strumentazione utilizzata</td>
+            <td>Strumentazione utilizzata nel corso della procedura</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure/Device</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).usedReference.resolve().ofType(Device)</code></td>
+          </tr>
+          <tr>
+            <td>Parametri descrittivi della procedura</td>
+            <td>Parametri rilevanti al fine di caratterizzare la procedura</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure/Observation</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).supportingInfo.resolve().ofType(Observation)</code></td>
+          </tr>
+          <tr>
+            <td>Note</td>
+            <td>Note</td>
+            <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).note.text</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Modello di mappatura</a>
+    </p>
+  </body>
+</div>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del Decreto Telemedicina e sono mappate sul profilo <strong>CompositionRefertoTelevisita</strong> e sulle risorse ad esso correlate.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina &#8594; CompositionRefertoTelevisita</h3>
+    <p>
+      Questa pagina illustra come gli elementi informativi previsti dall'Allegato 1 del Decreto Telemedicina siano rappresentati nel profilo FHIR <a href="StructureDefinition-CompositionRefertoTelevisita.html">CompositionRefertoTelevisita</a> e nelle risorse correlate presenti nelle sezioni del documento.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura</strong>
+      <ul>
+        <li><strong>Profilo target:</strong> <a href="StructureDefinition-CompositionRefertoTelevisita.html">CompositionRefertoTelevisita</a></li>
+      </ul>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> CompositionRefertoTelevisita">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data firma referto</td>
+            <td>Data di firma del referto</td>
+            <td>Composition</td>
+            <td>Composition.attester[legalAuthenticator].time</td>
+          </tr>
+          <tr>
+            <td>Codici identificazione oggetti correlati</td>
+            <td>Codici per identificare eventuali oggetti associati al referto (es. ID PACS, Accession number, Studio DICOM).</td>
+            <td>Composition</td>
+            <td>Composition.relatesTo.targetIdentifier / Composition.relatesTo.targetReference</td>
+          </tr>
+          <tr>
+            <td>Tipologia Accesso</td>
+            <td>Tipologia di accesso (programmata / ad accesso diretto)</td>
+            <td>Composition</td>
+            <td>Composition.event.code</td>
+          </tr>
+          <tr>
+            <td>Codice quesito diagnostico</td>
+            <td>Codice ICD9-CM del quesito diagnostico</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[questitoDiagnostico].entry.resolve().ofType(Observation).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione quesito diagnostico</td>
+            <td>Descrizione del quesito diagnostico</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[questitoDiagnostico].entry.resolve().ofType(Observation).code.text</td>
+          </tr>
+          <tr>
+            <td>Anamnesi</td>
+            <td>Descrizione testuale dell'anamnesi (quadro clinico)</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[anamnesi].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Precedenti esami eseguiti</td>
+            <td>Codice, descrizione, metodica e data di eventuali esami precedenti eseguiti dal paziente e ritenuti rilevanti ai fini della formulazione del referto</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[precedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text / code / effective[x]</td>
+          </tr>
+          <tr>
+            <td>Codice AIC/ATC farmaco</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci assunti nella terapia in atto</td>
+            <td>Composition / MedicationStatement</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement).medicationCodeableConcept.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica</td>
+            <td>Descrizione terapia farmacologica</td>
+            <td>Composition / MedicationStatement</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement).medicationCodeableConcept.text</td>
+          </tr>
+          <tr>
+            <td>Esame obiettivo</td>
+            <td>Esame obiettivo</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Strumentazione utilizzata</td>
+            <td>Strumentazione utilizzata nel corso della procedura</td>
+            <td>Composition / Procedure / Device</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).usedReference.resolve().ofType(Device)</td>
+          </tr>
+          <tr>
+            <td>Parametri descrittivi della procedura</td>
+            <td>Parametri rilevanti al fine di caratterizzare la procedura</td>
+            <td>Composition / Procedure / Observation</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).supportingInfo.resolve().ofType(Observation)</td>
+          </tr>
+          <tr>
+            <td>Confronto con precedenti esami eseguiti</td>
+            <td>Confronto con precedenti esami eseguiti. Permette di riportare un confronto tra quanto emerso nel corso di precedenti esami eseguiti e quanto rilevato durante la televisita.</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Refertazione</td>
+            <td>Referto della/e prestazione/i, oggetto principale del referto</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[referto].entry.resolve().ofType(Observation).note.text / value[x]</td>
+          </tr>
+          <tr>
+            <td>Codice diagnosi</td>
+            <td>Codice diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione diagnosi</td>
+            <td>Descrizione diagnosi formulata sulla base di quanto emerso nel corso della prestazione</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[diagnosi].entry.resolve().ofType(Observation).code.text</td>
+          </tr>
+          <tr>
+            <td>Conclusioni</td>
+            <td>Conclusioni</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[conclusioni].entry.resolve().ofType(Observation).note.text / value[x]</td>
+          </tr>
+          <tr>
+            <td>Suggerimenti per il medico prescrittore</td>
+            <td>Suggerimenti per il medico prescrittore</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().ofType(Observation).note.text</td>
+          </tr>
+          <tr>
+            <td>Codice accertamento consigliato</td>
+            <td>Codice accertamento/i o prestazione/i consigliata/e da eseguire a seguito della prestazione</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione accertamento consigliato</td>
+            <td>Descrizione accertamento/i o prestazione/i consigliata/e da eseguire a seguito della prestazione</td>
+            <td>Composition / Observation</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code.coding.display</td>
+          </tr>
+          <tr>
+            <td>Codice AIC/ATC farmaco consigliato</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci consigliato per la terapia farmacologica</td>
+            <td>Composition / MedicationRequest</td>
+            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medicationCodeableConcept.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica consigliata</td>
+            <td>Descrizione della terapia farmacologica consigliata</td>
+            <td>Composition / MedicationRequest</td>
+            <td>Composition.section[terapiaFarmacologicaConsigliata].entry.resolve().ofType(MedicationRequest).medicationCodeableConcept.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

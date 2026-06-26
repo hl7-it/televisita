@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>EHDSServiceRequest -> ServiceRequestLabEu</title>
+  </head>
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          <strong>Ongoing alignment:</strong>The models are expected to continue evolving, with updates incorporated into this Implementation Guide to maintain alignment with the EHDS Implementing Acts.
+        </div>
+      </div>
+    </div>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          <strong>Yellow row/cells:</strong> In this ballot publication, some row/cells of the
+          mapping table have been left in yellow to indicate areas requiring further review or
+          refinement; including feedback from the Xt-EHR joint action.
+        </div>
+      </div>
+    </div>
+
+    <h3>EHDSServiceRequest -> ServiceRequestLabEu</h3>
+    <a> </a>
+    <p>
+      This page explains how conceptual elements from the EHDS Service Request logical model are
+      expressed in the corresponding FHIR ServiceRequest profile used by this Implementation Guide.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Mapping Context</strong>
+      <ul>
+        <li>
+          <strong>Source logical model:</strong>
+          <a href="https://www.xt-ehr.eu/fhir/models/0.3.0/StructureDefinition-EHDSServiceRequest.html" target="_blank">
+            EHDSServiceRequest
+          </a>
+        </li>
+        <li>
+          <strong>Target FHIR profile:</strong>
+          <a href="StructureDefinition-ServiceRequest-eu-lab.html">ServiceRequestLabEu</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="EHDSServiceRequest -> ServiceRequestTelevisita">
+        <thead>
+          <tr>
+            <th>Contenuto Informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cognome medico prescrittore</td>
+            <td>Cognome del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td>
+            <td>ServiceRequest / PractitionerRole / Practitioner</td>
+            <td>ServiceRequest.requester.practitioner.name.family</td>
+          </tr>
+          <tr>
+            <td>Nome medico prescrittore</td>
+            <td>Nome del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td>
+            <td>ServiceRequest / PractitionerRole / Practitioner</td>
+            <td>ServiceRequest.requester.practitioner.name.given</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale medico prescrittore</td>
+            <td>Codice fiscale del medico prescrittore (medico del ruolo unico di assistenza primaria/PLS o Specialista)</td>
+            <td>ServiceRequest / PractitionerRole / Practitioner</td>
+            <td>ServiceRequest.requester.practitioner.identifier</td>
+          </tr>
+          <tr>
+            <td>Numero ricetta medica</td>
+            <td>Numero della ricetta medica</td>
+            <td>ServiceRequest</td>
+            <td>ServiceRequest.requisition</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Return to overview: <a href="modelmap.html">EHDS Logical Models -> FHIR Profiles</a>
+    </p>
+  </body>
+</div>

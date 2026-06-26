@@ -1,12 +1,19 @@
 Profile: MedicationRequestTelevisita
 Parent: MedicationRequest
 Id: MedicationRequestTelevisita
-Description: "Profilo base della MedicationRequest condiviso in tutti i documenti di Telemedicina" 
+Title: "MedicationRequest Televisita"
+Description: "Profilo della risorsa MedicationRequest utilizzato per rappresentare la terapia farmacologica consigliata al termine della televisita."
 * ^status = #draft
-* status ^definition = "Stato della richiesta."
+
+* . ^short = "Terapia farmacologica consigliata nella televisita."
+* . ^definition = "Descrive la prescrizione o il consiglio terapeutico farmacologico formulato dal medico specialista al termine della televisita, inclusi il farmaco, il dosaggio, la via e i tempi di somministrazione."
+
+* status ^short = "Stato della richiesta di terapia farmacologica."
+* status ^definition = "Stato attuale della MedicationRequest. I valori possibili includono: active, on-hold, cancelled, completed, entered-in-error, stopped, draft, unknown."
 
 * intent = #proposal
-* intent ^definition = "Scopo della richiesta."
+* intent ^short = "Scopo della richiesta (proposta terapeutica)."
+* intent ^definition = "Nel contesto della televisita il valore è impostato a 'proposal', indicando che si tratta di una proposta terapeutica formulata dallo specialista."
 
 * medication[x] ^short = "Definizione farmaco"
 * medication[x] ^definition = "Identifica il farmaco oggetto delle medication request."
@@ -16,8 +23,10 @@ Description: "Profilo base della MedicationRequest condiviso in tutti i document
 * subject ^definition = "Soggetto per cui è ricchiesta la medication"
 
 * requester 1..1
+* requester ^short = "Medico che ha formulato la terapia farmacologica."
+* requester ^definition = "Riferimento al medico specialista (PractitionerRole) che ha formulato la proposta terapeutica farmacologica nel contesto della televisita."
 
-* dosageInstruction ^short = "Instuzioni di dosaggio e somministrazione"
+* dosageInstruction ^short = "Istruzioni di dosaggio e somministrazione."
 * dosageInstruction ^definition = "Instuzioni di dosaggio e somministrazione"
 * dosageInstruction.timing ^short = "Tempistiche di somministrazione del farmaco"
 * dosageInstruction.timing ^definition = "Tempistiche di somministrazione del farmaco"

@@ -1,5 +1,3 @@
-Alias: $uri = urn:ietf:rfc:3986
-
 ValueSet: VsAnagrafiRegionali
 Id: vs-anagrafi-regionali
 Title: "VS-Anagrafi Regionali"

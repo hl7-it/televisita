@@ -1,17 +1,14 @@
-
-Alias: $Organization_T1 = http://hl7.it/fhir/StructureDefinition/Organization_T1
-Alias: $Organization_T2 = http://hl7.it/fhir/StructureDefinition/Organization_T2
-Alias: $Organization_T3 = http://hl7.it/fhir/StructureDefinition/Organization_T3
-Alias: $specialityPractitionerRole = https://terminology.agenas.gov.it/ValueSet/specialityPractitionerRole
-
 Profile: PractitionerRoleTelevisita
 Parent: PractitionerRole
 Id: PractitionerRoleTelevisita
 Title: "PractitionerRoleTelevisita"
-Description: "Profilo base del PractitionerRole condiviso in tutti i documenti di Telemedicina"
+Description: "Profilo della risorsa PractitionerRole utilizzato per rappresentare il ruolo professionale del medico specialista o di altro operatore sanitario nell'ambito dell'erogazione della televisita."
 * ^version = "0.1.0"
 * ^status = #active
 * ^jurisdiction = urn:iso:std:iso:3166#IT
+
+* . ^short = "Ruolo professionale del medico nella televisita."
+* . ^definition = "Rappresenta il ruolo che un professionista sanitario ricopre in una specifica organizzazione per l'erogazione della televisita, comprensivo di specialità, riferimento all'organizzazione e recapiti."
 
 * identifier ^short = "Identificativo dell'operatore (e.g. Codice Fiscale, ID Regionale)"
 * identifier ^definition = "Identificatori aziendali specifici di un ruolo/località."
@@ -30,7 +27,15 @@ Description: "Profilo base del PractitionerRole condiviso in tutti i documenti d
 * organization ^definition = "L'organizzazione in cui il professionista svolge i ruoli associati."
 * organization ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
 
-* code ^short = "Ruoli che questo professionista può svolgere"
+* code ^short = "Ruoli che questo professionista può svolgere."
 * code ^definition = "Ruoli che questo professionista è autorizzato a svolgere per l'organizzazione."
 * code ^comment = "Una persona può avere più di un ruolo."
 * specialty from vsspecialityPractitionerRole (required)
+* specialty ^short = "Branca specialistica del professionista."
+* specialty ^definition = "Specialità clinica del professionista sanitario nel contesto della televisita (es. cardiologia, neurologia, dermatologia). Il valore è vincolato al ValueSet delle specialità ambulatoriali."
+
+* telecom ^short = "Recapiti del professionista nel ruolo specifico."
+* telecom ^definition = "Numeri di telefono, indirizzi e-mail o altri recapiti del professionista nell'ambito del ruolo svolto per l'organizzazione, utilizzabili nell'ambito del percorso di televisita."
+
+* availableTime ^short = "Disponibilità oraria per le televisite."
+* availableTime ^definition = "Indica i giorni e gli orari in cui il professionista è disponibile per l'erogazione di televisite nell'ambito del ruolo ricoperto."

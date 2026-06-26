@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del Decreto Telemedicina e sono mappate sul profilo <strong>AllergyIntoleranceTelevisita</strong>.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina &#8594; AllergyIntoleranceTelevisita</h3>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi alle allergie dell'assistito, previsti dall'Allegato 1 del Decreto Telemedicina, siano rappresentati nel profilo FHIR <a href="StructureDefinition-AllergyIntoleranceTelevisita.html">AllergyIntoleranceTelevisita</a>.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura</strong>
+      <ul>
+        <li><strong>Profilo target:</strong> <a href="StructureDefinition-AllergyIntoleranceTelevisita.html">AllergyIntoleranceTelevisita</a></li>
+      </ul>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> AllergyIntoleranceTelevisita">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Allergie</td>
+            <td>Eventuali allergie e fonti dichiarate</td>
+            <td>AllergyIntolerance</td>
+            <td>AllergyIntolerance.note.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

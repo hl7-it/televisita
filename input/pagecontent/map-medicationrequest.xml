@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del Decreto Telemedicina e sono mappate sul profilo <strong>MedicationRequestTelevisita</strong>.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina &#8594; MedicationRequestTelevisita</h3>
+    <p>
+      Questa pagina illustra come gli elementi informativi relativi alla terapia farmacologica consigliata, previsti dall'Allegato 1 del Decreto Telemedicina, siano rappresentati nel profilo FHIR <a href="StructureDefinition-MedicationRequestTelevisita.html">MedicationRequestTelevisita</a>.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura</strong>
+      <ul>
+        <li><strong>Profilo target:</strong> <a href="StructureDefinition-MedicationRequestTelevisita.html">MedicationRequestTelevisita</a></li>
+      </ul>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> MedicationRequestTelevisita">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice AIC/ATC farmaco</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci consigliato per la terapia farmacologica</td>
+            <td>MedicationRequest</td>
+            <td>MedicationRequest.medicationCodeableConcept.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica consigliata</td>
+            <td>Descrizione della terapia farmacologica consigliata</td>
+            <td>MedicationRequest</td>
+            <td>MedicationRequest.medicationCodeableConcept.text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Allegato 1 Telemedicina &#8594; Profili FHIR</a>
+    </p>
+  </body>
+</div>

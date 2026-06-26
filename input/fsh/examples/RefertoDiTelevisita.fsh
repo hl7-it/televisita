@@ -1,10 +1,3 @@
-Alias: $sct = http://snomed.info/sct
-Alias: $icd-9-cm = http://hl7.org/fhir/sid/icd-9-cm
-Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
-Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-Alias: $istat-DUG-CS = 	https://www.hl7.it/fhir/terminology/CodeSystem/dug
-Alias: $mimeType = urn:ietf:bcp:13
-
 //TODO: non c'è il profilo del bundle transacrion??!!
 // // BUNDLE DI TIPO TRANSACTION
 // Instance: RefertoDiTelevisitaTransaction

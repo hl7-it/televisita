@@ -1,9 +1,12 @@
 Profile: ProcedureTelevisita
 Parent: Procedure
 Id: ProcedureTelevisita
-Description:  "Profilo base della Procedure condiviso in tutti i documenti di Telemedicina"
+Title: "Procedure Televisita"
+Description: "Profilo della risorsa Procedure utilizzato per rappresentare le prestazioni e le procedure cliniche erogate nel corso della televisita, inclusi codici, periodi di erogazione, modalità esecutive e strumentazione utilizzata."
 
 * ^status = #draft
+* . ^short = "Prestazione clinica erogata durante la televisita."
+* . ^definition = "Rappresenta una prestazione sanitaria o una procedura clinica eseguita nel corso della televisita, identificata da un codice del Catalogo Nazionale delle Prestazioni, con indicazione del periodo di erogazione e delle modalità di esecuzione."
 * extension contains http://hl7.org/fhir/StructureDefinition/procedure-method|5.2.0 named ModalitaEsecuzioneProcedura 0..1
 * extension[ModalitaEsecuzioneProcedura] ^short = "Modalità esecuzione procedura operativa"
 
@@ -51,9 +54,11 @@ Description:  "Profilo base della Procedure condiviso in tutti i documenti di Te
 * usedReference ^short = "Strumentazione utilizzata nel corso della procedura."
 //* usedReference only Reference(DeviceTelemedicinaTesserino)
 
-* category ^short = "Procedura operativa eseguita."
+* category ^short = "Categoria della procedura operativa eseguita."
+* category ^definition = "Classifica la procedura in una categoria clinica. Nel contesto della televisita può indicare la branca specialistica o la tipologia di prestazione erogata."
 * category MS
 * category.coding.display MS
 * category.coding.code MS
 
-* note ^short = "Note"
+* note ^short = "Note sulla procedura."
+* note ^definition = "Informazioni aggiuntive in testo libero relative alla procedura clinica eseguita, non altrimenti rappresentabili negli elementi strutturati."

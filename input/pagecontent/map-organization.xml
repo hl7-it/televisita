@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del Decreto Telemedicina
+          e i profili FHIR <strong>OrganizationT1</strong>, <strong>OrganizationT2</strong>, <strong>OrganizationT3</strong>.
+        </div>
+      </div>
+    </div>
+
+    <h3>Allegato 1 Telemedicina → Organization Televisita</h3>
+    <p>
+      La risorsa <code>Organization</code> rappresenta l'azienda sanitaria, il presidio e l'unità operativa
+      responsabili dell'erogazione della televisita, raggiungibili tramite il <code>PractitionerRole</code> dell'autore della Composition.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura:</strong>
+      <code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization)</code>
+      (profili <a href="StructureDefinition-OrganizationT1.html">OrganizationT1</a> /
+      <a href="StructureDefinition-OrganizationT2.html">OrganizationT2</a> /
+      <a href="StructureDefinition-OrganizationT3.html">OrganizationT3</a>)
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice e descrizione dell'azienda sanitaria</td>
+            <td>Codice e descrizione dell'azienda sanitaria</td>
+            <td>Composition/PractitionerRole/Organization</td>
+            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier + name</code></td>
+          </tr>
+          <tr>
+            <td>Codice e descrizione del presidio</td>
+            <td>Codice e descrizione del presidio</td>
+            <td>Composition/PractitionerRole/Organization</td>
+            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).partOf.identifier + name</code></td>
+          </tr>
+          <tr>
+            <td>Codice e descrizione dell'unità operativa</td>
+            <td>Codice e descrizione dell'unità operativa</td>
+            <td>Composition/PractitionerRole/Organization</td>
+            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier + name</code></td>
+          </tr>
+          <tr>
+            <td>Numero telefono Unità Operativa / CUP / Azienda Sanitaria</td>
+            <td>Numero di telefono dell'Unità Operativa / CUP / Azienda Sanitaria</td>
+            <td>Composition/PractitionerRole/Organization</td>
+            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).contact.telecom.where(system='phone')</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Modello di mappatura</a>
+    </p>
+  </body>
+</div>
