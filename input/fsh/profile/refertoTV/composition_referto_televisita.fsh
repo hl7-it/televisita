@@ -41,7 +41,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * attester[legalAuthenticator].time ^short = "Data e ora della firma del referto."
 * attester[legalAuthenticator].time ^definition = "Data e ora in cui il medico refertante ha firmato digitalmente il documento."
 * attester[legalAuthenticator].party 1..
-* attester[legalAuthenticator].party only Reference(PractitionerRoleTelevisita)
+* attester[legalAuthenticator].party only Reference(PractitionerTelevisita or PractitionerRoleTelevisita)
 * attester[legalAuthenticator].party ^short = "Medico firmatario del referto."
 * attester[legalAuthenticator].party ^definition = "Riferimento al professionista sanitario (PractitionerRoleTelevisita) che ha apposto la firma legale al referto di televisita."
 
@@ -117,7 +117,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^short = "Terapia farmacologica in corso al momento della televisita."
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto] ^definition = "Sezione che elenca i farmaci assunti dal paziente al momento della televisita, rappresentati tramite risorse MedicationStatement."
 * section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].code = $loinc#10160-0
-* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatement)
+* section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry only Reference(MedicationStatementTelevisita)
 
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^sliceName = "esameObiettivo"
 * section[InquadramentoClinicoIniziale].section[esameObiettivo] ^short = "Esame obiettivo rilevato durante la televisita."

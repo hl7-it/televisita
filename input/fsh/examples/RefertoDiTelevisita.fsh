@@ -139,12 +139,13 @@
 // BUNDLE DI TIPO DOCUMENT
 Instance: RefertoDiTelevisita
 InstanceOf: BundleRefertodiTelevisita
-Description: "Esempio di Referto di Televisita aggiornato con referto televisita"
+Title: "Referto di Televisita Pneumologica - Maria Rossi"
+Description: "Bundle di tipo document contenente il referto completo della televisita pneumologica di Maria Rossi del 16/06/2025. Include tutte le risorse cliniche e amministrative: composition, paziente, professionista, encounter, allergie, terapie, osservazioni, prestazioni e allegati."
 Usage: #example
 * type = #document
-* identifier.system = "urn:ietf:rfc:39861"
+* identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:bfcf00e2-e2bb-4a7d-adaa-3de9d419d27e"
-* timestamp = "2023-02-25T14:30:00+01:00"
+* timestamp = "2025-06-16T10:30:00+02:00"
 * entry[0].fullUrl = "http://example/Composition/aa011502-6ad2-430b-a439-01dddc36fd4e"
 * entry[0].resource = CompositionRefertoTelevisitaExample
 
@@ -222,7 +223,8 @@ Usage: #example
 
 Instance: PatientTelevisitaExample
 InstanceOf: PatientTelevisita
-Description: "Esempio di paziente nel contesto della televisita"
+Title: "Paziente - Maria Rossi"
+Description: "Maria Rossi, paziente di sesso femminile nata il 01/05/1971, residente a Milano (CF: RSSMRA71E41F205E). Affetta da bronchite cronica nota e allergia alla penicillina. Soggetto della televisita pneumologica del 16/06/2025."
 Usage: #example
 * id = "2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
 
@@ -237,7 +239,7 @@ Usage: #example
 
 * identifier[codiceFiscale]
   * system = "http://hl7.it/sid/codiceFiscale"
-  * value = "RSSMRA71E01F205E" 
+  * value = "RSSMRA71E41F205E" 
 
 * name.family = "Rossi"
 * name.given = "Maria"
@@ -277,8 +279,8 @@ Usage: #example
 
 Instance: CompositionRefertoTelevisitaExample
 InstanceOf: CompositionRefertoTelevisita
-Title: "Esempio completo di referto di televisita"
-Description: "Referto televisita con tutte le sezioni richieste dal profilo"
+Title: "Referto di Televisita Pneumologica - Maria Rossi"
+Description: "Compositiondel referto clinico della televisita pneumologica di Maria Rossi del 16/06/2025, condotta dal Dr. Marco Ferrari (Pneumologo) presso la U.O. Pneumologia dell'Ospedale Sandro Pertini, ASL Roma 1. Firmata digitalmente dallo stesso specialista."
 Usage: #example
 * status = #final
 * id = "aa011502-6ad2-430b-a439-01dddc36fd4e"
@@ -289,7 +291,7 @@ Usage: #example
 * date = "2025-06-16T10:30:00+02:00"
 * author[0] = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
 * attester[legalAuthenticator].mode = #legal
-* attester[legalAuthenticator].time = "2023-02-25T12:45:00+01:00"
+* attester[legalAuthenticator].time = "2025-06-16T10:30:00+02:00"
 * attester[legalAuthenticator].party = Reference(PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42)
 * section[questitoDiagnostico].code = $loinc#29299-5
 * section[questitoDiagnostico].title = "Quesito Diagnostico"
@@ -340,18 +342,19 @@ Usage: #example
 
 Instance: PractitionerTelevisitaExample
 InstanceOf: PractitionerTelevisita
-Description: "Esempio di practitioner nel contesto della televisita"
+Title: "Specialista - Dr. Marco Ferrari"
+Description: "Dr. Marco Ferrari, medico specialista in Pneumologia (CF: FRRMRC75T10H501K). Erogatore della televisita pneumologica del 16/06/2025 presso la U.O. Pneumologia dell'Ospedale Sandro Pertini."
 Usage: #example
 * id = "2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-* name.given = "John"
-* name.family = "Doe"
+* name.given = "Marco"
+* name.family = "Ferrari"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"
-* identifier[codiceFiscale].value = "DOEMRA80A01H501Z"
+* identifier[codiceFiscale].value = "FRRMRC75T10H501K"
 
 Instance: EncounterTelevisitaExample
 InstanceOf: EncounterTelevisita
-Title: "Esempio di Encounter per televisita"
-Description: "Esempio di incontro conforme al profilo EncounterTelevisitaExample"
+Title: "Televisita Pneumologica - Maria Rossi 16/06/2025"
+Description: "Incontro virtuale (classe VR) di natura pneumologica erogato il 16/06/2025 dalle 09:00 alle 09:45. Basato sulla richiesta del MMG (ServiceRequest AAZ123456789) e prenotato tramite Appointment. Struttura erogatrice: ASL Roma 1."
 Usage: #example
 * id = "a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
 * status = #finished
@@ -373,17 +376,19 @@ Usage: #example
 
 Instance: PractitionerRoleTelevisitaExample
 InstanceOf: PractitionerRoleTelevisita
-Description: "Esempio di practitionerRole nel contesto della televisita"
+Title: "Ruolo - Dr. Marco Ferrari, Pneumologo ASL Roma 1"
+Description: "Ruolo professionale del Dr. Marco Ferrari come Pneumologo (specialità #38) presso la U.O. Pneumologia dell'Ospedale Sandro Pertini, ASL Roma 1. Autore e firmatario del referto di televisita."
 Usage: #example
 * organization = Reference(AslRoma1)
 * practitioner = Reference(PractitionerTelevisitaExample)
-* specialty = CodeSystem_specialita_PractitionerRole#01 "Allergologia"
+* specialty = CodeSystem_specialita_PractitionerRole#38 "Pneumologia"
 * id = "e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
 
 Instance: Observation-quesito
 InstanceOf: ObservationTelevisita
-Description: "Esempio di quesito diagnostico nel contesto della televisita"
+Title: "Quesito Diagnostico - Tosse persistente post-COVID"
+Description: "Quesito diagnostico formulato dal MMG: tosse persistente post-COVID (ICD-9 786.2). Motivo clinico della richiesta di televisita pneumologica per Maria Rossi."
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
 * status = #final
@@ -395,7 +400,8 @@ Usage: #example
 
 Instance: Observation-anamnesi
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di anamnesi nel contesto della televisita"
+Title: "Anamnesi - Maria Rossi"
+Description: "Anamnesi raccolta durante la televisita pneumologica del 16/06/2025: bronchite cronica nota, non fumatrice. Raccolta dal Dr. Marco Ferrari in modalità remota."
 Usage: #example
 * id = "84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
 * status = #final
@@ -408,7 +414,8 @@ Usage: #example
 
 Instance: AllergyIntolerance-allergia1
 InstanceOf: AllergyIntoleranceTelevisita
-Description: "Esempio di allergyIntolerance nel contesto della televisita"
+Title: "Allergia - Penicillina (Maria Rossi)"
+Description: "Allergia alla penicillina (SNOMED 91936005) documentata per Maria Rossi, clinicamente attiva e verificata. Rilevata in fase di inquadramento clinico iniziale durante la televisita."
 Usage: #example
 * id = "1360bd6a-3855-48d3-aa33-96a9d961bb94"
 * clinicalStatus = $allergyintolerance-clinical#active
@@ -418,19 +425,35 @@ Usage: #example
 
 
 Instance: MedicationStatement-terapia-corrente
-InstanceOf: MedicationStatement
-Description: "Esempio di medicationStatement nel contesto della televisita"
+InstanceOf: MedicationStatementTelevisita
+Title: "Terapia in atto - Beclometasone 100 mcg (Maria Rossi)"
+Description: "Terapia farmacologica in atto di Maria Rossi al momento della televisita: Beclometasone dipropionato 100 mcg spray inalatorio (ATC R03BA01), assunto come terapia inalatoria di mantenimento per bronchite cronica dall'01/01/2025."
 Usage: #example
-* status = #active
-* subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* medicationCodeableConcept = $sct#372729009 "Acyclovir"
-* effectivePeriod.start = "2025-06-01"
 * id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
+* status = #active
+* medicationCodeableConcept.coding.system = "http://www.atc.it"
+* medicationCodeableConcept.coding.code = #R03BA01
+* medicationCodeableConcept.coding.display = "Beclometasone dipropionato"
+* medicationCodeableConcept.text = "Beclometasone 100 mcg spray inalatorio"
+* subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
+* context = Reference(Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2)
+* effectivePeriod.start = "2025-01-10"
+* effectivePeriod.end = "2025-06-16"
+* dateAsserted = "2025-06-16"
+* informationSource = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
+* reasonCode.text = "Bronchite cronica - terapia inalatoria di mantenimento"
+* dosage.text = "2 inalazioni da 100 mcg due volte al giorno"
+* dosage.route = http://snomed.info/sct#26643006 "Oral route"
+* dosage.doseAndRate.doseQuantity.value = 100
+* dosage.doseAndRate.doseQuantity.unit = "mcg"
+* dosage.doseAndRate.doseQuantity.system = "http://unitsofmeasure.org"
+* dosage.doseAndRate.doseQuantity.code = #ug
 
 
 Instance: Observation-esame-obiettivo
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di esame obiettivo nel contesto della televisita"
+Title: "Esame Obiettivo Remoto - Maria Rossi"
+Description: "Esame obiettivo rilevato durante la televisita pneumologica del 16/06/2025: tosse secca intermittente segnalata dalla paziente durante la videochiamata con il Dr. Marco Ferrari."
 Usage: #example
 * status = #final
 * code = $loinc#29545-1
@@ -443,17 +466,18 @@ Usage: #example
 
 Instance: Observation-esami-precedenti
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di prcedenti esami eseguiti nel contesto della televisita"
+Title: "Esami Precedenti - TC Torace 10/05/2025"
+Description: "TC torace eseguita il 10/05/2025, precedente alla televisita. Risultato: negativa per lesioni polmonari evolutive, con lieve ispessimento peribronchiale compatibile con bronchite cronica. Portata in rassegna dal Dr. Marco Ferrari."
 Usage: #example
 * status = #final
 * category[0] = $loinc#30954-2 "Relevant diagnostic tests/laboratory data note"
-* code = $loinc#24606-6 "MG Breast Screening"
+* code = $loinc#24627-2 "CT Chest"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * effectiveDateTime = "2025-05-10"
 * method.coding[0].system = "http://snomed.info/sct"
-* method.coding[0].code = #713548006
-* method.coding[0].display = "Low dose computed tomography of thorax"
-* valueString = "TC torace eseguita il 10/05/2025. Referto: negativa per lesioni polmonari evolutive."
+* method.coding[0].code = #418060003
+* method.coding[0].display = "Computed tomography of chest"
+* valueString = "TC torace eseguita il 10/05/2025. Referto: negativa per lesioni polmonari evolutive, lieve ispessimento peribronchiale compatibile con bronchite cronica."
 * id = "9dfdf0c9-a837-42d5-987c-6170c75cc476"
 * performer = Reference(PractitionerTelevisitaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
@@ -461,7 +485,8 @@ Usage: #example
 
 Instance: Observation-confronto-esami
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di confronto con precedenti esame eseguiti nel contesto della televisita"
+Title: "Confronto Esami - Miglioramento quadro bronchiolitico"
+Description: "Confronto con i precedenti esami del paziente effettuato dal Dr. Marco Ferrari: lieve miglioramento del quadro bronchiolitico rispetto al controllo precedente, senza segni di progressione."
 Usage: #example
 * status = #final
 * code = $loinc#93126-1
@@ -474,7 +499,8 @@ Usage: #example
 
 Instance: Observation-referto-principale
 InstanceOf: ObservationTelevisita
-Description: "Esempio di referto nel contesto della televisita"
+Title: "Referto Televisita Pneumologica - Maria Rossi"
+Description: "Referto clinico redatto dal Dr. Marco Ferrari al termine della televisita pneumologica: sintomi respiratori in lieve miglioramento, assenza di complicanze, terapia inalatoria confermata."
 Usage: #example
 * status = #final
 * code = $loinc#47045-0
@@ -487,7 +513,8 @@ Usage: #example
 
 Instance: Observation-diagnosi-principale
 InstanceOf: ObservationTelevisita
-Description: "Esempio di esame diagnosi nel contesto della televisita"
+Title: "Diagnosi - Bronchite Cronica Mucopurulenta (ICD-9 491.1)"
+Description: "Diagnosi formulata dal Dr. Marco Ferrari: bronchite cronica mucopurulenta (ICD-9 491.1) in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente) e buona risposta alla terapia inalatoria in corso."
 Usage: #example
 * status = #final
 * code = http://hl7.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
@@ -500,7 +527,8 @@ Usage: #example
 
 Instance: Observation-conclusioni-generali
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di conclusioni generali nel contesto della televisita"
+Title: "Conclusioni Televisita - Monitoraggio consigliato"
+Description: "Conclusioni della televisita pneumologica del 16/06/2025: buona risposta al trattamento inalatorio. Il Dr. Marco Ferrari raccomanda monitoraggio periodico e spirometria di controllo tra 3 mesi."
 Usage: #example
 * status = #final
 * code = $loinc#55110-1
@@ -513,7 +541,8 @@ Usage: #example
 
 Instance: Observation-suggerimenti
 InstanceOf: ObservationTelevisitaNarrative
-Description: "Esempio di suggerimenti nel contesto della televisita"
+Title: "Suggerimenti al MMG - Spirometria di controllo"
+Description: "Suggerimenti del Dr. Marco Ferrari per il Medico di Medicina Generale di Maria Rossi: valutare spirometria di controllo entro 3 mesi per monitoraggio della funzionalità respiratoria."
 Usage: #example
 * status = #final
 * code = $loinc#62385-0
@@ -526,7 +555,8 @@ Usage: #example
 
 Instance: Observation-accertamenti-consigliati
 InstanceOf: ObservationTelevisita
-Description: "Esempio di accertamenti consigliati nel contesto della televisita"
+Title: "Accertamenti Consigliati - Emogasanalisi domiciliare"
+Description: "Accertamenti diagnostici consigliati dal Dr. Marco Ferrari a seguito della televisita: controllo emogasanalisi a domicilio per monitoraggio dei parametri respiratori di Maria Rossi."
 Usage: #example
 * status = #final
 * code = $loinc#80615-8
@@ -539,20 +569,26 @@ Usage: #example
 
 Instance: MedicationRequest-terapia-consigliata
 InstanceOf: MedicationRequestTelevisita
-Description: "Esempio di terapia consigliata nel contesto della televisita"
+Title: "Proposta Terapeutica - Acetilcisteina 600 mg"
+Description: "Proposta terapeutica del Dr. Marco Ferrari al termine della televisita: Acetilcisteina 600 mg granulato effervescente (ATC R05CB01), mucolitico indicato a supporto della gestione della bronchite cronica di Maria Rossi."
 Usage: #example
 * status = #active
 * intent = #proposal
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* medicationCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/aifa-atc|https://www.hl7.it/fhir/terminology/CodeSystem/aifa-atc|0.1.2#C01BD01 "Amiodarone" 
+* medicationCodeableConcept.coding.system = "http://www.atc.it"
+* medicationCodeableConcept.coding.code = #R05CB01
+* medicationCodeableConcept.coding.display = "Acetilcisteina"
+* medicationCodeableConcept.text = "N-acetilcisteina 600 mg granulato effervescente"
 * authoredOn = "2025-06-16"
 * requester = Reference(PractitionerTelevisitaExample)
+* dosageInstruction.text = "1 bustina da 600 mg una volta al giorno, discolta in acqua"
 * id = "9282eb8d-b153-451a-bd0d-437efd13b45f"
 
 
 Instance: DocumentReference-allegato1
 InstanceOf: DocumentReference
-Description: "Esempio di allegsti nel contesto della televisita"
+Title: "Allegato - TC Torace 10/05/2025 (Maria Rossi)"
+Description: "Referto della TC torace eseguita il 10/05/2025 allegato alla televisita pneumologica come documento di riferimento clinico, in formato PDF."
 Usage: #example
 * status = #current
 * type = $loinc#55107-7 "Addendum Document"
@@ -566,39 +602,39 @@ Usage: #example
 
 Instance: ProcedureTelevisitaExample
 InstanceOf: ProcedureTelevisita
-Title: "Esempio di Televisita Cardiologica"
-Description: "Esempio di istanza ProcedureTelevisita per una televisita cardiologica."
+Title: "Esempio di Televisita Pneumologica"
+Description: "Esempio di istanza ProcedureTelevisita per una televisita pneumologica."
 Usage: #example
 * id = "b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
 * status = #completed
-* category = http://snomed.info/sct#409063005 "Counselling"
-* code = http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.17.3 "MONITORAGGIO CARDIORESPIRATORIO NOTTURNO COMPLETOPer studio apnee"
+* category = http://snomed.info/sct#11429006 "Consultation"
+* code = http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.01.H "VISITA SPECIALISTICA IN TELEMEDICINA"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* performedPeriod.start = "2025-07-08T10:00:00+01:00"
-* performedPeriod.end = "2025-07-08T10:30:00+01:00"
+* performedPeriod.start = "2025-06-16T09:00:00+02:00"
+* performedPeriod.end = "2025-06-16T09:45:00+02:00"
 * encounter = Reference(EncounterTelevisitaExample)
 * recorder = Reference(PractitionerTelevisitaExample)
 * performer[+].actor = Reference(PractitionerTelevisitaExample)
-* performer[=].function = http://snomed.info/sct#17561000 "Cardiologist"
-* outcome.text = "Il paziente ha riportato miglioramenti. Non si segnalano criticità. Terapia invariata."
-* note[+].text = "Televisita eseguita tramite piattaforma XTelemed."
+* performer[=].function = http://snomed.info/sct#41672002 "Pulmonologist"
+* outcome.text = "Il paziente ha riportato lieve miglioramento della sintomatologia respiratoria. Terapia inalatoria confermata. Indicata spirometria di controllo tra 3 mesi."
+* note[+].text = "Televisita eseguita tramite piattaforma XTelemed. Durata 45 minuti."
 
 
 Instance: AppointmentTelevisitaExample
 InstanceOf: AppointmentTelevisita
-Title: "Appuntamento Televisita Cardiologica"
-Description: "Esempio di appuntamento per televisita cardiologica del paziente Mario Rossi"
+Title: "Appuntamento Televisita Pneumologica - Maria Rossi"
+Description: "Prenotazione della televisita pneumologica per Maria Rossi, schedulata il 16/06/2025 dalle 09:00 alle 09:45, erogata dal Dr. Marco Ferrari. Creata il 02/06/2025 su richiesta del MMG."
 Usage: #example
 * id = "9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
 * status = #booked
-* identifier.value = "TV-20250709-001"
-* created = "2025-07-01T09:00:00+01:00"
-* start = "2025-07-09T10:00:00+01:00"
-* end = "2025-07-09T10:30:00+01:00"
+* identifier.value = "TV-20250616-001"
+* created = "2025-06-02T09:00:00+02:00"
+* start = "2025-06-16T09:00:00+02:00"
+* end = "2025-06-16T09:45:00+02:00"
 * basedOn = Reference(ServiceRequestTelemedicinaExample)
 * serviceCategory = http://terminology.hl7.org/CodeSystem/service-category|1.1.1#8 "Counselling"
-* reasonCode[+] = http://snomed.info/sct#129265001 "Evaluation - action (qualifier value)"
-* reasonCode[=].text = "Televisita cardiologica per controllo post-operatorio"
+* reasonCode[+] = http://snomed.info/sct#13645005 "Chronic obstructive lung disease"
+* reasonCode[=].text = "Televisita pneumologica per follow-up bronchite cronica"
 * participant[0].actor = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * participant[0].status = #accepted
 * participant[1].actor = Reference(PractitionerRoleTelevisitaExample)
@@ -607,25 +643,24 @@ Usage: #example
 
 Instance: ServiceRequestTelemedicinaExample
 InstanceOf: ServiceRequestTelevisita
-Title: "Richiesta Televisita Cardiologica - Mario Rossi"
-Description: "Esempio di ServiceRequest per una televisita cardiologica, con NRE e branca di prestazione."
+Title: "Richiesta Televisita Pneumologica - Maria Rossi"
+Description: "Richiesta di televisita pneumologica (NRE: AAZ123456789) inviata dal Medico di Medicina Generale per Maria Rossi, motivata da follow-up per bronchite cronica (SNOMED 13645005). Redatta il 02/06/2025, con data prevista di erogazione 16/06/2025."
 Usage: #example
 * id = "d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc"
 * status = #active
 * intent = #order
 * identifier.value = "AAZ123456789"
-* requisition.value = "REQ-20250709-0001"
-* category = http://hl7.it/fhir/CodeSystem/branca-prestazione#02 "Cardiologia"
+* requisition.value = "REQ-20250616-0001"
+* category = http://hl7.it/fhir/CodeSystem/branca-prestazione#38 "Pneumologia"
 * priority = #routine
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* subject.display = "Mario Rossi"
+* subject.display = "Maria Rossi"
 * encounter = Reference(EncounterTelevisitaExample)
-* encounter.display = "Televisita 09/07/2025"
-* occurrenceDateTime = "2025-07-09T10:00:00+01:00"
-* authoredOn = "2025-07-01T09:15:00+01:00"
+* encounter.display = "Televisita 16/06/2025"
+* occurrenceDateTime = "2025-06-16T09:00:00+02:00"
+* authoredOn = "2025-06-02T09:15:00+02:00"
 * requester = Reference(PractitionerRoleTelevisitaExample)
-//* performer = Reference(Organization/ASLRoma1)
-* reasonCode = http://snomed.info/sct#2153008 "Cardiac catheterization education"
+* reasonCode = http://snomed.info/sct#13645005 "Chronic obstructive lung disease"
 * note[+].text = "Prestazione da eseguire in modalità remota tramite piattaforma XTelemed"
 
 
@@ -661,11 +696,11 @@ Usage: #example
 
 Instance: UOCardiologiaPertini
 InstanceOf: OrganizationT3
-Title: "U.O. Cardiologia - Ospedale Pertini"
-Description: "Unità Operativa di Cardiologia afferente all'Ospedale Pertini"
+Title: "U.O. Pneumologia - Ospedale Pertini"
+Description: "Unità Operativa di Pneumologia afferente all'Ospedale Pertini"
 Usage: #example
 * id = "uo-cardiologia-pertini"
-* name = "U.O. Cardiologia"
+* name = "U.O. Pneumologia"
 * partOf = Reference(Organization/osp-pertini)
 * identifier.system = "http://hl7.it/sid/hsp"
 * identifier.value = "UO12345"

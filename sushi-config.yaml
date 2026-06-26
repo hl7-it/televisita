@@ -156,19 +156,117 @@ menu:
 #
 groups:
   GroupA:
-    name: Profili Referto Televisita
+    name: Profili Core Referto Televisita
     description: Profili utilizzati nel contesto del Referto di Televisita
     resources:
     - StructureDefinition/BundleRefertodiTelevisita
-    # - StructureDefinition/BundleRefertoDiTelevisitaTransaction
     - StructureDefinition/CompositionRefertoTelevisita
     - StructureDefinition/ServiceRequestTelevisita
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
+  GroupB:
+    name: Profili Correlati Referto Televisita
+    description: Profili correlati utilizzati a supporto del Referto di Televisita
+    resources:
+    - StructureDefinition/PatientTelevisita
+    - StructureDefinition/PractitionerTelevisita
+    - StructureDefinition/PractitionerRoleTelevisita
+    - StructureDefinition/EncounterTelevisita
+    - StructureDefinition/AppointmentTelevisita
+    - StructureDefinition/AllergyIntoleranceTelevisita
+    - StructureDefinition/MedicationRequestTelevisita
+    - StructureDefinition/MedicationStatementTelevisita
+    - StructureDefinition/ProcedureTelevisita
+    - StructureDefinition/ObservationTelevisita
+    - StructureDefinition/ObservationTelevisitaNarrative
+    - StructureDefinition/OrganizationT1
+    - StructureDefinition/OrganizationT2
+    - StructureDefinition/OrganizationT3
+    - StructureDefinition/AddressItTelemedicina
+  GroupC:
+    name: Estensioni
+    description: Estensioni FHIR definite nella guida di Televisita
+    resources:
+    - StructureDefinition/recordCertification
+    - StructureDefinition/birth-place-ita
+    - StructureDefinition/address-dug
+    - StructureDefinition/address-official
+  GroupD:
+    name: Value Set
+    description: Value Set definiti nella guida di Televisita
+    resources:
+    - ValueSet/VsBundleTipoTelevisita
+    - ValueSet/VsClassEncounterTelevisita
+    - ValueSet/vsAmbitoTelemedicina
+    - ValueSet/vsspecialityPractitionerRole
+    - ValueSet/specialita-mediche
+    - ValueSet/VsCatalogoNazionalePrestazioni
+    - ValueSet/ValueSetCatalogoNazionalePrestazioni
+    - ValueSet/diagnosi-icd9cm
+    - ValueSet/istat-dug
+    - ValueSet/VstipoIdentificatore
+    - ValueSet/vsTipologiaDocumentale
+    - ValueSet/tipologia-piano
+    - ValueSet/TipologiaAttivitaPianoDiTelemonitoraggio
+    - ValueSet/vs-tipo-ricetta
+    - ValueSet/minsan-asl
+    - ValueSet/minsan-idStrutture
+    - ValueSet/minsan-idAziendeOspedaliere
+    - ValueSet/minsan-idStruttureInterne
+    - ValueSet/vs-anagrafi-regionali
+    - ValueSet/ValuesetMinisteroSaluteidASL
+  GroupE:
+    name: Code System
+    description: Code System definiti nella guida di Televisita
+    resources:
+    - CodeSystem/csAmbitoTelemedicina
+    - CodeSystem/csspecialityPractitionerRole
+    - CodeSystem/branca-prestazione
+    - CodeSystem/CsCatalogoNazionalePrestazioni
+    - CodeSystem/CodesystemCatalogoNazionalePrestazioni
+    - CodeSystem/diagnosi-icd9cm
+    - CodeSystem/dug
+    - CodeSystem/cs-mds-idStruttureInterne
+    - CodeSystem/CodesystemMinisteroSaluteASL
+    - CodeSystem/csTipologiaPiano
+    - CodeSystem/cs-tipo-ricetta
+    - CodeSystem/cs-asl
+    - CodeSystem/minsan-hsp
+  GroupF:
+    name: Esempi
+    description: >-
+      Caso d'uso esemplificativo: televisita pneumologica virtuale (classe VR) erogata il 16/06/2025
+      dalla U.O. Pneumologia dell'Ospedale Sandro Pertini (ASL Roma 1). La paziente Maria Rossi
+      (bronchite cronica nota, non fumatrice) viene visitata dal Dr. Marco Ferrari, Pneumologo,
+      su richiesta del suo Medico di Medicina Generale per follow-up della sintomatologia
+      respiratoria post-COVID. La visita include raccolta anamnestica, esame obiettivo remoto,
+      confronto con TC torace del 10/05/2025, diagnosi ICD-9 491.1 (bronchite cronica
+      mucopurulenta in fase stabile) e proposta terapeutica con Acetilcisteina 600 mg.
+    resources:
+    - Bundle/RefertoDiTelevisita
+    - Composition/aa011502-6ad2-430b-a439-01dddc36fd4e
+    - Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82
+    - Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d
+    - PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42
+    - Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2
+    - Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908
+    - ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc
+    - AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94
+    - MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a
+    - MedicationRequest/9282eb8d-b153-451a-bd0d-437efd13b45f
+    - Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f
+    - Observation/7cbbe77d-dcdb-409b-a215-6361ad7873d5
+    - Observation/84f911ee-b09d-4325-a3f3-a973a0c5ad8f
+    - Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865
+    - Observation/9dfdf0c9-a837-42d5-987c-6170c75cc476
+    - Observation/ecc5c95f-a1c0-483c-b48e-5fd84762c393
+    - Observation/a465cf01-05e6-4f38-8f6a-b5d6c4168c94
+    - Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3
+    - Observation/1611ed98-7577-48ab-9587-7ab4fc96e191
+    - Observation/2054e65c-2012-4286-aac7-ce2f23e8be31
+    - Observation/1b401b53-f564-4730-bb13-45d5620596f0
+    - DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb
+    - Organization/asl-roma-1
+    - Organization/osp-pertini
+    - Organization/uo-cardiologia-pertini
 #
 #
 # The ImplementationGuide resource defines several other properties

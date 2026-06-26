@@ -7,6 +7,7 @@ Alias: $loinc                              = http://loinc.org
 Alias: $sct                               = http://snomed.info/sct
 Alias: $icd-9-cm                          = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $v2-0203                           = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $v3-ActCode                        = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $allergyintolerance-clinical       = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification   = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $mimeType                          = urn:ietf:bcp:13
