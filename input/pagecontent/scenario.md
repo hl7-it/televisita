@@ -1,3 +1,5 @@
+Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando gli attori coinvolti e le macrofasi che caratterizzano il processo di televisita, dalla richiesta della prestazione fino alla produzione e condivisione del referto clinico.
+
 ### Introduzione
 
 La televisita rappresenta una modalità di erogazione della prestazione sanitaria che consente al professionista sanitario di interagire con il paziente a distanza mediante strumenti di comunicazione audio-video in tempo reale. Essa si inserisce all'interno del percorso assistenziale del paziente e permette di garantire continuità delle cure, accessibilità ai servizi sanitari e supporto ai processi di presa in carico.

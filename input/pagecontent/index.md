@@ -1,3 +1,4 @@
+
 ### Contesto e scenario di riferimento Nazionale
 La Telemedicina sta assumendo un ruolo sempre più centrale nell’evoluzione del sistema sanitario, rappresentando un’opportunità per migliorare l’accesso alle cure, ridurre i tempi di attesa e garantire una maggiore continuità assistenziale, in particolare per i pazienti con patologie croniche o residenti in aree geograficamente svantaggiate.
 
@@ -79,25 +80,29 @@ L'adozione di entrambe le rappresentazioni permette quindi di supportare sia gli
 <tr class="odd">
 <td>Autore</td>
 <td>Federica Dessì</td>
-<td>Deloitte S.p.A.</td>
+<td>Deloitte S.B. S.r.l.
+ </td>
 <td>fdessi@deloitte.it</td>
 </tr>
 <tr class="odd">
 <td>Autore</td>
 <td>Sonia Biasi</td>
-<td>Deloitte S.p.A.</td>
+<td>Deloitte S.B. S.r.l.
+ </td>
 <td>sbiasi@deloitte.it</td>
 </tr>
 <tr class="odd">
 <td>Autore</td>
 <td>Davide Spanu</td>
-<td>Deloitte S.p.A.</td>
+<td>Deloitte S.B. S.r.l.
+ </td>
 <td>dspanu@deloitte.it</td>
 </tr>
 <tr class="odd">
 <td>Autore</td>
 <td>William Tasinazzo</td>
-<td>Deloitte S.p.A.</td>
+<td>Deloitte S.B. S.r.l.
+ </td>
 <td>wtasinazzo@deloitte.it</td>
 </tr>
 <tr class="even">

@@ -1,3 +1,5 @@
+Questa pagina illustra il modello logico (Model Map) che descrive le relazioni tra le risorse FHIR coinvolte nella costruzione del Referto di Televisita, con la relativa legenda per la lettura del diagramma.
+
 ### Legenda di lettura
 
 Il **Model Map** rappresenta il modello logico di riferimento utilizzato per la definizione dei profili FHIR e mostra le relazioni esistenti tra le diverse risorse coinvolte nella costruzione del documento FHIR.

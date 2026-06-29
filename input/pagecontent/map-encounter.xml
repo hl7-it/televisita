@@ -34,31 +34,31 @@
         <tbody>
           <tr>
             <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
-            <td>Cognome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Cognome del medico specialista o altra figura tecnica partecipante alla televisita</td>
             <td>Encounter / Practitioner</td>
             <td>Encounter.participant.individual.resolve().ofType(Practitioner).name.family</td>
           </tr>
           <tr>
             <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
-            <td>Nome altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Nome del medico specialista o altra figura tecnica partecipante alla televisita</td>
             <td>Encounter / Practitioner</td>
             <td>Encounter.participant.individual.resolve().ofType(Practitioner).name.given</td>
           </tr>
           <tr>
             <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
-            <td>Codice fiscale altra figura tecnica coinvolta nell'esecuzione della procedura</td>
+            <td>Codice fiscale del medico specialista o altra figura tecnica partecipante alla televisita</td>
             <td>Encounter / Practitioner</td>
             <td>Encounter.participant.individual.resolve().ofType(Practitioner).identifier</td>
           </tr>
           <tr>
             <td>Codice Nosologico</td>
-            <td>Codice Nosologico</td>
+            <td>Codice nosologico associato all'incontro di televisita, ove applicabile</td>
             <td>Encounter</td>
             <td>Encounter.identifier.where(type='codiceNosologico').value</td>
           </tr>
           <tr>
             <td>Provenienza</td>
-            <td>Provenienza (es PS, Reparto)</td>
+            <td>Provenienza del paziente (es. territoriale, domiciliare, ambulatoriale)</td>
             <td>Encounter</td>
             <td>Encounter.class</td>
           </tr>

@@ -71,7 +71,7 @@
           </tr>
           <tr>
             <td>Quantità</td>
-            <td>Quantità</td>
+            <td>Numero di volte in cui la prestazione è stata eseguita</td>
             <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
             <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).extension:quantita / derived</code></td>
           </tr>
@@ -95,7 +95,7 @@
           </tr>
           <tr>
             <td>Note</td>
-            <td>Note</td>
+            <td>Note aggiuntive relative alla procedura eseguita durante la televisita</td>
             <td><a href="StructureDefinition-ProcedureTelevisita.html">Composition/Procedure</a></td>
             <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).note.text</code></td>
           </tr>

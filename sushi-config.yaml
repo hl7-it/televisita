@@ -181,6 +181,7 @@ groups:
     description: Profili utilizzati nel contesto del Referto di Televisita
     resources:
     - StructureDefinition/BundleRefertodiTelevisita
+    - StructureDefinition/BundleRefertoDiTelevisitaTransaction
     - StructureDefinition/CompositionRefertoTelevisita
     - StructureDefinition/ServiceRequestTelevisita
   GroupB:
@@ -234,6 +235,8 @@ groups:
     - ValueSet/minsan-idStruttureInterne
     - ValueSet/vs-anagrafi-regionali
     - ValueSet/ValuesetMinisteroSaluteidASL
+    - ValueSet/tipoCertificatore
+    - ValueSet/vs-uri-id-eni
   GroupE:
     name: Code System
     description: Code System definiti nella guida di Televisita
@@ -251,6 +254,8 @@ groups:
     - CodeSystem/cs-tipo-ricetta
     - CodeSystem/cs-asl
     - CodeSystem/minsan-hsp
+    - CodeSystem/it-identifier-type
+    - CodeSystem/it-tipoEntita
   GroupF:
     name: Esempi
     description: >-
@@ -263,6 +268,7 @@ groups:
       mucopurulenta in fase stabile) e proposta terapeutica con Acetilcisteina 600 mg.
     resources:
     - Bundle/RefertoDiTelevisita
+    - Bundle/RefertoDiTelevisitaTransaction
     - Composition/aa011502-6ad2-430b-a439-01dddc36fd4e
     - Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82
     - Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d

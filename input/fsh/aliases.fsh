@@ -12,6 +12,7 @@ Alias: $allergyintolerance-clinical       = http://terminology.hl7.org/CodeSyste
 Alias: $allergyintolerance-verification   = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $mimeType                          = urn:ietf:bcp:13
 Alias: $uri                               = urn:ietf:rfc:3986
+Alias: $V3RoleCode                        = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
 // --- Estensioni FHIR ---
 Alias: $patient-birthPlace                = http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.2.0
@@ -34,16 +35,14 @@ Alias: $cf                                = http://hl7.it/sid/codiceFiscale
 Alias: $anpr                              = http://hl7.it/sid/anpr
 
 // --- CodeSystem HL7 IT ---
-Alias: $istat-dug                         = http://hl7.it/fhir/lab-report/CodeSystem/dug
-Alias: $istat-DUG-CS                      = https://www.hl7.it/fhir/terminology/CodeSystem/dug
+Alias: $istat-dug                         = http://hl7.it/fhir/televisita/CodeSystem/dug
+Alias: $istat-DUG-CS                      = http://hl7.it/fhir/televisita/CodeSystem/dug
 
 // --- ValueSet HL7 IT ---
-Alias: $tipoCertificatore                 = https://www.hl7.it/fhir/terminology/ValueSet/tipoCertificatore
-Alias: $minsan-idStruttureInterne-vs      = https://www.hl7.it/fhir/terminology/ValueSet/minsan-idStruttureInterne
-Alias: $uri-idAslRegione                  = https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione
-Alias: $uri-idEni                         = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentificatore
-Alias: $uri-idStp                         = https://www.hl7.it/fhir/terminology/ValueSet/VstipoIdentificatore
-Alias: $uri-idRegionali                   = https://www.hl7.it/fhir/terminology/ValueSet/vs-anagrafi-regionali
+Alias: $tipoCertificatore                 = http://hl7.it/fhir/televisita/tipoCertificatore
+Alias: $uri-idEni                         = http://hl7.it/fhir/televisita/ValueSet/vs-uri-id-eni
+Alias: $uri-idStp                         = http://hl7.it/fhir/televisita/ValueSet/VstipoIdentificatore
+Alias: $uri-idRegionali                   = http://hl7.it/fhir/televisita/ValueSet/vs-anagrafi-regionali
 
 // --- CodeSystem / ValueSet AGENAS ---
 Alias: $specialityPractitionerRole        = https://terminology.agenas.gov.it/ValueSet/specialityPractitionerRole

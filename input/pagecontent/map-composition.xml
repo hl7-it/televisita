@@ -82,13 +82,13 @@
           </tr>
           <tr>
             <td>Descrizione terapia farmacologica</td>
-            <td>Descrizione terapia farmacologica</td>
+            <td>Descrizione della terapia farmacologica attualmente in atto al momento della televisita</td>
             <td>Composition / MedicationStatement</td>
             <td>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement).medicationCodeableConcept.text</td>
           </tr>
           <tr>
             <td>Esame obiettivo</td>
-            <td>Esame obiettivo</td>
+            <td>Resoconto dell'esame obiettivo effettuato durante la televisita</td>
             <td>Composition / Observation</td>
             <td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().ofType(Observation).note.text</td>
           </tr>
@@ -130,13 +130,13 @@
           </tr>
           <tr>
             <td>Conclusioni</td>
-            <td>Conclusioni</td>
+            <td>Conclusioni formulate dal medico specialista a seguito della televisita</td>
             <td>Composition / Observation</td>
             <td>Composition.section[conclusioni].entry.resolve().ofType(Observation).note.text / value[x]</td>
           </tr>
           <tr>
             <td>Suggerimenti per il medico prescrittore</td>
-            <td>Suggerimenti per il medico prescrittore</td>
+            <td>Indicazioni e suggerimenti rivolti al medico prescrittore a seguito della televisita</td>
             <td>Composition / Observation</td>
             <td>Composition.section[suggerimentiPerMedicoPrescrittore].entry.resolve().ofType(Observation).note.text</td>
           </tr>

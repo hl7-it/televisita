@@ -1,3 +1,5 @@
+Questa pagina raccoglie tutti gli artefatti scaricabili della Implementation Guide: il pacchetto completo, i file di definizione (profili, ValueSet, estensioni) nei formati XML, JSON e TTL, i package NPM per le versioni FHIR R4 e R4B e gli esempi inclusi nella guida.
+
 ### IG Televisita
 
 Download l'intera Implementation Guide [qui](full-ig.zip).
