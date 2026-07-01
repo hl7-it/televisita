@@ -1,22 +1,24 @@
-Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando gli attori coinvolti e le macrofasi che caratterizzano il processo di televisita, dalla richiesta della prestazione fino alla produzione e condivisione del referto clinico.
+**Fonte:** [Piattaforma Nazionale Telemedicina - AGENAS](https://bg.pnt.agenas.it/ckpportal/detail/69e0bea942fefd4e4ccf86d9)
+
+Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando gli attori coinvolti e le macrofasi che caratterizzano il processo di televisita, dalla richiesta della prestazione fino alla definizione e condivisione del referto clinico.
 
 ### Introduzione
 
-La televisita rappresenta una modalità di erogazione della prestazione sanitaria che consente al professionista sanitario di interagire con il paziente a distanza mediante strumenti di comunicazione audio-video in tempo reale. Essa si inserisce all'interno del percorso assistenziale del paziente e permette di garantire continuità delle cure, accessibilità ai servizi sanitari e supporto ai processi di presa in carico.
+La televisita si inserisce all'interno del percorso assistenziale del paziente e permette di garantire continuità delle cure, accessibilità ai servizi sanitari e supporto ai processi di presa in carico.
 
-Dal punto di vista organizzativo e clinico, la televisita si configura come un processo articolato che coinvolge differenti attori e sistemi informativi, dalla richiesta della prestazione fino alla produzione e condivisione del referto clinico.
+Dal punto di vista organizzativo e clinico, la televisita si configura come un processo articolato che coinvolge differenti attori e sistemi informativi.
 
-Il presente capitolo descrive lo scenario funzionale di riferimento adottato dalla presente guida e le principali fasi che caratterizzano il processo di televisita.
+Il capitolo descritto si seguito si focalizza sullo scenario di riferimento adottato dalla presente linea guida, evidenziando le principali fasi che ne caratterizzano il processo.
 
 ### Attori coinvolti
 
 I principali attori coinvolti nel processo sono:
 
 - Assistito;
-- Caregiver, ove previsto;
+- Caregiver, ove necessario;
 - Medico Richiedente;
 - Medico Erogatore;
-- Operatori amministrativi;
+- Personale di supporto infermieristico e/o amministrativo;
 - Sistemi di prenotazione (CUP);
 - Piattaforme di Telemedicina;
 - Sistemi informativi sanitari regionali e nazionali.
@@ -29,66 +31,63 @@ Il processo di televisita può essere descritto attraverso cinque macrofasi prin
 2. Verifica di eseguibilità;
 3. Preparazione della televisita;
 4. Erogazione della televisita;
-5. Refertazione o annotazione clinica.
+5. Refertazione.
 
-#### Richiesta e prescrizione della televisita
+#### Richiesta/Arruolamento del paziente in televisita
 
-Il processo ha origine dalla valutazione clinica effettuata dal professionista sanitario, che identifica la necessità di una prestazione erogabile mediante modalità di telemedicina.
+La richiesta di televisita può essere avanzata dal Medico di Medicina Generale (MMG), dal Pediatra di Libera Scelta (PLS), da altri medici specialisti operanti in ambito territoriale o ospedaliero oppure direttamente dall'assistito, secondo le modalità organizzative adottate dall'Azienda sanitaria.
 
-La richiesta della televisita rappresenta una decisione clinica finalizzata all'identificazione del bisogno assistenziale del paziente. A seguito della richiesta viene effettuata la prescrizione della prestazione, secondo le modalità previste dall'organizzazione sanitaria di riferimento.
+Il MMG/PLS o altro medico richiedente può proporre una televisita per monitorare l'andamento della patologia, rivalutare il quadro clinico, adattare il trattamento terapeutico, valutare gli esiti di esami diagnostici o strumentali, garantire la continuità assistenziale o per altre esigenze cliniche compatibili con la prestazione a distanza.
 
-Pur essendo strettamente correlate, richiesta e prescrizione costituiscono attività distinte: la prima è finalizzata alla definizione del bisogno clinico, mentre la seconda rappresenta la formalizzazione amministrativa della prestazione.
+In alcuni casi, il medico che ha in carico il paziente può svolgere direttamente la televisita nell'ambito del proprio percorso assistenziale.
 
-#### Verifica di eseguibilità
+Il paziente o il caregiver possono richiedere spontaneamente una televisita, ad esempio per ricevere chiarimenti su referti o accertamenti eseguiti, rivalutare il decorso clinico o qualora sussistano difficoltà agli spostamenti.
 
-A seguito della richiesta o della prescrizione, il medico erogatore valuta l'idoneità della prestazione ad essere erogata in modalità remota.
+Lo specialista può inoltre richiedere una televisita ad altro specialista nell'ambito di un percorso multidisciplinare, qualora siano necessarie competenze complementari per la gestione del caso clinico.
 
-La verifica di eseguibilità comprende la valutazione dei seguenti aspetti:
+L'arruolabilità del paziente viene valutata dal medico erogatore della prestazione, che verifica la presenza dei seguenti criteri di inclusione:
 
-- utilità clinica della televisita rispetto al caso specifico;
-- condizioni di sicurezza clinica per il paziente;
-- livello di compliance digitale del paziente;
-- consenso del paziente all'erogazione della prestazione.
+Eleggibilità clinica. Il paziente deve presentare una condizione clinica compatibile con l'erogazione della televisita, secondo le indicazioni previste dalla disciplina specialistica e sulla base della valutazione del medico.
 
-Nel caso in cui la richiesta provenga direttamente dall'assistito, il professionista sanitario effettua preliminarmente una valutazione delle indicazioni cliniche prima di procedere alla verifica di eseguibilità.
+Appropriatezza clinica. Il medico verifica che gli obiettivi della prestazione possano essere raggiunti efficacemente mediante televisita, tenendo conto del quesito clinico, delle informazioni disponibili e delle finalità assistenziali (ad esempio rivalutazione clinica, interpretazione di esami, follow-up, prescrizioni, counselling o definizione di ulteriori approfondimenti diagnostici o terapeutici).
 
-L'esito positivo delle verifiche rappresenta il presupposto per l'attivazione del servizio e per la successiva pianificazione della prestazione.
+Utilità e sicurezza clinica. Il medico valuta che la televisita sia appropriata, sicura e sufficiente rispetto alle condizioni cliniche del paziente, considerando eventuali limitazioni derivanti dall'assenza dell'esame obiettivo diretto e verificando che non siano presenti condizioni che richiedano necessariamente una valutazione in presenza.
 
-#### Preparazione della televisita
+Adeguatezza tecnologica. Il medico o il personale di supporto verifica che il paziente disponga di strumenti tecnologici idonei e possieda competenze sufficienti per partecipare alla televisita, eventualmente con il supporto di un caregiver. La valutazione può comprendere la disponibilità di dispositivi dotati di videocamera e microfono, la connettività internet, la capacità di utilizzo degli strumenti digitali e l'eventuale presenza di limitazioni fisiche, sensoriali o cognitive.
 
-La fase di preparazione comprende tutte le attività necessarie all'organizzazione e alla pianificazione della prestazione.
+Qualora il paziente risulti eleggibile, il medico fornisce un'adeguata informazione sulle modalità di svolgimento della televisita e acquisisce il consenso informato sanitario per eseguire la Televisita  e il consenso all'erogazione della prestazione sanitaria tramite strumenti di telemedicina.
 
-Tra le principali attività rientrano:
+Criteri di esclusione. In assenza anche di uno solo dei criteri sopra indicati, oppure qualora non venga acquisito il consenso informato, il paziente non potrà essere arruolato per la televisita.
 
-- prenotazione della prestazione tramite CUP o sistemi interni;
-- pianificazione dell'appuntamento;
-- predisposizione dell'ambulatorio virtuale;
-- generazione e distribuzione delle informazioni di accesso alla piattaforma;
-- verifiche amministrative preliminari.
+Conclusa positivamente la fase di arruolamento, il medico o il personale autorizzato provvede all'identificazione del paziente, alla registrazione dei consensi e all'avvio del percorso organizzativo previsto per la fase successiva.
 
-#### Erogazione della televisita
+#### Preparazione
 
-L'erogazione rappresenta la fase centrale del processo e corrisponde allo svolgimento della prestazione sanitaria.
+La fase di preparazione comprende tutte le attività propedeutiche all'erogazione della televisita.
 
-Durante la sessione di televisita il professionista sanitario può:
+Prescrizione. Il medico provvede alla prescrizione della prestazione secondo le modalità vigenti per la specialistica ambulatoriale e mediante gli strumenti informativi adottati dall'organizzazione sanitaria.
 
-- accedere all'ambulatorio virtuale;
-- consultare e condividere documentazione clinica;
-- raccogliere l'anamnesi del paziente;
-- effettuare attività di osservazione clinica compatibili con la modalità remota;
-- formulare valutazioni cliniche;
-- fornire indicazioni terapeutiche e assistenziali.
+Prenotazione. Il personale amministrativo o sanitario competente effettua la prenotazione della televisita e trasmette al paziente le informazioni necessarie per il collegamento (ad esempio link accesso alla piattaforma, credenziali). Qualora necessario, viene richiesto al paziente di rendere disponibile preventivamente la documentazione clinica utile allo svolgimento della visita (ad esempio referti, immagini diagnostiche, lettere di dimissione, esami di laboratorio o altra documentazione pertinente).
 
-#### Refertazione o annotazione clinica
+Verifica tecnica. Il personale di supporto verifica preventivamente il corretto funzionamento degli strumenti tecnologici necessari alla televisita, accertando la disponibilità di una connessione adeguata, di dispositivi idonei e della documentazione clinica appropriata. In caso di criticità tecniche, viene fornito supporto al paziente; qualora i problemi non siano risolvibili, la televisita viene riprogrammata oppure convertita in visita in presenza.
 
-Al termine della prestazione il professionista sanitario provvede alla registrazione dell'esito della televisita.
+Completate le attività preparatorie, si procede alla fase di erogazione della prestazione.
 
-Nel caso di visite specialistiche viene prodotto un referto digitale secondo le modalità previste dall'organizzazione sanitaria di riferimento.
+#### Esecuzione
 
-Nel caso del Medico di Medicina Generale o del Pediatra di Libera Scelta, l'esito della prestazione può essere registrato mediante annotazione sul sistema gestionale utilizzato dal professionista.
+Nel giorno e nell'orario stabiliti, il paziente, eventualmente assistito dal caregiver o da altri operatori coinvolti nel percorso assistenziale, e il medico accedono alla piattaforma di telemedicina adottata dall'organizzazione sanitaria di pertinenza.
 
-La documentazione prodotta viene registrata nei sistemi informativi aziendali e identificata come prestazione erogata in modalità telemedicina.
+Durante la televisita il medico può consultare la documentazione clinica disponibile, raccogliere informazioni anamnestiche, valutare l'evoluzione dello stato di salute, analizzare referti, immagini o altri dati clinici condivisi in tempo reale e confrontarsi, ove necessario, con il caregiver o con altri professionisti sanitari coinvolti nella presa in carico.
 
-<!-- ### Rappresentazione del processo
+Al termine della visita il medico formula le proprie valutazioni cliniche, definisce le indicazioni diagnostiche, terapeutiche o assistenziali e programma gli eventuali controlli successivi.
 
-![](scenario-televisita.png) -->
+Qualora nel corso della televisita emerga la necessità di effettuare un esame obiettivo non eseguibile a distanza oppure la qualità del collegamento non consenta di garantire il raggiungimento degli obiettivi clinici della prestazione, il medico dispone l'esecuzione di una visita in presenza secondo le modalità organizzative previste.
+
+#### Refertazione
+
+Al termine della televisita, qualora il medico ritenga appropriato l'inserimento del paziente in altri percorsi di telemedicina (ad esempio telemonitoraggio, teleconsulto o teleassistenza), provvede all'attivazione del relativo percorso secondo l'organizzazione aziendale.
+
+Il medico redige il referto secondo le modalità previste per la visita specialistica, indicando che la prestazione è stata erogata in modalità di televisita, e ne assicura la disponibilità attraverso i sistemi informativi aziendali e il Fascicolo Sanitario Elettronico, ove previsto.
+
+Al termine della prestazione, il medico e il personale autorizzato gestiscono la documentazione prodotta nel rispetto della normativa vigente in materia di protezione dei dati personali, conservazione documentale e sicurezza informatica, eliminando eventuali dati temporanei o non necessari al proseguimento del percorso assistenziale.
+

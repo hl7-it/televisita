@@ -1,141 +1,3 @@
-//TODO: non c'è il profilo del bundle transacrion??!!
-// // BUNDLE DI TIPO TRANSACTION
-// Instance: RefertoDiTelevisitaTransaction
-// InstanceOf: BundleRefertoDiTelevisitaTransaction
-// Description: "Esempio di Referto di Televisita come Bundle transaction con PUT e identifier"
-// Usage: #example
-
-// * type = #transaction
-
-// // Risorse amministrative con PUT e identifier
-
-// * entry[0].fullUrl = "http://example/Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82"
-// * entry[0].resource = PatientTelevisitaExample
-// * entry[0].request.method = #PUT
-// * entry[0].request.url = "Patient?identifier=http://hl7.it/sid/codiceFiscale|RSSMRA80A01H501Z"
-
-// * entry[1].fullUrl = "http://example/Practitioner/2b373c5c-0fbf-4167-875b-47ee7fc5cd5d"
-// * entry[1].resource = PractitionerTelevisitaExample
-// * entry[1].request.method = #PUT
-// * entry[1].request.url = "Practitioner?identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
-
-// * entry[2].fullUrl = "http://example/Organization/asl-roma-1"
-// * entry[2].resource = AslRoma1
-// * entry[2].request.method = #PUT
-// * entry[2].request.url = "Organization?identifier=http://hl7.it/sid/fls|RM0011"
-
-// * entry[3].fullUrl = "http://example/Organization/osp-pertini"
-// * entry[3].resource = PresidioSandroPertini
-// * entry[3].request.method = #PUT
-// * entry[3].request.url = "Organization?identifier=http://hl7.it/sid/hsp|HSP00123"
-
-// * entry[4].fullUrl = "http://example/Organization/uo-cardiologia-pertini"
-// * entry[4].resource = UOCardiologiaPertini
-// * entry[4].request.method = #PUT
-// * entry[4].request.url = "Organization?identifier=http://hl7.it/sid/hsp|UO12345"
-
-// * entry[5].fullUrl = "http://example/PractitionerRole/e446e848-2bd4-423a-b2f8-5d25687e2f42"
-// * entry[5].resource = PractitionerRoleTelevisitaExample
-// * entry[5].request.method = #PUT
-// * entry[5].request.url = "PractitionerRole?practitioner.identifier=http://hl7.it/sid/codiceFiscale|DOEMRA80A01H501Z"
-
-// // Risorse cliniche con POST
-
-// * entry[6].fullUrl = "http://example/Composition/aa011502-6ad2-430b-a439-01dddc36fd4e"
-// * entry[6].resource = CompositionRefertoTelevisitaExample
-// * entry[6].request.method = #POST
-// * entry[6].request.url = "Composition"
-
-// * entry[7].fullUrl = "http://example/Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
-// * entry[7].resource = EncounterTelevisitaExample
-// * entry[7].request.method = #POST
-// * entry[7].request.url = "Encounter"
-
-// * entry[8].fullUrl = "http://example/Observation/7cbbe77d-dcdb-409b-a215-6361ad7873d5"
-// * entry[8].resource = Observation-quesito
-// * entry[8].request.method = #POST
-// * entry[8].request.url = "Observation"
-
-// * entry[9].fullUrl = "http://example/Observation/84f911ee-b09d-4325-a3f3-a973a0c5ad8f"
-// * entry[9].resource = Observation-anamnesi
-// * entry[9].request.method = #POST
-// * entry[9].request.url = "Observation"
-
-// * entry[10].fullUrl = "http://example/AllergyIntolerance/1360bd6a-3855-48d3-aa33-96a9d961bb94"
-// * entry[10].resource = AllergyIntolerance-allergia1
-// * entry[10].request.method = #POST
-// * entry[10].request.url = "AllergyIntolerance"
-
-// * entry[11].fullUrl = "http://example/MedicationStatement/e62c9f1d-9c0b-4433-853b-06ec5074f19a"
-// * entry[11].resource = MedicationStatement-terapia-corrente
-// * entry[11].request.method = #POST
-// * entry[11].request.url = "MedicationStatement"
-
-// * entry[12].fullUrl = "http://example/Observation/c2a2b1ea-9d7e-41b9-83a5-cc2e71c0b865"
-// * entry[12].resource = Observation-esame-obiettivo
-// * entry[12].request.method = #POST
-// * entry[12].request.url = "Observation"
-
-// * entry[13].fullUrl = "http://example/Observation/9dfdf0c9-a837-42d5-987c-6170c75cc476"
-// * entry[13].resource = Observation-esami-precedenti
-// * entry[13].request.method = #POST
-// * entry[13].request.url = "Observation"
-
-// * entry[14].fullUrl = "http://example/Observation/ecc5c95f-a1c0-483c-b48e-5fd84762c393"
-// * entry[14].resource = Observation-confronto-esami
-// * entry[14].request.method = #POST
-// * entry[14].request.url = "Observation"
-
-// * entry[15].fullUrl = "http://example/Observation/a465cf01-05e6-4f38-8f6a-b5d6c4168c94"
-// * entry[15].resource = Observation-referto-principale
-// * entry[15].request.method = #POST
-// * entry[15].request.url = "Observation"
-
-// * entry[16].fullUrl = "http://example/Observation/1729dcef-ac19-434b-82e7-b6e6e51e74b3"
-// * entry[16].resource = Observation-diagnosi-principale
-// * entry[16].request.method = #POST
-// * entry[16].request.url = "Observation"
-
-// * entry[17].fullUrl = "http://example/Observation/1611ed98-7577-48ab-9587-7ab4fc96e191"
-// * entry[17].resource = Observation-conclusioni-generali
-// * entry[17].request.method = #POST
-// * entry[17].request.url = "Observation"
-
-// * entry[18].fullUrl = "http://example/Observation/2054e65c-2012-4286-aac7-ce2f23e8be31"
-// * entry[18].resource = Observation-suggerimenti
-// * entry[18].request.method = #POST
-// * entry[18].request.url = "Observation"
-
-// * entry[19].fullUrl = "http://example/Observation/1b401b53-f564-4730-bb13-45d5620596f0"
-// * entry[19].resource = Observation-accertamenti-consigliati
-// * entry[19].request.method = #POST
-// * entry[19].request.url = "Observation"
-
-// * entry[20].fullUrl = "http://example/MedicationRequest/9282eb8d-b153-451a-bd0d-437efd13b45f"
-// * entry[20].resource = MedicationRequest-terapia-consigliata
-// * entry[20].request.method = #POST
-// * entry[20].request.url = "MedicationRequest"
-
-// * entry[21].fullUrl = "http://example/DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb"
-// * entry[21].resource = DocumentReference-allegato1
-// * entry[21].request.method = #POST
-// * entry[21].request.url = "DocumentReference"
-
-// * entry[22].fullUrl = "http://example/ServiceRequest/d3f1a9b0-8c3d-4e8f-b2e2-59d8b02a6fdc"
-// * entry[22].resource = ServiceRequestTelemedicinaExample
-// * entry[22].request.method = #POST
-// * entry[22].request.url = "ServiceRequest"
-
-// * entry[23].fullUrl = "http://example/Appointment/9c7e5f13-47bd-4a0a-a6bb-c9e39fd3a908"
-// * entry[23].resource = AppointmentTelevisitaExample
-// * entry[23].request.method = #POST
-// * entry[23].request.url = "Appointment"
-
-// * entry[24].fullUrl = "http://example/Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
-// * entry[24].resource = ProcedureTelevisitaExample
-// * entry[24].request.method = #POST
-// * entry[24].request.url = "Procedure"
-
 // BUNDLE DI TIPO DOCUMENT
 Instance: RefertoDiTelevisita
 InstanceOf: BundleRefertodiTelevisita
@@ -258,7 +120,7 @@ Usage: #example
 * address.use = #home
 * address.state = "Italia"
 * address.extension[residenza].valueBoolean = true
-* address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = https://www.hl7.it/fhir/terminology/CodeSystem/it-tipoEntita#gov
+* address.extension[certificazioneIndirizzo].extension[who].valueCodeableConcept = http://hl7.it/fhir/televisita/CodeSystem/it-tipoEntita#gov
 * address.line.extension[dugCode].valueCodeableConcept  = $istat-DUG-CS#67 "via"
 * contact[0].name.family = "Rossi"
 * contact[0].name.given = "Luigi"
@@ -297,6 +159,7 @@ Usage: #example
 * section[questitoDiagnostico].title = "Quesito Diagnostico"
 * section[questitoDiagnostico].entry[0] = Reference(Observation/7cbbe77d-dcdb-409b-a215-6361ad7873d5)
 * section[InquadramentoClinicoIniziale].title = "Inquadramento Clinico Iniziale"
+* section[InquadramentoClinicoIniziale].code = $loinc#10164-2
 * section[InquadramentoClinicoIniziale].section[anamnesi].code = $loinc#11329-0
 * section[InquadramentoClinicoIniziale].section[anamnesi].title = "Anamnesi"
 * section[InquadramentoClinicoIniziale].section[anamnesi].entry = Reference(Observation/84f911ee-b09d-4325-a3f3-a973a0c5ad8f)
@@ -333,12 +196,13 @@ Usage: #example
 * section[terapiaFarmacologicaConsigliata].code = $loinc#93341-6
 * section[terapiaFarmacologicaConsigliata].title = "Terapia farmacologica consigliata"
 * section[terapiaFarmacologicaConsigliata].entry[0] = Reference(MedicationRequest/9282eb8d-b153-451a-bd0d-437efd13b45f)
-* section[allegati].code = $loinc#77599-9
-* section[allegati].title = "Documenti allegati"
-* section[allegati].entry[0] = Reference(DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb)
 * section[prestazioni].code = $loinc#62387-6 
 * section[prestazioni].title = "Prestazioni"
 * section[prestazioni].entry[0] = Reference(Procedure/b81d2c4e-5a9f-4c97-90fb-2a3b726b123f)
+* section[allegati].code = $loinc#77599-9
+* section[allegati].title = "Documenti allegati"
+* section[allegati].entry[0] = Reference(DocumentReference/4f6c71e1-cc6e-4428-ae9b-0118c0a928cb)
+
 
 Instance: PractitionerTelevisitaExample
 InstanceOf: PractitionerTelevisita
@@ -358,7 +222,7 @@ Description: "Incontro virtuale (classe VR) di natura pneumologica erogato il 16
 Usage: #example
 * id = "a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2"
 * status = #finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode|3.0.0#VR "Virtual"
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#VR "Virtual"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * basedOn = Reference(ServiceRequestTelemedicinaExample)
 * appointment = Reference(AppointmentTelevisitaExample)
@@ -381,7 +245,7 @@ Description: "Ruolo professionale del Dr. Marco Ferrari come Pneumologo (special
 Usage: #example
 * organization = Reference(AslRoma1)
 * practitioner = Reference(PractitionerTelevisitaExample)
-* specialty = CodeSystem_specialita_PractitionerRole#38 "Pneumologia"
+* specialty = CodeSystem_specialita_PractitionerRole#68 "Pneumologia"
 * id = "e446e848-2bd4-423a-b2f8-5d25687e2f42"
 
 
@@ -392,9 +256,9 @@ Description: "Quesito diagnostico formulato dal MMG: tosse persistente post-COVI
 Usage: #example
 * id = "7cbbe77d-dcdb-409b-a215-6361ad7873d5"
 * status = #final
-* code = http://hl7.it/fhir/CodeSystem/diagnosi-icd9cm#786.2 "TOSSE"
+* code = $loinc#29299-5 "Reason for visit Narrative"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* valueString = "Controllo post-COVID per tosse persistente"
+* valueString = "Controllo post-COVID per tosse persistente (ICD-9: 786.2)"
 * performer = Reference(PractitionerTelevisitaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
 
@@ -431,9 +295,9 @@ Description: "Terapia farmacologica in atto di Maria Rossi al momento della tele
 Usage: #example
 * id = "e62c9f1d-9c0b-4433-853b-06ec5074f19a"
 * status = #active
-* medicationCodeableConcept.coding.system = "http://www.atc.it"
+* medicationCodeableConcept.coding.system = "http://www.whocc.no/atc"
 * medicationCodeableConcept.coding.code = #R03BA01
-* medicationCodeableConcept.coding.display = "Beclometasone dipropionato"
+* medicationCodeableConcept.coding.display = "beclometasone"
 * medicationCodeableConcept.text = "Beclometasone 100 mcg spray inalatorio"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * context = Reference(Encounter/a2aaf911-51e7-4e38-a7ca-2817c0fcc6d2)
@@ -474,9 +338,6 @@ Usage: #example
 * code = $loinc#24627-2 "CT Chest"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * effectiveDateTime = "2025-05-10"
-* method.coding[0].system = "http://snomed.info/sct"
-* method.coding[0].code = #418060003
-* method.coding[0].display = "Computed tomography of chest"
 * valueString = "TC torace eseguita il 10/05/2025. Referto: negativa per lesioni polmonari evolutive, lieve ispessimento peribronchiale compatibile con bronchite cronica."
 * id = "9dfdf0c9-a837-42d5-987c-6170c75cc476"
 * performer = Reference(PractitionerTelevisitaExample)
@@ -517,9 +378,9 @@ Title: "Diagnosi - Bronchite Cronica Mucopurulenta (ICD-9 491.1)"
 Description: "Diagnosi formulata dal Dr. Marco Ferrari: bronchite cronica mucopurulenta (ICD-9 491.1) in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente) e buona risposta alla terapia inalatoria in corso."
 Usage: #example
 * status = #final
-* code = http://hl7.it/fhir/CodeSystem/diagnosi-icd9cm#491.1 "BRONCHITE CRONICA MUCOPURULENTA"
+* code = $loinc#29548-5 "Diagnosis Narrative"
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* valueString = "Bronchite cronica in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
+* valueString = "Bronchite cronica mucopurulenta (ICD-9: 491.1) in fase stabile, con sintomatologia respiratoria lieve (tosse secca persistente), assenza di segni di riacutizzazione e buona risposta alla terapia inalatoria in corso."
 * id = "1729dcef-ac19-434b-82e7-b6e6e51e74b3"
 * performer = Reference(PractitionerTelevisitaExample)
 * effectiveDateTime = "2025-06-16T10:30:00+02:00"
@@ -575,9 +436,9 @@ Usage: #example
 * status = #active
 * intent = #proposal
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
-* medicationCodeableConcept.coding.system = "http://www.atc.it"
+* medicationCodeableConcept.coding.system = "http://www.whocc.no/atc"
 * medicationCodeableConcept.coding.code = #R05CB01
-* medicationCodeableConcept.coding.display = "Acetilcisteina"
+* medicationCodeableConcept.coding.display = "acetylcysteine"
 * medicationCodeableConcept.text = "N-acetilcisteina 600 mg granulato effervescente"
 * authoredOn = "2025-06-16"
 * requester = Reference(PractitionerTelevisitaExample)
@@ -603,20 +464,35 @@ Usage: #example
 Instance: ProcedureTelevisitaExample
 InstanceOf: ProcedureTelevisita
 Title: "Esempio di Televisita Pneumologica"
-Description: "Esempio di istanza ProcedureTelevisita per una televisita pneumologica."
+Description: "Esempio di istanza ProcedureTelevisita per una televisita pneumologica di controllo (codice 89.01.L). Include tutti gli elementi previsti dal profilo: stato, codice, soggetto, incontro, periodo, operatore, estensione modalità, motivazione, esito, referto e note."
 Usage: #example
 * id = "b81d2c4e-5a9f-4c97-90fb-2a3b726b123f"
+
+// Estensione: modalità di esecuzione (televisita)
+//* extension[ModalitaEsecuzioneProcedura].valueCodeableConcept = http://snomed.info/sct#448337001 "Telemedicine consultation with patient (procedure)"
+
 * status = #completed
-* category = http://snomed.info/sct#11429006 "Consultation"
-* code = http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.01.H "VISITA SPECIALISTICA IN TELEMEDICINA"
+* category = http://hl7.it/fhir/televisita/CodeSystem/branca-prestazione#22 "Pneumologia"
+* code = http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni#89.01.L "VISITA PNEUMOLOGICA DI CONTROLLO. Incluso: eventuale rilevazione incruenta della saturazione arteriosa"
+
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
+* encounter = Reference(EncounterTelevisitaExample)
+
 * performedPeriod.start = "2025-06-16T09:00:00+02:00"
 * performedPeriod.end = "2025-06-16T09:45:00+02:00"
-* encounter = Reference(EncounterTelevisitaExample)
+
+* basedOn = Reference(ServiceRequestTelemedicinaExample)
+
 * recorder = Reference(PractitionerTelevisitaExample)
-* performer[+].actor = Reference(PractitionerTelevisitaExample)
+* performer[+].actor = Reference(PractitionerRoleTelevisitaExample)
 * performer[=].function = http://snomed.info/sct#41672002 "Pulmonologist"
+
+* reasonCode = http://snomed.info/sct#13645005 "Chronic obstructive lung disease"
+
 * outcome.text = "Il paziente ha riportato lieve miglioramento della sintomatologia respiratoria. Terapia inalatoria confermata. Indicata spirometria di controllo tra 3 mesi."
+
+* report = Reference(Composition/aa011502-6ad2-430b-a439-01dddc36fd4e)
+
 * note[+].text = "Televisita eseguita tramite piattaforma XTelemed. Durata 45 minuti."
 
 
@@ -651,7 +527,7 @@ Usage: #example
 * intent = #order
 * identifier.value = "AAZ123456789"
 * requisition.value = "REQ-20250616-0001"
-* category = http://hl7.it/fhir/CodeSystem/branca-prestazione#38 "Pneumologia"
+* category = http://hl7.it/fhir/televisita/CodeSystem/branca-prestazione#22 "Pneumologia"
 * priority = #routine
 * subject = Reference(Patient/2e7e0fe3-f0bf-4e0a-8228-b8e7fcec8c82)
 * subject.display = "Maria Rossi"
@@ -674,8 +550,8 @@ Usage: #example
 * name = "ASL Roma 1"
 * identifier[asl].system = "http://hl7.it/sid/fls"
 * identifier[asl].value = "120201"
-* identifier[aslRegione].system = "https://www.hl7.it/fhir/terminology/ValueSet/uri-idAslRegione"
-* identifier[aslRegione].value = "http://hl7.it/sid/lazio/asl"
+* identifier[aslRegione].system = "urn:ietf:rfc:3986"
+* identifier[aslRegione].value = "urn:oid:2.16.840.1.113883.2.9.2.120.4.1"
 * identifier[partitaIva].system = "http://hl7.it/sid/partitaIva"
 * identifier[partitaIva].value = "12345678901"
 * identifier[codiceFiscale].system = "http://hl7.it/sid/codiceFiscale"

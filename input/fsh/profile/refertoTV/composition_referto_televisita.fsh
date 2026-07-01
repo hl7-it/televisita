@@ -1,7 +1,7 @@
 Profile: CompositionRefertoTelevisita
 Parent: Composition
 Id: CompositionRefertoTelevisita
-Description: "Profilo della Composition utilizzata nel contesto della Televisita. Rappresenta il documento clinico strutturato prodotto al termine di una sessione di televisita, includendo tutte le sezioni cliniche e amministrative previste dal Decreto Telemedicina."
+Description: "Profilo della Composition utilizzata nel contesto della Televisita. Rappresenta il documento clinico strutturato prodotto al termine di una sessione di televisita, includendo tutte le sezioni cliniche e amministrative previste dal D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina."
 * ^status = #draft
 
 * identifier ^short = "Identificativo univoco del referto di televisita."
@@ -50,7 +50,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 
 * event.code ^short = "Tipo di attività clinica svolta nella televisita."
 * event.code ^definition = "Codifica dell'evento clinico documentato nel referto. Tipicamente descrive la tipologia di accesso o atto medico effettuato in modalità remota."
-* event.code from http://terminology.hl7.org/ValueSet/v3-ActCode|3.0.0
+* event.code from http://terminology.hl7.org/ValueSet/v3-ActCode
 
 * title 1..1
 * title = "Referto di Televisita"
@@ -91,6 +91,7 @@ Description: "Profilo della Composition utilizzata nel contesto della Televisita
 * section[InquadramentoClinicoIniziale] ^sliceName = "InquadramentoClinicoIniziale"
 * section[InquadramentoClinicoIniziale] ^short = "Inquadramento clinico iniziale del paziente."
 * section[InquadramentoClinicoIniziale] ^definition = "Sezione che raccoglie le informazioni cliniche rilevanti del paziente al momento della televisita: anamnesi, allergie, terapia in atto ed esame obiettivo."
+* section[InquadramentoClinicoIniziale].code = $loinc#10164-2
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.type = #value
 * section[InquadramentoClinicoIniziale].section ^slicing.discriminator.path = "code"
 * section[InquadramentoClinicoIniziale].section ^slicing.rules = #open

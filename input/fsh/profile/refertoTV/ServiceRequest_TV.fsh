@@ -68,15 +68,15 @@ Description: "Profilo della risorsa ServiceRequest utilizzata per rappresentare 
 * code.coding[codiceNomenclatoreTariffario].code ^short = "Codice nazionale della prestazione"
 * code.coding[codiceNomenclatoreTariffario].display ^short = "Descrizione della prestazione"
 
-* code.coding[codiceCatalogoRegionalePrestazione] from $catalogoRegionalePrestazioni (preferred)
-* code.coding[codiceCatalogoRegionalePrestazione] ^short = "Codice del catalogo regionale della prestazione"
-* code.coding[codiceCatalogoRegionalePrestazione] ^definition = "Codifica della prestazione secondo il catalogo regionale, ove disponibile."
-* code.coding[codiceCatalogoRegionalePrestazione].system 1..1
-* code.coding[codiceCatalogoRegionalePrestazione].system = $csCatalogoRegionalePrestazioni (exactly)
-* code.coding[codiceCatalogoRegionalePrestazione].system ^short = "Sistema di codifica regionale"
-* code.coding[codiceCatalogoRegionalePrestazione].code 1..1
-* code.coding[codiceCatalogoRegionalePrestazione].code ^short = "Codice regionale della prestazione"
-* code.coding[codiceCatalogoRegionalePrestazione].display ^short = "Descrizione regionale della prestazione"
+// * code.coding[codiceCatalogoRegionalePrestazione] from $catalogoRegionalePrestazioni (preferred)
+// * code.coding[codiceCatalogoRegionalePrestazione] ^short = "Codice del catalogo regionale della prestazione"
+// * code.coding[codiceCatalogoRegionalePrestazione] ^definition = "Codifica della prestazione secondo il catalogo regionale, ove disponibile."
+// * code.coding[codiceCatalogoRegionalePrestazione].system 1..1
+// * code.coding[codiceCatalogoRegionalePrestazione].system = $csCatalogoRegionalePrestazioni (exactly)
+// * code.coding[codiceCatalogoRegionalePrestazione].system ^short = "Sistema di codifica regionale"
+// * code.coding[codiceCatalogoRegionalePrestazione].code 1..1
+// * code.coding[codiceCatalogoRegionalePrestazione].code ^short = "Codice regionale della prestazione"
+// * code.coding[codiceCatalogoRegionalePrestazione].display ^short = "Descrizione regionale della prestazione"
 
 * orderDetail 0..*
 * orderDetail ^short = "Dettagli aggiuntivi della richiesta"
@@ -138,5 +138,5 @@ Description: "Profilo della risorsa ServiceRequest utilizzata per rappresentare 
 Invariant: requisition-system
 Description: "Il system deve seguire questa struttura: 'http://www.[nome prodotto o fornitore].it/identifiers/requisition'"
 Severity: #error
-Expression: "matches('^http://www\\..+\\.it/identifiers/requisition$')"
+Expression: "matches('^http://www\\\\..+\\\\.it/identifiers/requisition$')"
 

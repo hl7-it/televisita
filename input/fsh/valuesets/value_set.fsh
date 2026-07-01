@@ -27,8 +27,8 @@ Description: "Value set che descrivie i diversi tipi di identificatori. Include 
 * ^publisher = "HL7 Italia"
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://hl7.it/fhir"
-* $v2-0203#DL "Patente di Guida"
-* $v2-0203#PPN "Numero Passaporto"
+* $v2-0203#DL "Driver's license number"
+* $v2-0203#PPN "Passport number"
 * $v2-0203#BRN "Breed Registry Number"
 * $v2-0203#MR "Medical record number"
 * $v2-0203#MCN "Microchip Number"

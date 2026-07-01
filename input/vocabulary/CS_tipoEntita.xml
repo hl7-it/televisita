@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
-	<id value="it-tipoEntita"/>	
+	<id value="it-tipoEntita"/>
+	<url value="http://hl7.it/fhir/televisita/CodeSystem/it-tipoEntita"/>
 	<name value="CSItTipoEntita"/>
 	<title value="HL7 Italia - Tipo di Entità"/>
 	<status value="active"/>

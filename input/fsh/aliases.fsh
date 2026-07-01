@@ -15,12 +15,12 @@ Alias: $uri                               = urn:ietf:rfc:3986
 Alias: $V3RoleCode                        = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
 // --- Estensioni FHIR ---
-Alias: $patient-birthPlace                = http://hl7.org/fhir/StructureDefinition/patient-birthPlace|5.2.0
-Alias: $iso21090-ADXP-houseNumber         = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.2.0
-Alias: $iso21090-ADXP-streetName          = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.2.0
-Alias: $iso21090-ADXP-streetNameBase      = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.2.0
-Alias: $iso21090-ADXP-streetNameType      = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.2.0
-Alias: $iso21090-SC-coding                = http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.2.0
+Alias: $patient-birthPlace                = http://hl7.org/fhir/StructureDefinition/patient-birthPlace
+Alias: $iso21090-ADXP-houseNumber         = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber|5.3.0
+Alias: $iso21090-ADXP-streetName          = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName|5.3.0
+Alias: $iso21090-ADXP-streetNameBase      = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameBase|5.3.0
+Alias: $iso21090-ADXP-streetNameType      = http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetNameType|5.3.0
+Alias: $iso21090-SC-coding                = http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.3.0
 
 // --- Profili HL7 IT ---
 Alias: $Address                           = http://hl7.it/fhir/StructureDefinition/Address
@@ -39,14 +39,14 @@ Alias: $istat-dug                         = http://hl7.it/fhir/televisita/CodeSy
 Alias: $istat-DUG-CS                      = http://hl7.it/fhir/televisita/CodeSystem/dug
 
 // --- ValueSet HL7 IT ---
-Alias: $tipoCertificatore                 = http://hl7.it/fhir/televisita/tipoCertificatore
+Alias: $tipoCertificatore                 = http://hl7.it/fhir/televisita/ValueSet/tipoCertificatore
 Alias: $uri-idEni                         = http://hl7.it/fhir/televisita/ValueSet/vs-uri-id-eni
 Alias: $uri-idStp                         = http://hl7.it/fhir/televisita/ValueSet/VstipoIdentificatore
 Alias: $uri-idRegionali                   = http://hl7.it/fhir/televisita/ValueSet/vs-anagrafi-regionali
 
 // --- CodeSystem / ValueSet AGENAS ---
-Alias: $specialityPractitionerRole        = https://terminology.agenas.gov.it/ValueSet/specialityPractitionerRole
-Alias: $minsan-fls                        = https://terminology.agenas.gov.it/ValueSet/minsan-fls
-Alias: $catalogoRegionalePrestazioni      = https://terminology.agenas.gov.it/ValueSet/catalogoRegionalePrestazioni
-Alias: $csCatalogoNazionalePrestazioni    = https://terminology.agenas.gov.it/CodeSystem/catalogoNazionalePrestazioni
-Alias: $csCatalogoRegionalePrestazioni    = https://terminology.agenas.gov.it/CodeSystem/catalogoRegionalePrestazioni
+Alias: $specialityPractitionerRole        = http://hl7.it/fhir/televisita/ValueSet/vsspecialityPractitionerRole
+Alias: $minsan-fls                        = http://hl7.it/fhir/televisita/ValueSet/minsan-fls
+Alias: $catalogoRegionalePrestazioni      = http://hl7.it/fhir/televisita/ValueSet/catalogoRegionalePrestazioni
+Alias: $csCatalogoNazionalePrestazioni    = http://hl7.it/fhir/televisita/CodeSystem/CsCatalogoNazionalePrestazioni
+Alias: $csCatalogoRegionalePrestazioni    = http://hl7.it/fhir/televisita/CodeSystem/catalogoRegionalePrestazioni

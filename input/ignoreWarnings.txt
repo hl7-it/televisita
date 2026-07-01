@@ -1,7 +1,7 @@
 == Suppressed Messages ==
 
 # == Suppress missing definition warnings ==
-No definition could be found for URL value 'urn:ietf:rfc:39861'
+No definition could be found for URL value 'urn:ietf:rfc:3986'
 No definition could be found for URL value 'http://hl7.it/sid/codiceFiscale'
 No definition could be found for URL value 'http://agenas.gov.it/sid/codiceNosologico'
 No definition could be found for URL value 'http://www.nomeProdottoOFornitore.it/identifiers/requisition'
@@ -46,6 +46,10 @@ Reference to experimental CodeSystem https://agenas.gov.it/fhir/CodeSystem/csspe
 
 == Suppress warnings for unresolved custom CodeSystems ==
 %could not be found, so the code cannot be validated%
+
+== Suppress terminology server timeouts ==
+%SocketTimeoutException%
+%timeout%
 
 == Suppress reference to experimental CodeSystems ==
 INFORMATION: Reference to experimental CodeSystem https://agenas.gov.it/fhir/CodeSystem/csspecialityPractitionerRole.*
@@ -95,3 +99,30 @@ Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/Co
 Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni|0.1.0
 Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni|0.1.0
 
+== Suppress informational messages on experimental CodeSystems ==
+Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/dug|0.2.0
+Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/branca-prestazione|0.2.0
+Reference to experimental CodeSystem http://hl7.it/fhir/televisita/CodeSystem/CodesystemCatalogoNazionalePrestazioni|0.2.0
+
+== Suppress template-generated duplicate anchor in modelmap ==
+The html source has duplicate anchor Ids: 1
+
+== Suppress informational messages on CodeSystem properties without URI ==
+%This property has only a code%and not a URI, so it has no clearly defined meaning in the terminology ecosystem%
+
+== Suppress informational messages on deprecated extensions ==
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/iso21090-SC-coding|5.3.0 is deprecated
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated
+
+== Suppress informational messages on specialty coding recommendation ==
+%None of the codings provided are in the value set 'Practice Setting Code Value Set'%
+
+== Suppress informational messages on open-slicing Organization identifier ==
+%This element does not match any known slice defined in the profile http://hl7.it/fhir/televisita/StructureDefinition/OrganizationT1%
+
+== Suppress terminology server network timeouts ==
+%SocketTimeoutException%
+
+
+Error from https://tx.fhir.org/r4: Error: The cache '244cc22a-3ddc-45a4-bd08-8d8305503dea' is not known to this server. Caches are created with $cache-control?mode=start; this one was never created, or has expired or been released

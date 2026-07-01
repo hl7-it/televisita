@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
   <body>
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del Decreto Telemedicina e sono mappate sul profilo <strong>PatientTelevisita</strong>.
+          Le informazioni rappresentate nella presente tabella derivano dagli elementi informativi definiti nell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina" e sono mappate sul corrispondente profilo FHIR.
         </div>
       </div>
     </div>
 
-    <h3>Allegato 1 Telemedicina &#8594; PatientTelevisita</h3>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Dati dell'assistito</p>
     <p>
-      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del Decreto Telemedicina, siano rappresentati nel profilo FHIR <a href="StructureDefinition-PatientTelevisita.html">PatientTelevisita</a>.
+      Questa pagina illustra come gli elementi informativi relativi all'assistito, previsti dall'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina", siano rappresentati nel corrispondente profilo FHIR.
     </p>
 
-    <div class="table-wrap">
-      <strong>Contesto di mappatura</strong>
-      <ul>
-        <li><strong>Profilo target:</strong> <a href="StructureDefinition-PatientTelevisita.html">PatientTelevisita</a></li>
-      </ul>
-    </div>
+
 
     <div class="table-wrap">
       <table class="table table-striped table-bordered table-hover" summary="Allegato 1 -> PatientTelevisita">

@@ -9,7 +9,7 @@ Description: "Profilo della risorsa Procedure utilizzato per rappresentare le pr
 * . ^definition = "Rappresenta una prestazione sanitaria o una procedura clinica eseguita nel corso della televisita, identificata da un codice del Catalogo Nazionale delle Prestazioni, con indicazione del periodo di erogazione e delle modalità di esecuzione."
 
 // ── Estensioni ───────────────────────────────────────────────────────────────
-* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method|5.2.0 named ModalitaEsecuzioneProcedura 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/procedure-method|5.3.0 named ModalitaEsecuzioneProcedura 0..1
 * extension[ModalitaEsecuzioneProcedura] ^short = "Modalità di esecuzione della procedura operativa."
 * extension[ModalitaEsecuzioneProcedura] ^definition = "Descrizione della modalità pratica con cui è stata eseguita la procedura operativa nell'ambito della televisita."
 

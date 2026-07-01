@@ -34,7 +34,8 @@ Description: "Bundle FHIR utilizzato per rappresentare il referto di televisita.
     allergyIntolerance 0..* and
     familyMemberHistory 0..* and
     encounter 0..* and
-    procedure 0..*
+    procedure 0..* and
+    documentReference 0..*
 
 * entry[composition] ^short = "Documento clinico della televisita."
 * entry[composition] ^definition = "Composition che rappresenta il referto di televisita e costituisce la risorsa principale del Bundle document."
@@ -95,3 +96,7 @@ Description: "Bundle FHIR utilizzato per rappresentare il referto di televisita.
 * entry[procedure] ^short = "Prestazioni eseguite."
 * entry[procedure] ^definition = "Prestazioni sanitarie effettuate o documentate nell'ambito della televisita."
 * entry[procedure].resource only ProcedureTelevisita
+
+* entry[documentReference] ^short = "Documenti allegati."
+* entry[documentReference] ^definition = "Documenti allegati o referenziati nell'ambito del referto di televisita, quali referti precedenti, immagini diagnostiche o altri allegati clinici."
+* entry[documentReference].resource only DocumentReference

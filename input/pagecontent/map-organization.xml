@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml">
   <body>
     <div class="model-map-block">
       <div class="callout-wrapper">
         <div class="callout-box">
-          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del Decreto Telemedicina
-          e i profili FHIR <strong>OrganizationT1</strong>, <strong>OrganizationT2</strong>, <strong>OrganizationT3</strong>.
+          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina"
+          e i corrispondenti profili FHIR.
         </div>
       </div>
     </div>
 
-    <h3>Allegato 1 Telemedicina → Organization Televisita</h3>
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Strutture organizzative</p>
     <p>
       La risorsa <code>Organization</code> rappresenta l'azienda sanitaria, il presidio e l'unità operativa
       responsabili dell'erogazione della televisita, raggiungibili tramite il <code>PractitionerRole</code> dell'autore della Composition.
@@ -19,9 +19,7 @@
     <div class="table-wrap">
       <strong>Contesto di mappatura:</strong>
       <code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization)</code>
-      (profili <a href="StructureDefinition-OrganizationT1.html">OrganizationT1</a> /
-      <a href="StructureDefinition-OrganizationT2.html">OrganizationT2</a> /
-      <a href="StructureDefinition-OrganizationT3.html">OrganizationT3</a>)
+
     </div>
 
     <div class="table-wrap">

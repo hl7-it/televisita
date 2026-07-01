@@ -29,6 +29,8 @@ Extension: BirthPlaceIta
 Id: birth-place-ita
 Title: "Luogo di Nascita - ITA"
 Description: "Estensione utilizzata per rappresentare il luogo di nascita dell'assistito secondo il formato italiano, strutturato come un indirizzo conforme al profilo AddressItTelemedicina. Nel contesto della televisita è rilevante per l'identificazione anagrafica dell'assistito."
+* ^context.type = #element
+* ^context.expression = "Patient"
 * . ^short = "Luogo di nascita dell'assistito (formato italiano)."
 * . ^definition = "Contiene l'indirizzo del luogo di nascita dell'assistito, espresso secondo il profilo AddressItTelemedicina. Include comune, provincia, regione e stato di nascita, utili per l'identificazione anagrafica nel sistema sanitario italiano."
 * value[x] only AddressItTelemedicina
