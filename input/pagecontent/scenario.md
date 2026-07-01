@@ -27,11 +27,10 @@ I principali attori coinvolti nel processo sono:
 
 Il processo di televisita può essere descritto attraverso cinque macrofasi principali:
 
-1. Richiesta e prescrizione della televisita;
-2. Verifica di eseguibilità;
-3. Preparazione della televisita;
-4. Erogazione della televisita;
-5. Refertazione.
+1. Richiesta/Arruolamento del paziente in televisita;
+2. Preparazione;
+3. Esecuzione
+4. Refertazione
 
 #### Richiesta/Arruolamento del paziente in televisita
 
