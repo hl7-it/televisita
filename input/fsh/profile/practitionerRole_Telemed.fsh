@@ -22,10 +22,10 @@ Description: "Profilo della risorsa PractitionerRole utilizzato per rappresentar
 * practitioner ^definition = "Il professionista è in grado di fornire i servizi definiti per l'organizzazione."
 * practitioner ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
 
-* organization only Reference(OrganizationT1)
-* organization ^short = "Organizzazione di Appartenenza"
-* organization ^definition = "L'organizzazione in cui il professionista svolge i ruoli associati."
-* organization ^comment = "I riferimenti DEVONO essere un riferimento a una risorsa FHIR effettiva e DEVONO essere risolvibili (consentendo il controllo dell'accesso, la temporanea indisponibilità, ecc.) La risoluzione può avvenire tramite il recupero dell'URL o, se applicabile al tipo di risorsa, trattando un riferimento assoluto come un URL canonico e cercandolo in un registro/repository locale."
+* organization only Reference(OrganizationT1 or OrganizationT2 or OrganizationT3) 
+* organization ^short = "Unità Operativa, Presidio o Azienda Sanitaria"
+* organization ^definition = "Il campo deve essere valorizzato con il riferimento all'organizzazione più specifica disponibile (Unità Operativa, Presidio o Azienda Sanitaria). Le organizzazioni di livello superiore sono collegate tramite il campo partOf, consentendo la navigazione dell'intera gerarchia organizzativa. Qualora non sia disponibile l'informazione sull'Unità Operativa o sul Presidio, è sufficiente referenziare l'Azienda Sanitaria."
+* organization ^comment = "Il campo deve essere valorizzato con il riferimento all'organizzazione più specifica disponibile (Unità Operativa, Presidio o Azienda Sanitaria). Le organizzazioni di livello superiore sono collegate tramite il campo partOf, consentendo la navigazione dell'intera gerarchia organizzativa. Qualora non sia disponibile l'informazione sull'Unità Operativa o sul Presidio, è sufficiente referenziare l'Azienda Sanitaria."
 
 * code ^short = "Ruoli che questo professionista può svolgere."
 * code ^definition = "Ruoli che questo professionista è autorizzato a svolgere per l'organizzazione."

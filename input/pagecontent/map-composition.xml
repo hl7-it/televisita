@@ -28,6 +28,48 @@
         </thead>
         <tbody>
           <tr>
+            <td>Cognome medico refertante</td>
+            <td>Cognome del medico refertante</td>
+            <td>Composition</td>
+            <td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td>
+          </tr>
+          <tr>
+            <td>Nome medico refertante</td>
+            <td>Nome del medico refertante</td>
+            <td>Composition</td>
+            <td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td>
+          </tr>
+          <tr>
+            <td>Codice fiscale medico refertante</td>
+            <td>Codice Fiscale del medico refertante</td>
+            <td>Composition</td>
+            <td>Composition.author.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td>
+          </tr>
+          <tr>
+            <td>Cognome medico firmatario</td>
+            <td>Cognome del medico firmatario</td>
+            <td>Composition</td>
+            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.family</td>
+          </tr>
+          <tr>
+            <td>Nome medico firmatario</td>
+            <td>Nome del medico firmatario</td>
+            <td>Composition</td>
+            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).name.given</td>
+          </tr>
+          <tr>
+            <td>Codice Fiscale medico firmatario</td>
+            <td>Codice Fiscale del medico firmatario</td>
+            <td>Composition</td>
+            <td>Composition.attester[legalAuthenticator].party.resolve().ofType(PractitionerRole).practitioner.resolve().ofType(Practitioner).identifier</td>
+          </tr>
+          <tr>
+            <td>Codice e descrizione dell'azienda sanitaria</td>
+            <td>Codice e descrizione dell'azienda sanitaria</td>
+            <td>Composition</td>
+            <td>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier + Organization.name</td>
+          </tr>
+          <tr>
             <td>Data firma referto</td>
             <td>Data di firma del referto</td>
             <td>Composition</td>
@@ -64,6 +106,12 @@
             <td>Composition.section[InquadramentoClinicoIniziale].section[anamnesi].entry.resolve().ofType(Observation).note.text</td>
           </tr>
           <tr>
+            <td>Allergie</td>
+            <td>Eventuali allergie e fonti dichiarate</td>
+            <td>Composition / AllergyIntolerance</td>
+            <td>Composition.section[InquadramentoClinicoIniziale].section[allergie].entry.resolve().ofType(AllergyIntolerance)</td>
+          </tr>
+          <tr>
             <td>Precedenti esami eseguiti</td>
             <td>Codice, descrizione, metodica e data di eventuali esami precedenti eseguiti dal paziente e ritenuti rilevanti ai fini della formulazione del referto</td>
             <td>Composition / Observation</td>
@@ -88,6 +136,54 @@
             <td>Composition.section[InquadramentoClinicoIniziale].section[esameObiettivo].entry.resolve().ofType(Observation).note.text</td>
           </tr>
           <tr>
+            <td>Codice prestazione eseguita</td>
+            <td>Codice della prestazione eseguita</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione prestazione eseguita</td>
+            <td>Descrizione della prestazione eseguita</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.display</td>
+          </tr>
+          <tr>
+            <td>Data e ora di inizio erogazione</td>
+            <td>Data e ora di inizio erogazione della prestazione</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).performedPeriod.start</td>
+          </tr>
+          <tr>
+            <td>Data e ora di fine erogazione</td>
+            <td>Data e ora di fine erogazione della prestazione</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).performedPeriod.end</td>
+          </tr>
+          <tr>
+            <td>Codice procedura operativa</td>
+            <td>Codice della procedura operativa eseguita</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</td>
+          </tr>
+          <tr>
+            <td>Descrizione procedura operativa</td>
+            <td>Descrizione procedura operativa</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.display | Procedure.code.text</td>
+          </tr>
+          <tr>
+            <td>Quantit&#224;</td>
+            <td>Quantit&#224;</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure) /* dato derivato/conteggio prestazioni */</td>
+          </tr>
+          <tr>
+            <td>Modalit&#224; esecuzione procedura operativa</td>
+            <td>Descrizione modalit&#224; di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).method</td>
+          </tr>
+          <tr>
             <td>Strumentazione utilizzata</td>
             <td>Strumentazione utilizzata nel corso della procedura</td>
             <td>Composition / Procedure / Device</td>
@@ -100,16 +196,22 @@
             <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).supportingInfo.resolve().ofType(Observation)</td>
           </tr>
           <tr>
+            <td>Note</td>
+            <td>Note</td>
+            <td>Composition / Procedure</td>
+            <td>Composition.section[prestazioni].entry.resolve().ofType(Procedure).note.text</td>
+          </tr>
+          <tr>
             <td>Confronto con precedenti esami eseguiti</td>
             <td>Confronto con precedenti esami eseguiti. Permette di riportare un confronto tra quanto emerso nel corso di precedenti esami eseguiti e quanto rilevato durante la televisita.</td>
             <td>Composition / Observation</td>
-            <td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text</td>
+            <td>Composition.section[confrontoPrecedentiEsamiEseguiti].entry.resolve().ofType(Observation).note.text | Observation.valueString</td>
           </tr>
           <tr>
             <td>Refertazione</td>
             <td>Referto della/e prestazione/i, oggetto principale del referto</td>
             <td>Composition / Observation</td>
-            <td>Composition.section[referto].entry.resolve().ofType(Observation).note.text / value[x]</td>
+            <td>Composition.section[referto].entry.resolve().ofType(Observation).note.text | Observation.valueString</td>
           </tr>
           <tr>
             <td>Codice diagnosi</td>
@@ -127,7 +229,7 @@
             <td>Conclusioni</td>
             <td>Conclusioni formulate dal medico specialista a seguito della televisita</td>
             <td>Composition / Observation</td>
-            <td>Composition.section[conclusioni].entry.resolve().ofType(Observation).note.text / value[x]</td>
+            <td>Composition.section[conclusioni].entry.resolve().ofType(Observation).note.text | Observation.valueString</td>
           </tr>
           <tr>
             <td>Suggerimenti per il medico prescrittore</td>
@@ -145,7 +247,7 @@
             <td>Descrizione accertamento consigliato</td>
             <td>Descrizione accertamento/i o prestazione/i consigliata/e da eseguire a seguito della prestazione</td>
             <td>Composition / Observation</td>
-            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code.coding.display</td>
+            <td>Composition.section[accertamentiControlliConsigliati].entry.resolve().ofType(Observation).code.text | Observation.valueCodeableConcept.text</td>
           </tr>
           <tr>
             <td>Codice AIC/ATC farmaco consigliato</td>
