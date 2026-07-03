@@ -1,5 +1,3 @@
-**Fonte:** [Piattaforma Nazionale Telemedicina - AGENAS](https://bg.pnt.agenas.it/ckpportal/detail/69e0bea942fefd4e4ccf86d9)
-
 Questa pagina descrive lo scenario funzionale di riferimento adottato dalla presente guida, illustrando gli attori coinvolti e le macrofasi che caratterizzano il processo di televisita, dalla richiesta della prestazione fino alla definizione e condivisione del referto clinico.
 
 ### Introduzione
