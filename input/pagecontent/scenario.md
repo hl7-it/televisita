@@ -25,7 +25,7 @@ I principali attori coinvolti nel processo sono:
 
 ### Flusso funzionale della televisita
 
-Di seguito viene descritto il processo di erogazione della televisita, articolato nelle principali fasi operative e sviluppato considerando il Modello orientativo di erogazione della Televisita disponibile sulla Piattaforma Nazionale di Telemedicina (PNT) [BG - pub - MODELLO ORIENTATIVO DI EROGAZIONE DELLA TELEVISITA | Dettaglio Linea guida](https://bg.pnt.agenas.it/ckpportal/detail/69e0bea942fefd4e4ccf86d9) . Per ciascuna fase sono riportate le attività da svolgere, i soggetti coinvolti e gli elementi organizzativi necessari alla corretta erogazione della prestazione:
+Di seguito viene descritto il processo di erogazione della televisita, articolato nelle principali fasi operative e sviluppato considerando il [Modello orientativo di erogazione della Televisita](https://bg.pnt.agenas.it/ckpportal/detail/69e0bea942fefd4e4ccf86d9) disponibile sulla Piattaforma Nazionale di Telemedicina (PNT). Per ciascuna fase sono riportate le attività da svolgere, i soggetti coinvolti e gli elementi organizzativi necessari alla corretta erogazione della prestazione:
 
 1. Richiesta/Arruolamento del paziente in televisita;
 2. Preparazione;
