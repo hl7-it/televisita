@@ -25,7 +25,7 @@ I principali attori coinvolti nel processo sono:
 
 ### Flusso funzionale della televisita
 
-Il processo di televisita può essere descritto attraverso cinque macrofasi principali:
+Di seguito viene descritto il processo di erogazione della televisita, articolato nelle principali fasi operative e sviluppato considerando il Modello orientativo di erogazione della Televisita disponibile sulla Piattaforma Nazionale di Telemedicina (PNT) [BG - pub - MODELLO ORIENTATIVO DI EROGAZIONE DELLA TELEVISITA | Dettaglio Linea guida](https://bg.pnt.agenas.it/ckpportal/detail/69e0bea942fefd4e4ccf86d9) . Per ciascuna fase sono riportate le attività da svolgere, i soggetti coinvolti e gli elementi organizzativi necessari alla corretta erogazione della prestazione:
 
 1. Richiesta/Arruolamento del paziente in televisita;
 2. Preparazione;
@@ -56,7 +56,7 @@ Adeguatezza tecnologica. Il medico o il personale di supporto verifica che il pa
 
 Qualora il paziente risulti eleggibile, il medico fornisce un'adeguata informazione sulle modalità di svolgimento della televisita e acquisisce il consenso informato sanitario per eseguire la Televisita  e il consenso all'erogazione della prestazione sanitaria tramite strumenti di telemedicina.
 
-Criteri di esclusione. In assenza anche di uno solo dei criteri sopra indicati, oppure qualora non venga acquisito il consenso informato, il paziente non potrà essere arruolato per la televisita.
+Criteri di esclusione. In assenza anche di uno solo dei criteri sopra indicati, oppure qualora non venga acquisito il consenso informato, il paziente non potrà essere arruolato per eseguire la televisita.
 
 Conclusa positivamente la fase di arruolamento, il medico o il personale autorizzato provvede all'identificazione del paziente, alla registrazione dei consensi e all'avvio del percorso organizzativo previsto per la fase successiva.
 
@@ -70,11 +70,11 @@ Prenotazione. Il personale amministrativo o sanitario competente effettua la pre
 
 Verifica tecnica. Il personale di supporto verifica preventivamente il corretto funzionamento degli strumenti tecnologici necessari alla televisita, accertando la disponibilità di una connessione adeguata, di dispositivi idonei e della documentazione clinica appropriata. In caso di criticità tecniche, viene fornito supporto al paziente; qualora i problemi non siano risolvibili, la televisita viene riprogrammata oppure convertita in visita in presenza.
 
-Completate le attività preparatorie, si procede alla fase di erogazione della prestazione.
+Completate le attività preparatorie, si procede alla fase di esecuzione della prestazione.
 
 #### Esecuzione
 
-Nel giorno e nell'orario stabiliti, il paziente, eventualmente assistito dal caregiver o da altri operatori coinvolti nel percorso assistenziale, e il medico accedono alla piattaforma di telemedicina adottata dall'organizzazione sanitaria di pertinenza.
+Nel giorno e nell'orario stabiliti, il paziente, eventualmente assistito dal caregiver o da altri operatori coinvolti nel percorso assistenziale e il medico accedono alla piattaforma di telemedicina adottata dall'organizzazione sanitaria di pertinenza.
 
 Durante la televisita il medico può consultare la documentazione clinica disponibile, raccogliere informazioni anamnestiche, valutare l'evoluzione dello stato di salute, analizzare referti, immagini o altri dati clinici condivisi in tempo reale e confrontarsi, ove necessario, con il caregiver o con altri professionisti sanitari coinvolti nella presa in carico.
 
