@@ -33,18 +33,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Codice prestazione eseguita</td>
-            <td>Codice della prestazione eseguita</td>
-            <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</code></td>
-          </tr>
-          <tr>
-            <td>Descrizione prestazione eseguita</td>
-            <td>Descrizione della prestazione eseguita</td>
-            <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.text</code></td>
-          </tr>
+          
           <tr>
             <td>Data e ora di inizio erogazione</td>
             <td>Data e ora di inizio erogazione della prestazione</td>
@@ -69,17 +58,12 @@
             <td>Composition/Procedure</td>
             <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.display</code></td>
           </tr>
-          <tr>
-            <td>Quantità</td>
-            <td>Numero di volte in cui la prestazione è stata eseguita</td>
-            <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).extension:quantita / derived</code></td>
-          </tr>
+          
           <tr>
             <td>Modalità esecuzione procedura operativa</td>
             <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).method</code></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).extension:modalitaEsecuzione</code></td>
           </tr>
           <tr>
             <td>Strumentazione utilizzata</td>
@@ -91,7 +75,7 @@
             <td>Parametri descrittivi della procedura</td>
             <td>Parametri rilevanti al fine di caratterizzare la procedura</td>
             <td>Composition/Procedure/Observation</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).supportingInfo.resolve().ofType(Observation)</code></td>
+            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).outcome</code></td>
           </tr>
           <tr>
             <td>Note</td>

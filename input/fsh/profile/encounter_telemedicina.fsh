@@ -29,7 +29,7 @@ Description: "Profilo della risorsa Encounter utilizzato per rappresentare la vi
 * type from ValueSet_specialita_PractitionerRole (required)
 * type MS
 * type ^short = "Disciplina specialistica della televisita."
-* type ^definition = "Indica la branca specialistica nell'ambito della quale viene erogata la televisita (es. cardiologia, neurologia, dermatologia). Il valore è vincolato al ValueSet delle specialità ambulatoriali."
+* type ^definition = "Indica la disciplina specialistica nell'ambito della quale viene erogata la televisita (es. cardiologia, neurologia, dermatologia). Il valore è vincolato al ValueSet delle specialità ambulatoriali."
 
 * serviceType from specialita-mediche (preferred)
 * serviceType ^short = "Tipologia di servizio erogato."

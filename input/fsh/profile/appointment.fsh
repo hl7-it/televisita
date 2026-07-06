@@ -4,7 +4,7 @@ Id: AppointmentTelevisita
 Description: "Profilo base del Appointment condiviso in tutti i documenti di Telemedicina"
 * ^status = #draft
 * identifier 1..
-* identifier ^short = "Codice della prenotazione"
+* identifier ^short = "Codice CUP, identificativo della prenotazione"
 * identifier ^definition = "Elemento di tipo identifier contenente gli identificativi univoci della risorsa."
 
 * serviceCategory ^short = "Categorizzazione del servizio erogato durante l'appuntamento."

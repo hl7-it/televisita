@@ -33,58 +33,10 @@
         </thead>
         <tbody>
           <tr>
-            <td>Codice prenotazione</td>
-            <td>Identificativo univoco della prenotazione della televisita</td>
+            <td>CodiceCUP</td>
+            <td>Codice della prenotazione</td>
             <td>Appointment</td>
             <td><code>Appointment.identifier.value</code></td>
-          </tr>
-          <tr>
-            <td>Data e ora inizio appuntamento</td>
-            <td>Data e ora di inizio della televisita</td>
-            <td>Appointment</td>
-            <td><code>Appointment.start</code></td>
-          </tr>
-          <tr>
-            <td>Data e ora fine appuntamento</td>
-            <td>Data e ora di conclusione della televisita</td>
-            <td>Appointment</td>
-            <td><code>Appointment.end</code></td>
-          </tr>
-          <tr>
-            <td>Data creazione prenotazione</td>
-            <td>Data in cui è stata creata la prenotazione dell'appuntamento</td>
-            <td>Appointment</td>
-            <td><code>Appointment.created</code></td>
-          </tr>
-          <tr>
-            <td>Categoria servizio</td>
-            <td>Categorizzazione del servizio erogato durante l'appuntamento (es. branca specialistica)</td>
-            <td>Appointment</td>
-            <td><code>Appointment.serviceCategory.coding.code</code></td>
-          </tr>
-          <tr>
-            <td>Motivo dell'appuntamento</td>
-            <td>Motivazione clinica per cui è stato prenotato l'appuntamento di televisita</td>
-            <td>Appointment</td>
-            <td><code>Appointment.reasonCode.text</code></td>
-          </tr>
-          <tr>
-            <td>Riferimento alla richiesta</td>
-            <td>Riferimento alla ServiceRequest da cui origina la prenotazione</td>
-            <td>Appointment</td>
-            <td><code>Appointment.basedOn</code></td>
-          </tr>
-          <tr>
-            <td>Paziente</td>
-            <td>Riferimento al paziente partecipante all'appuntamento di televisita</td>
-            <td>Appointment</td>
-            <td><code>Appointment.participant.actor.resolve().ofType(Patient)</code></td>
-          </tr>
-          <tr>
-            <td>Medico specialista</td>
-            <td>Riferimento al medico specialista (PractitionerRole) partecipante all'appuntamento</td>
-            <td>Appointment</td>
-            <td><code>Appointment.participant.actor.resolve().ofType(PractitionerRole)</code></td>
           </tr>
         </tbody>
       </table>

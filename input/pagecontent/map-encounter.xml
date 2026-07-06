@@ -61,14 +61,9 @@
             <td>Disciplina</td>
             <td>Disciplina specialistica ambulatoriale</td>
             <td>Encounter</td>
-            <td>Encounter.serviceType</td>
+            <td>Encounter.type</td>
           </tr>
-          <tr>
-            <td>Branca</td>
-            <td>Branca specialistica ambulatoriale</td>
-            <td>Encounter</td>
-            <td>Encounter.serviceType</td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

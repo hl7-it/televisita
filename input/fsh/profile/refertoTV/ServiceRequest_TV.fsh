@@ -49,7 +49,7 @@ Description: "Profilo della risorsa ServiceRequest utilizzata per rappresentare 
 * code ^definition = "Codice della prestazione richiesta o prescritta. Nel contesto della televisita rappresenta la prestazione specialistica richiesta, eventualmente erogabile in modalità televisita."
 
 * code.coding 1..*
-* code.coding ^short = "Codifica della prestazione richiesta"
+* code.coding ^short = "Codifica della prestazione"
 * code.coding ^definition = "Codice della prestazione secondo il sistema terminologico di riferimento."
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
@@ -81,10 +81,6 @@ Description: "Profilo della risorsa ServiceRequest utilizzata per rappresentare 
 * orderDetail 0..*
 * orderDetail ^short = "Dettagli aggiuntivi della richiesta"
 * orderDetail ^definition = "Ulteriori dettagli relativi alla prestazione richiesta, incluse eventuali indicazioni organizzative o cliniche."
-
-* quantity[x] 0..1
-* quantity[x] ^short = "Quantità della prestazione"
-* quantity[x] ^definition = "Quantità o molteplicità della prestazione richiesta."
 
 * subject 1..1
 * subject only Reference(PatientTelevisita)
