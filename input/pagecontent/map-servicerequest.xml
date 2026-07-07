@@ -54,13 +54,13 @@
           <tr>
             <td>Codice prestazione eseguita</td>
             <td>Codice della prestazione eseguita</td>
-            <td>Composition / Procedure</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.code.coding.code</td>
           </tr>
           <tr>
             <td>Descrizione prestazione eseguita</td>
             <td>Descrizione della prestazione eseguita</td>
-            <td>Composition / Procedure</td>
+            <td>ServiceRequest</td>
             <td>ServiceRequest.code.coding.display</td>
           </tr>
         </tbody>
