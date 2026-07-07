@@ -74,7 +74,7 @@
           <tr>
             <td>Parametri descrittivi della procedura</td>
             <td>Parametri rilevanti al fine di caratterizzare la procedura</td>
-            <td>Composition/Procedure/Observation</td>
+            <td>Composition/Procedure</td>
             <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).outcome</code></td>
           </tr>
           <tr>
