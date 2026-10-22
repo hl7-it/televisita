@@ -37,25 +37,25 @@
             <td>Codice e descrizione dell'azienda sanitaria</td>
             <td>Codice e descrizione dell'azienda sanitaria</td>
             <td>Composition/PractitionerRole/Organization</td>
-            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier + name</code></td>
+            <td><code>Organization.identifier + name</code></td>
           </tr>
           <tr>
             <td>Codice e descrizione del presidio</td>
             <td>Codice e descrizione del presidio</td>
             <td>Composition/PractitionerRole/Organization</td>
-            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).partOf.identifier + name</code></td>
+            <td><code>Organization.partOf.identifier + name</code></td>
           </tr>
           <tr>
             <td>Codice e descrizione dell'unità operativa</td>
             <td>Codice e descrizione dell'unità operativa</td>
             <td>Composition/PractitionerRole/Organization</td>
-            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier + name</code></td>
+            <td><code>Organization.identifier + name</code></td>
           </tr>
           <tr>
             <td>Numero telefono Unità Operativa / CUP / Azienda Sanitaria</td>
             <td>Numero di telefono dell'Unità Operativa / CUP / Azienda Sanitaria</td>
             <td>Composition/PractitionerRole/Organization</td>
-            <td><code>Composition.author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).contact.telecom.where(system='phone')</code></td>
+            <td><code>Organization.contact.telecom.where(system='phone')</code></td>
           </tr>
         </tbody>
       </table>

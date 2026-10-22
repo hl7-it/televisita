@@ -38,38 +38,38 @@
             <td>Codice procedura operativa</td>
             <td>Codice della procedura operativa eseguita</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.code</code></td>
+            <td><code>Procedure.code.coding.code</code></td>
           </tr>
           <tr>
             <td>Descrizione procedura operativa</td>
             <td>Descrizione procedura operativa eseguita</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).code.coding.display</code></td>
+            <td><code>Procedure.code.coding.display</code></td>
           </tr>
           
           <tr>
             <td>Modalità esecuzione procedura operativa</td>
             <td>Descrizione modalità di esecuzione della procedura operativa. Rappresenta la declinazione pratica del come viene eseguita la procedura.</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).extension:modalitaEsecuzione</code></td>
+            <td><code>Procedure.extension:modalitaEsecuzione</code></td>
           </tr>
           <tr>
             <td>Strumentazione utilizzata</td>
             <td>Strumentazione utilizzata nel corso della procedura</td>
             <td>Composition/Procedure/Device</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).usedReference.resolve().ofType(Device)</code></td>
+            <td><code>Device</code></td>
           </tr>
           <tr>
             <td>Parametri descrittivi della procedura</td>
             <td>Parametri rilevanti al fine di caratterizzare la procedura</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).outcome</code></td>
+            <td><code>Procedure.outcome</code></td>
           </tr>
           <tr>
             <td>Note</td>
             <td>Note aggiuntive relative alla procedura eseguita durante la televisita</td>
             <td>Composition/Procedure</td>
-            <td><code>Composition.section[prestazioni].entry.resolve().ofType(Procedure).note.text</code></td>
+            <td><code>Procedure.note.text</code></td>
           </tr>
         </tbody>
       </table>
