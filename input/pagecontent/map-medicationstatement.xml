@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <body>
+    <div class="model-map-block">
+      <div class="callout-wrapper">
+        <div class="callout-box">
+          Questa pagina descrive la mappatura tra i campi dell'Allegato 1 del D.M. Salute 19 novembre 2025, pubblicato in GU Serie Generale n. 301 del 30 dicembre 2025 recante "Disciplina del trattamento dei dati personali nell'ambito della infrastruttura della Piattaforma nazionale telemedicina"
+          e il corrispondente profilo FHIR.
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:1.2em;font-weight:bold;margin-top:1.5rem;">Allegato 1 Telemedicina &#8594; Terapia farmacologica in atto</p>
+    <p>
+      La risorsa <code>MedicationStatement</code> rappresenta la terapia farmacologica che il paziente sta già assumendo al momento
+      della televisita, indipendentemente da una prescrizione corrente.
+    </p>
+
+    <div class="table-wrap">
+      <strong>Contesto di mappatura:</strong>
+      <code>Composition.section[InquadramentoClinicoIniziale].section[terapiaFarmacologicaInAtto].entry.resolve().ofType(MedicationStatement)</code>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Contenuto informativo</th>
+            <th>Descrizione</th>
+            <th>Risorsa FHIR</th>
+            <th>FHIR path</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Codice AIC/ATC farmaco</td>
+            <td>Codice AIC/ATC del farmaco o dei farmaci assunti nella terapia in atto</td>
+            <td>Composition/MedicationStatement</td>
+            <td><code>MedicationStatement.medicationCodeableConcept.coding.code</code></td>
+          </tr>
+          <tr>
+            <td>Descrizione terapia farmacologica</td>
+            <td>Descrizione della terapia farmacologica attualmente in atto al momento della televisita</td>
+            <td>Composition/MedicationStatement</td>
+            <td><code>MedicationStatement.medicationCodeableConcept.text</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem;color:#555;">
+      Torna alla panoramica: <a href="modelmap.html">Modello di mappatura</a>
+    </p>
+  </body>
+</div>

@@ -71,6 +71,18 @@
             <td>Composition/Procedure</td>
             <td><code>Procedure.note.text</code></td>
           </tr>
+          <tr>
+            <td>Data e ora di inizio erogazione</td>
+            <td>Data e ora di inizio erogazione della prestazione</td>
+            <td>Composition/Procedure</td>
+            <td><code>Procedure.performedPeriod.start</code></td>
+          </tr>
+          <tr>
+            <td>Data e ora di fine erogazione</td>
+            <td>Data e ora di fine erogazione della prestazione</td>
+            <td>Composition/Procedure</td>
+            <td><code>Procedure.performedPeriod.end</code></td>
+          </tr>
         </tbody>
       </table>
     </div>

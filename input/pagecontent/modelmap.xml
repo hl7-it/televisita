@@ -79,6 +79,19 @@
                     </tr>
                     <tr>
                         <td>
+                            <a href="StructureDefinition-PractitionerTelevisita.html">
+                                <code>PractitionerTelevisita</code>
+                            </a>,
+                            <a href="StructureDefinition-PractitionerRoleTelevisita.html">
+                                <code>PractitionerRoleTelevisita</code>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="pill" href="map-practitioner.html">Practitioner Mapping</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <a href="StructureDefinition-EncounterTelevisita.html">
                                 <code>EncounterTelevisita</code>
                             </a>
@@ -115,6 +128,29 @@
                         </td>
                         <td>
                             <a class="pill" href="map-medicationrequest.html">MedicationRequest Mapping</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="StructureDefinition-MedicationStatementTelevisita.html">
+                                <code>MedicationStatementTelevisita</code>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="pill" href="map-medicationstatement.html">MedicationStatement Mapping</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="StructureDefinition-ObservationTelevisita.html">
+                                <code>ObservationTelevisita</code>
+                            </a>,
+                            <a href="StructureDefinition-ObservationTelevisitaNarrative.html">
+                                <code>ObservationTelevisitaNarrative</code>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="pill" href="map-observation.html">Observation Mapping</a>
                         </td>
                     </tr>
                     <tr>
